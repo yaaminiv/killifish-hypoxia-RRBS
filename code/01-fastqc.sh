@@ -6,7 +6,7 @@
 #SBATCH --mail-user=yaamini.venkataraman@whoi.edu    # Where to send mail
 #SBATCH --ntasks=1                 								   # Run a single task
 #SBATCH --cpus-per-task=8      								       # Number of CPU cores per task
-#SBATCH --mem=1gb                  								   # Job memory request
+#SBATCH --mem=100gb                  								 # Job memory request
 #SBATCH --time=03:00:00            								   # Time limit hrs:min:sec
 #SBATCH --output=yrv_fastqc%j.log  								   # Standard output/error
 
