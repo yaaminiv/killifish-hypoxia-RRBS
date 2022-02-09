@@ -18,7 +18,7 @@
 # These variables need to be set by user
 
 # FastQC output directory
-output_dir=/vortexfs1/scratch/yaamini.venkataraman/
+output_dir=/vortexfs1/scratch/yaamini.venkataraman/01-fastqc
 
 # Input/output files
 checksums=fastq_checksums.md5
@@ -111,14 +111,3 @@ do
   	cp --preserve ~/.multiqc_config.yaml .
   fi
 done
-
-
-# Document programs in PATH (primarily for program version ID)
-{
-date
-echo ""
-echo "System PATH for $SLURM_JOB_ID"
-echo ""
-printf "%0.s-" {1..10}
-echo "${PATH}" | tr : \\n
-} >> system_path.log
