@@ -1,14 +1,15 @@
 #!/bin/bash
 
-#SBATCH --partition=compute          								 # Queue selection
-#SBATCH --job-name=yrv_fastqc         							 # Job name
-#SBATCH --mail-type=ALL              							   # Mail events (BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=yaamini.venkataraman@whoi.edu    # Where to send mail
-#SBATCH --ntasks=1                 								   # Run a single task
-#SBATCH --cpus-per-task=8      								       # Number of CPU cores per task
-#SBATCH --mem=100gb                  								 # Job memory request
-#SBATCH --time=03:00:00            								   # Time limit hrs:min:sec
-#SBATCH --output=yrv_fastqc%j.log  								   # Standard output/error
+#SBATCH --partition=compute          								 							# Queue selection
+#SBATCH --job-name=yrv_fastqc         							 							# Job name
+#SBATCH --mail-type=ALL              							   							# Mail events (BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=yaamini.venkataraman@whoi.edu    							# Where to send mail
+#SBATCH --ntasks=1                 								  						  # Run a single task
+#SBATCH --cpus-per-task=8      								       							# Number of CPU cores per task
+#SBATCH --mem=100gb                  								 							# Job memory request
+#SBATCH --time=03:00:00            								   							# Time limit hrs:min:sec
+#SBATCH --output=yrv_fastqc%j.log  								   							# Standard output/error
+#SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/01-fastqc	# Working directory for this script
 
 # Script adapted from one used by Sam White: https://robertslab.github.io/sams-notebook/2020/11/10/FastQC-MultiQC-C.gigas-Ploidy-WGBS-Raw-Sequence-Data-from-Ronits-Project-on-Mox.html
 
@@ -17,12 +18,16 @@
 # These variables need to be set by user
 
 # FastQC output directory
-output_dir=/vortexfs1/home/naluru/Killifish/output/01-fastqc/
+output_dir=/vortexfs1/scratch/yaamini.venkataraman/
 
 # Input/output files
 checksums=fastq_checksums.md5
 fastq_list=fastq_list.txt
 raw_reads_dir=/vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/
+
+# Paths to programs
+fastqc=/vortexfs1/home/yaamini.venkataraman/miniconda3/bin/fastqc
+multiqc=/vortexfs1/home/yaamini.venkataraman/miniconda3/bin/multiqc
 
 # Programs associative array
 declare -A programs_array
@@ -41,7 +46,7 @@ module load python3/intel
 
 # Sync raw FastQ files to working directory
 rsync --archive --verbose \
-"${raw_reads_dir}"zr3616*.fq.gz .
+"${raw_reads_dir}"190626_I114_FCH7TVNBBXY*.fq.gz .
 
 # Populate array with FastQ files
 fastq_array=(*.fq.gz)
