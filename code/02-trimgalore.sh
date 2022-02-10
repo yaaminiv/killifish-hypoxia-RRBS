@@ -24,7 +24,7 @@ set -e
 --non_directional \
 --rrbs \
 --paired \
---path_to_cutadapt /vortexfs1/scratch/yaamini.venkataraman/miniconda3/bin/cutadapt \
+--path_to_cutadapt /vortexfs1/home/yaamini.venkataraman/miniconda3/bin/cutadapt \
 /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_20-N4_1.fq.gz \
 /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz \
 /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_20-S1_1.fq.gz \
@@ -75,7 +75,7 @@ set -e
 echo TrimGalore complete
 
 #MultiQC
-/vortexfs1/scratch/yaamini.venkataraman/miniconda3/bin/multiqc \
+/vortexfs1/home/yaamini.venkataraman/miniconda3/bin/multiqc \
 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/.
 
 echo MultiQC complete
