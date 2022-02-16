@@ -1,0 +1,113 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.6
+Cutadapt version: 3.5
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Using Illumina adapter for trimming (count: 12862). Second best hit was smallRNA (count: 0)
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+File was specified to be an MspI-digested RRBS sample. Read 1 sequences with adapter contamination will be trimmed a further 2 bp from their 3' end, and Read 2 sequences will be trimmed by 2 bp from their 5' end to remove potential methylation-biased bases from the end-repair reaction
+File was specified to be a non-directional MspI-digested RRBS sample. Sequences starting with either 'CAA' or 'CGA' will have the first 2 bp trimmed off to remove potential methylation-biased bases from the end-repair reaction
+Running FastQC on the data once trimming has completed
+Running FastQC with the following extra arguments: --outdir /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore --threads 28
+Output file will be GZIP compressed
+
+
+This is cutadapt 3.5 with Python 3.9.5
+Command line parameters: -j 1 -e 0.1 -O 1 -a AGATCGGAAGAGC /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_qual_trimmed.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 412.63 s (14 µs/read; 4.15 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              28,557,733
+Reads with adapters:                13,649,277 (47.8%)
+Reads written (passing filters):    28,557,733 (100.0%)
+
+Total basepairs processed: 1,388,258,087 bp
+Total written (filtered):  1,360,985,671 bp (98.0%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 13649277 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 54.7%
+  C: 17.9%
+  G: 4.5%
+  T: 22.5%
+  none/other: 0.3%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	11894546	7139433.2	0	11894546
+2	231624	1784858.3	0	231624
+3	190972	446214.6	0	190972
+4	148228	111553.6	0	148228
+5	151768	27888.4	0	151768
+6	123116	6972.1	0	123116
+7	102086	1743.0	0	102086
+8	112316	435.8	0	112316
+9	86620	108.9	0	86596 24
+10	88193	27.2	1	83643 4550
+11	94184	6.8	1	89653 4531
+12	75061	1.7	1	70546 4515
+13	65707	0.4	1	62225 3482
+14	54825	0.4	1	51566 3259
+15	40449	0.4	1	38253 2196
+16	41381	0.4	1	38929 2452
+17	35973	0.4	1	33863 2110
+18	21849	0.4	1	20769 1080
+19	18250	0.4	1	17177 1073
+20	9894	0.4	1	9377 517
+21	6494	0.4	1	6139 355
+22	5073	0.4	1	4874 199
+23	2972	0.4	1	2776 196
+24	693	0.4	1	635 58
+25	737	0.4	1	688 49
+26	172	0.4	1	163 9
+27	245	0.4	1	217 28
+28	168	0.4	1	143 25
+29	70	0.4	1	65 5
+30	35	0.4	1	29 6
+31	39	0.4	1	29 10
+32	15	0.4	1	12 3
+33	13	0.4	1	11 2
+34	26	0.4	1	20 6
+35	14	0.4	1	6 8
+36	8	0.4	1	4 4
+37	11	0.4	1	8 3
+38	12	0.4	1	5 7
+39	15	0.4	1	9 6
+40	11	0.4	1	9 2
+41	13	0.4	1	4 9
+42	5	0.4	1	1 4
+43	10	0.4	1	1 9
+44	62	0.4	1	7 55
+45	45	0.4	1	4 41
+46	13	0.4	1	4 9
+47	100	0.4	1	2 98
+48	355	0.4	1	2 353
+49	44809	0.4	1	152 44657
+
+RUN STATISTICS FOR INPUT FILE: /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz
+=============================================
+28557733 sequences processed in total
+Sequences were truncated to a varying degree because of deteriorating qualities (Phred score quality cutoff: 20):	1992911 (7.0%)
+RRBS reads trimmed by additional 2 bp when adapter contamination was detected:	1410440 (4.9%)
+RRBS reads trimmed by 2 bp at the start when read started with CAA (24822629) or CGA (461015) in total:	25283644 (88.5%)
+
+Total number of sequences analysed for the sequence pair length validation: 28557733
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 151836 (0.53%)
