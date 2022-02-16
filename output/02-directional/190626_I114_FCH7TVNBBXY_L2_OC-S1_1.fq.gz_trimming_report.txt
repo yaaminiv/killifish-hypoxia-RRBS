@@ -1,0 +1,109 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.6
+Cutadapt version: 3.5
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Using Illumina adapter for trimming (count: 12862). Second best hit was smallRNA (count: 0)
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+File was specified to be an MspI-digested RRBS sample. Read 1 sequences with adapter contamination will be trimmed a further 2 bp from their 3' end, and Read 2 sequences will be trimmed by 2 bp from their 5' end to remove potential methylation-biased bases from the end-repair reaction
+All Read 2 sequences will be trimmed by 2 bp from their 5' end to avoid poor qualities or biases (e.g. M-bias for BS-Seq applications)
+Running FastQC on the data once trimming has completed
+Running FastQC with the following extra arguments: --outdir /vortexfs1/scratch/yaamini.venkataraman/02-directional --threads 28
+Output file will be GZIP compressed
+
+
+This is cutadapt 3.5 with Python 3.9.5
+Command line parameters: -j 1 -e 0.1 -O 1 -a AGATCGGAAGAGC /vortexfs1/scratch/yaamini.venkataraman/02-directional/190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz_qual_trimmed.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 313.24 s (12 µs/read; 4.84 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              25,279,464
+Reads with adapters:                 9,317,753 (36.9%)
+Reads written (passing filters):    25,279,464 (100.0%)
+
+Total basepairs processed: 1,237,516,888 bp
+Total written (filtered):  1,211,270,265 bp (97.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 9317753 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 24.0%
+  C: 0.6%
+  G: 37.9%
+  T: 36.8%
+  none/other: 0.6%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	5482787	6319866.0	0	5482787
+2	1708828	1579966.5	0	1708828
+3	642123	394991.6	0	642123
+4	275814	98747.9	0	275814
+5	156988	24687.0	0	156988
+6	131106	6171.7	0	131106
+7	108148	1542.9	0	108148
+8	117561	385.7	0	117561
+9	83225	96.4	0	82979 246
+10	84438	24.1	1	81758 2680
+11	95479	6.0	1	92134 3345
+12	76074	1.5	1	73329 2745
+13	66602	0.4	1	63858 2744
+14	49819	0.4	1	47758 2061
+15	39469	0.4	1	37711 1758
+16	42323	0.4	1	40510 1813
+17	36664	0.4	1	35123 1541
+18	21800	0.4	1	21026 774
+19	14096	0.4	1	13619 477
+20	9631	0.4	1	9164 467
+21	6847	0.4	1	6584 263
+22	4098	0.4	1	3959 139
+23	3953	0.4	1	3818 135
+24	1049	0.4	1	1031 18
+25	1020	0.4	1	942 78
+26	259	0.4	1	235 24
+27	380	0.4	1	362 18
+28	177	0.4	1	174 3
+29	152	0.4	1	140 12
+30	93	0.4	1	86 7
+31	53	0.4	1	51 2
+32	17	0.4	1	17
+33	2	0.4	1	1 1
+34	26	0.4	1	23 3
+35	7	0.4	1	4 3
+36	1	0.4	1	1
+37	11	0.4	1	7 4
+38	10	0.4	1	4 6
+39	7	0.4	1	1 6
+40	11	0.4	1	2 9
+41	13	0.4	1	6 7
+42	11	0.4	1	6 5
+43	10	0.4	1	4 6
+44	3	0.4	1	0 3
+45	12	0.4	1	1 11
+46	32	0.4	1	2 30
+47	53	0.4	1	2 51
+48	477	0.4	1	4 473
+49	55994	0.4	1	130 55864
+
+RUN STATISTICS FOR INPUT FILE: /vortexfs1/home/naluru/Killifish/WHOI-Mummichog_RRBS/190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz
+=============================================
+25279464 sequences processed in total
+Sequences were truncated to a varying degree because of deteriorating qualities (Phred score quality cutoff: 20):	562253 (2.2%)
+RRBS reads trimmed by additional 2 bp when adapter contamination was detected:	9261136 (36.6%)
+
