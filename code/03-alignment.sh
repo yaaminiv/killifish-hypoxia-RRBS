@@ -16,7 +16,7 @@ set -e
 
 #Load the singularity module for BAT
 module load singularity/3.7
-singularity run /vortexfs1/home/naluru/bat_latest.sif
+singularity exec /vortexfs1/home/naluru/bat_latest.sif
 
 #Alignment (non-directional)
 
@@ -27,5 +27,37 @@ BAT_mapping \
 -p /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz \
 -i /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
 -o /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional \
+-t 16 \
+-F 2
+
+#Test sample 2
+BAT_mapping \
+-g /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
+-q /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
+-p /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2.fq.gz \
+-i /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
+-o /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional \
 -t 4 \
 -F 2
+
+#Alignment (directional)
+
+#Test sample 1
+BAT_mapping \
+-g /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
+-q /vortexfs1/scratch/yaamini.venkataraman/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
+-p /vortexfs1/scratch/yaamini.venkataraman/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz \
+-i /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
+-o /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_1_directional \
+-t 4 \
+-F 1
+
+#Test sample 2
+BAT_mapping \
+-g /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
+-q /vortexfs1/scratch/yaamini.venkataraman/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
+-p /vortexfs1/scratch/yaamini.venkataraman/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2.fq.gz \
+-i /vortexfs1/home/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
+-o /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_directional \
+-t 4 \
+-F 1
