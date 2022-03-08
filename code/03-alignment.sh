@@ -18,6 +18,9 @@ set -e
 module load singularity/3.7
 singularity exec /vortexfs1/home/naluru/bat_latest.sif
 
+#Load the singularity module and bind directories so you can access them
+singularity run --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif
+
 #Alignment (non-directional)
 
 #Test sample 1
