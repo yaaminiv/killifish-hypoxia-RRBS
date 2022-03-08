@@ -29,13 +29,12 @@ mkdir $MAPPED
 
 #Load the singularity module for BAT
 module load singularity/3.7
-singularity exec /vortexfs1/home/naluru/bat_latest.sif
 
 echo "Mapping Module"
 
 for f in $FASTQ
 do
-  singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+  singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping \
   -g $GENOME \
   -q ${f}_1_val_1.fq.gz \
@@ -50,7 +49,7 @@ echo "Statistics Module"
 
 for f in $FASTQ
 do
-  singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+  singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping_stat \
   --bam ${MAPPED}/${F}.bam \
   --excluded ${MAPPED}/${F}.excluded.bam \
@@ -68,7 +67,7 @@ module load singularity/3.7
 #Alignment (non-directional)
 
 #Test sample 1
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
 BAT_mapping \
 -g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
 -q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
@@ -79,7 +78,7 @@ BAT_mapping \
 -F 2
 
 #Test sample 2
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
 BAT_mapping \
 -g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
 -q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
@@ -92,7 +91,7 @@ BAT_mapping \
 #Alignment (directional)
 
 #Test sample 1
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
 BAT_mapping \
 -g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
 -q /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
@@ -103,7 +102,7 @@ BAT_mapping \
 -F 1
 
 #Test sample 2
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch \
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
 BAT_mapping \
 -g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
 -q /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
