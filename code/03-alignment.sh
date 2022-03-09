@@ -111,3 +111,41 @@ BAT_mapping \
 -o /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_directional \
 -t 4 \
 -F 1
+
+# Mapping Statistics
+
+# Test sample 1 (non-directional)
+
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
+BAT_mapping_stat \
+--bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.bam \
+--excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.excluded.bam \
+--fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
+> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.stat
+
+# Test sample 2 (non-directional)
+
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
+BAT_mapping_stat \
+--bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.bam \
+--excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.excluded.bam \
+--fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
+> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.stat
+
+# Test sample 1 (directional)
+
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
+BAT_mapping_stat \
+--bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.bam \
+--excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.excluded.bam \
+--fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
+> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.stat
+
+# Test sample 2 (directional)
+
+singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
+BAT_mapping_stat \
+--bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.bam \
+--excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.excluded.bam \
+--fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
+> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.stat
