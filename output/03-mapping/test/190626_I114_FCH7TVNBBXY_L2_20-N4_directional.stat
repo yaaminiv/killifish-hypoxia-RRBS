@@ -1,0 +1,18 @@
+/usr/bin/R
+-----------------------------
+--------   SUMMARY   --------
+-----------------------------
+total amount of MAPPINGS:	0
+total amount of query READS:	31980722
+
+MAPPED READS:
+unique paired end:	0 (0%)
+multiple paired end:	0 (0%)
+unique one mate:	0 (0%)
+multiple one mate:	0 (0%)
+unique single end:	0 (0%)
+multiple single end:	0 (0%)
+sum of mapped reads:	0 (0%)
+
+-----------------------------
+
