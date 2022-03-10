@@ -16,9 +16,11 @@ set -e
 
 #Set some variable to directories and genome files
 GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+TRIMMED=/scratch/02-trimgalore
 INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel
-SINGMAPPED=/scratch/03-mapping/mapped/
-MAPPED=/vortexfs1/scratch/yaamini.venkataraman/03-mapping/mapped/
+SINGMAPPED=/scratch/03-mapping #Mapping directory within singularity container
+STAT=/vortexfs1/scratch/yaamini.venkataraman/03-mapping/stat #Directory on host system for stat files
+MERGED= #FIX THIS
 
 #Get list of files which should be processed
 #Reverse the string
@@ -26,9 +28,6 @@ MAPPED=/vortexfs1/scratch/yaamini.venkataraman/03-mapping/mapped/
 #Reverse the string
 #Sort and pull unique basenames
 FASTQ=`ls /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/*gz  | rev | cut -c15- | rev | sort | uniq`
-
-#Create directories
-mkdir $MAPPED
 
 #Load the singularity module for BAT
 module load singularity/3.7
@@ -40,15 +39,18 @@ do
   singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping \
   -g $GENOME \
-  -q ${f}_1_val_1.fq.gz \
-  -p ${f}_2_val_2.fq.gz \
+  -q ${TRIMMED}/{f}_1_val_1.fq.gz \
+  -p ${TRIMMED}/{f}_2_val_2.fq.gz \
   -i $INDICES  \
   -o ${SINGMAPPED}/${f} \
   -t 16 \
-  -F 2 #FIX THIS
+  -F 2
 done
 
 echo "Statistics Module"
+
+#Create directories
+mkdir $STAT
 
 for f in $FASTQ
 do
@@ -56,9 +58,14 @@ do
   BAT_mapping_stat \
   --bam ${SINGMAPPED}/${F}.bam \
   --excluded ${SINGMAPPED}/${F}.excluded.bam \
-  --fastq ${f}_1_val_1.fq.gz \
-  > ${MAPPED}/${F}.stat
+  --fastq ${TRIMMED}/{f}_1_val_1.fq.gz \
+  > ${STAT}/${F}.stat
 done
+
+echo "Merging Module"
+
+#Create directories
+mkdir $MERGED
 
 ---
 
