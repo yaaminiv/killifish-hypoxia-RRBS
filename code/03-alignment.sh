@@ -17,11 +17,14 @@ set -e
 #Set some variable to directories and genome files
 GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
 INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel
-MAPPED=/scratch/03-mapping/mapped/
+SINGMAPPED=/scratch/03-mapping/mapped/
+MAPPED=/vortexfs1/scratch/yaamini.venkataraman/03-mapping/mapped/
 
 #Get list of files which should be processed
-#This assumes you call the script from the directory where the gzipped
-#fastq-files (*.fastq.gz) are located
+#Reverse the string
+#Remove the last 15 characters
+#Reverse the string
+#Sort and pull unique basenames
 FASTQ=`ls /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/*gz  | rev | cut -c15- | rev | sort | uniq`
 
 #Create directories
@@ -40,7 +43,7 @@ do
   -q ${f}_1_val_1.fq.gz \
   -p ${f}_2_val_2.fq.gz \
   -i $INDICES  \
-  -o ${MAPPED}/${f} \
+  -o ${SINGMAPPED}/${f} \
   -t 16 \
   -F 2 #FIX THIS
 done
@@ -51,10 +54,10 @@ for f in $FASTQ
 do
   singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping_stat \
-  --bam ${MAPPED}/${F}.bam \
-  --excluded ${MAPPED}/${F}.excluded.bam \
+  --bam ${SINGMAPPED}/${F}.bam \
+  --excluded ${SINGMAPPED}/${F}.excluded.bam \
   --fastq ${f}_1_val_1.fq.gz \
-  > ${MAPPED}/${F}.stat;
+  > ${MAPPED}/${F}.stat
 done
 
 ---
@@ -63,54 +66,6 @@ done
 
 #Load the singularity module and bind directories so you can access them
 module load singularity/3.7
-
-#Alignment (non-directional)
-
-#Test sample 1
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
-BAT_mapping \
--g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
--q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
--p /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz \
--i /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
--o /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional \
--t 16 \
--F 2
-
-#Test sample 2
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
-BAT_mapping \
--g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
--q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
--p /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2.fq.gz \
--i /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
--o /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional \
--t 4 \
--F 2
-
-#Alignment (directional)
-
-#Test sample 1
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
-BAT_mapping \
--g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
--q /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
--p /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz \
--i /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
--o /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_1_directional \
--t 4 \
--F 1
-
-#Test sample 2
-singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
-BAT_mapping \
--g /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz \
--q /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
--p /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2.fq.gz \
--i /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel \
--o /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_directional \
--t 4 \
--F 1
 
 # Mapping Statistics
 
@@ -121,7 +76,7 @@ BAT_mapping_stat \
 --bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.bam \
 --excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.excluded.bam \
 --fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
-> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.stat
+> /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_nondirectional.stat
 
 # Test sample 2 (non-directional)
 
@@ -130,7 +85,7 @@ BAT_mapping_stat \
 --bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.bam \
 --excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.excluded.bam \
 --fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
-> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.stat
+> /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_nondirectional.stat
 
 # Test sample 1 (directional)
 
@@ -139,7 +94,7 @@ BAT_mapping_stat \
 --bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.bam \
 --excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.excluded.bam \
 --fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz \
-> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.stat
+> /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L2_20-N4_directional.stat
 
 # Test sample 2 (directional)
 
@@ -148,4 +103,4 @@ BAT_mapping_stat \
 --bam /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.bam \
 --excluded /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.excluded.bam \
 --fastq /scratch/02-directional/190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz \
-> /scratch/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.stat
+> /vortexfs1/scratch/yaamini.venkataraman/03-mapping/190626_I114_FCH7TVNBBXY_L3_OC-S3_directional.stat
