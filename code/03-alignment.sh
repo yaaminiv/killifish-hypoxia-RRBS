@@ -56,7 +56,7 @@ do
   --bam ${SINGMAPPED}/${f}.bam \
   --excluded ${SINGMAPPED}/${f}.excluded.bam \
   --fastq ${TRIMMED}/${f}_1_val_1.fq.gz \
-  > ${STAT}/${F}.stat
+  > ${STAT}/${f}.stat
 done
 
 echo "Merging Module"
