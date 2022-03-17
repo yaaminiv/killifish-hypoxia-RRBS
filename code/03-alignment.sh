@@ -39,9 +39,9 @@ do
   singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping \
   -g $GENOME \
-  -q ${TRIMMED}/{f}_1_val_1.fq.gz \
-  -p ${TRIMMED}/{f}_2_val_2.fq.gz \
-  -i $INDICES  \
+  -q ${TRIMMED}/${f}_1_val_1.fq.gz \
+  -p ${TRIMMED}/${f}_2_val_2.fq.gz \
+  -i $INDICES \
   -o ${SINGMAPPED}/${f} \
   -t 16 \
   -F 2
@@ -53,9 +53,9 @@ for f in $FASTQ
 do
   singularity exec --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping_stat \
-  --bam ${SINGMAPPED}/${F}.bam \
-  --excluded ${SINGMAPPED}/${F}.excluded.bam \
-  --fastq ${TRIMMED}/{f}_1_val_1.fq.gz \
+  --bam ${SINGMAPPED}/${f}.bam \
+  --excluded ${SINGMAPPED}/${f}.excluded.bam \
+  --fastq ${TRIMMED}/${f}_1_val_1.fq.gz \
   > ${STAT}/${F}.stat
 done
 
