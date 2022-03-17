@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1                 								  				    		  # Run a single task
 #SBATCH --cpus-per-task=8      								       				    			# Number of CPU cores per task
 #SBATCH --mem=100gb                  								 						    	# Job memory request
-#SBATCH --time=240:00:00            								   							  # Time limit hrs:min:sec
+#SBATCH --qos=unlim                                                   # QOS selection
 #SBATCH --output=yrv_mapping%j.log  								   					  		# Standard output/error
 #SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/03-mapping  	# Working directory for this script
 
