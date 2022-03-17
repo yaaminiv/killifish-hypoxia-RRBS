@@ -1,0 +1,19 @@
+#Variables to use with singularity container, paths may be based on host system or directories bound to container
+
+#Genome
+GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+
+#Trimmed files
+TRIMMED=/scratch/02-trimgalore
+
+#Genome indices
+INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel
+
+#Mapped files
+SINGMAPPED=/scratch/03-mapping/mapped #Mapping directory within singularity container
+
+#Merged files
+SINGMERGED=/scratch/03-mapping/merged #Merged file directory within singularity container
+
+#List of files to process
+FASTQ=(vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-S1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-S3 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-S4 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_5-N1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_5-N2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_5-S3 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_5-S4 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_OC-S1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_20-N2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_5-N3 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_5-S2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-N1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-N2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-N4 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-N5 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_OC-S3 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L4_20-N1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L4_20-S2 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L4_5-S1 /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/190626_I114_FCH7TVNBBXY_L4_OC-S5)
