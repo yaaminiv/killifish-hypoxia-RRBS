@@ -19,7 +19,7 @@ module load singularity/3.7
 
 echo "Mapping Module"
 
-for f in $FASTQ
+for f in "${FASTQ[@]}"
 do
   singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping \
@@ -32,11 +32,13 @@ do
   -F 2
 done
 
+echo "Done with mapping"
+
 echo "Statistics Module"
 
 STAT=/vortexfs1/scratch/yaamini.venkataraman/03-mapping/stat #Directory on host system for stat files
 
-for f in $FASTQ
+for f in "${FASTQ[@]}"
 do
   singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch /vortexfs1/home/naluru/bat_latest.sif \
   BAT_mapping_stat \
@@ -45,6 +47,8 @@ do
   --fastq ${TRIMMED}/${f}_1_val_1.fq.gz \
   > ${STAT}/${f}.stat
 done
+
+echo "Done with statistics"
 
 echo "Merging Module"
 
@@ -84,4 +88,4 @@ BAT_merging \
 -o ${SINGMERGED}/OC-S.bam \
 --bam ${SINGMAPPED}/190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz,${SINGMAPPED}/190626_I114_FCH7TVNBBXY_L3_OC-S2_1.fq.gz,${SINGMAPPED}/190626_I114_FCH7TVNBBXY_L4_OC-S5_1.fq.gz
 
-echo "Done with mapping"
+echo "Done with merging"
