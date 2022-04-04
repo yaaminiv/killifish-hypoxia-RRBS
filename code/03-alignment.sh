@@ -4,15 +4,21 @@
 #SBATCH --job-name=yrv_mapping          							 							  # Job name
 #SBATCH --mail-type=ALL              							   				     			# Mail events (BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=yaamini.venkataraman@whoi.edu    				    			# Where to send mail
-#SBATCH --ntasks=1                 								  				    		  # Run a single task
-#SBATCH --cpus-per-task=8      								       				    			# Number of CPU cores per task
-#SBATCH --mem=100gb                  								 						    	# Job memory request
+#SBATCH --nodes=1                                                     # One node
+#SBATCH --exclusive                                                   # All 36 procs on the one node
 #SBATCH --qos=unlim                                                   # QOS selection
-#SBATCH --output=yrv_mapping%j.log  								   					  		# Standard output/error
+#SBATCH --error=yrv_mapping%j.err                                     # Standard error
+#SBATCH --output=yrv_mapping%j.log  								   					  		# Standard output
 #SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/03-mapping  	# Working directory for this script
 
 #Exit script if any command fails
 set -e
+
+#Job information
+echo 'Start job:' `date`
+echo 'Current directory:' `pwd`
+echo 'Job number: '; $SLURM_JOBID
+echo 'Job nodes: $SLURM_JOB_NODELIST'
 
 #Load the singularity module for BAT
 module load singularity/3.7
