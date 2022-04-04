@@ -7,18 +7,15 @@
 #SBATCH --nodes=1                                                     # One node
 #SBATCH --exclusive                                                   # All 36 procs on the one node
 #SBATCH --qos=unlim                                                   # QOS selection
-#SBATCH --error=yrv_mapping%j.err                                     # Standard error
 #SBATCH --output=yrv_mapping%j.log  								   					  		# Standard output
 #SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/03-mapping  	# Working directory for this script
 
 #Exit script if any command fails
 set -e
 
-#Job information
-echo 'Start job:' `date`
-echo 'Current directory:' `pwd`
-echo 'Job number: '; $SLURM_JOBID
-echo 'Job nodes: $SLURM_JOB_NODELIST'
+#Make scripts executable
+chmod +x /vortexfs1/home/yaamini.venkataraman/03-BAT-mapping.sh
+chmod +x /vortexfs1/home/yaamini.venkataraman/03-BAT-mapping-stat.sh
 
 #Load the singularity module for BAT
 module load singularity/3.7
