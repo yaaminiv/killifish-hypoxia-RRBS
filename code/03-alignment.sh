@@ -6,6 +6,7 @@
 #SBATCH --mail-user=yaamini.venkataraman@whoi.edu    				    			# Where to send mail
 #SBATCH --nodes=1                                                     # One node
 #SBATCH --exclusive                                                   # All 36 procs on the one node
+#SBATCH --mem=100gb                                                   # Job memory request
 #SBATCH --qos=unlim                                                   # QOS selection
 #SBATCH --output=yrv_mapping%j.log  								   					  		# Standard output
 #SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/03-mapping  	# Working directory for this script
