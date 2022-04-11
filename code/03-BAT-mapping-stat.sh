@@ -15,5 +15,5 @@ do
   --bam ${SINGMAPPED}/${f}.bam \
   --excluded ${SINGMAPPED}/${f}.excluded.bam \
   --fastq ${TRIMMED}/${f}_1_val_1.fq.gz \
-  > /vortexfs1/scratch/yaamini.venkataraman/03-mapping/stat/${f}.stat
+  > /scratch/03-mapping/stat/${f}.stat
 done
