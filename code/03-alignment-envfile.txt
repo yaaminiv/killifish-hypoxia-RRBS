@@ -11,6 +11,3 @@ INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.
 
 #Mapped files
 SINGMAPPED=/scratch/03-mapping/mapped #Mapping directory within singularity container
-
-#Merged files
-SINGMERGED=/scratch/03-mapping/merged #Merged file directory within singularity container
