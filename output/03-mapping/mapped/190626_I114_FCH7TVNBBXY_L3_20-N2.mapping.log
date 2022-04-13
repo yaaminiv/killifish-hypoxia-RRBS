@@ -1,0 +1,84 @@
+[INFO]	Tue Apr 5, 3:59:7, 2022	Start mapping
+[SYSTEM CALL] 	Tue Apr 5, 3:59:7, 2022	 segemehl.x -s -d /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz -i /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.ctidx -j /naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.gaidx -F 2 -t 16 -q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1.fq.gz -u /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.unmapped -o /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.sam -p /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2.fq.gz >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.mapping.log 2>&1
+
+[INFO]	Tue Apr 5, 5:39:7, 2022	Exclude reads from sam file (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.sam) and convert nonexcluded and excluded output to bam files (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.bam and /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.excluded.bam)
+[SYSTEM CALL] 	Tue Apr 5, 5:55:22, 2022	 remove /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.sam
+[INFO]	Tue Apr 5, 5:55:22, 2022	Gzip unmapped out file
+[SYSTEM CALL] 	Tue Apr 5, 5:55:22, 2022	 gzip -f /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.unmapped >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.mapping.log 2>&1
+
+[INFO]	Tue Apr 5, 6:0:48, 2022	Index regular bam file
+[SYSTEM CALL] 	Tue Apr 5, 6:0:48, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.mapping.log 2>&1
+
+[INFO]	Tue Apr 5, 6:1:14, 2022	Index excluded bam file
+[SYSTEM CALL] 	Tue Apr 5, 6:1:14, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.excluded.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_20-N2.mapping.log 2>&1
+
+EHL] Tue Apr  5 04:01:25 2022: read suffix array '/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.ctidx' with 1021908740 elements.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: md5 keys of index and db match.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: reading the suffix array has taken 17.000000 seconds.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: starting 16 threads.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 0.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 1.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 2.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 3.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 4.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139266 reads in thread 5.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139209 reads in thread 6.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 7.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 8.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 9.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 10.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 11.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 12.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 13.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 14.
+[SEGEMEHL] Tue Apr  5 04:01:26 2022: 1139153 reads in thread 15.
+[SEGEMEHL] Tue Apr  5 04:38:02 2022: threaded matching w/ suffixarray has taken 2196.000000 seconds.
+[SEGEMEHL] Tue Apr  5 04:38:02 2022: reading database sequences.
+[SEGEMEHL] Tue Apr  5 04:38:15 2022: 10180 database sequences found.
+[SEGEMEHL] Tue Apr  5 04:38:15 2022: total length of db sequences: 1021898560
+[SEGEMEHL] Tue Apr  5 04:38:19 2022: reading suffix array '/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.gaidx' from disk.
+[SEGEMEHL] Tue Apr  5 04:38:23 2022: reading lcpc/vtab.
+[SEGEMEHL] Tue Apr  5 04:38:23 2022: reading childtab.
+[SEGEMEHL] Tue Apr  5 04:38:25 2022: reading suflinks.
+[SEGEMEHL] Tue Apr  5 04:38:28 2022: reading lsint id.
+[SEGEMEHL] Tue Apr  5 04:38:28 2022: read suffix array '/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.gaidx' with 1021908740 elements.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: md5 keys of index and db match.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: reading the suffix array has taken 10.000000 seconds.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: starting 16 threads.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 0.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 1.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 2.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 3.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 4.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139266 reads in thread 5.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139209 reads in thread 6.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 7.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 8.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 9.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 10.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 11.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 12.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 13.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 14.
+[SEGEMEHL] Tue Apr  5 04:38:29 2022: 1139153 reads in thread 15.
+[SEGEMEHL] Tue Apr  5 05:17:25 2022: threaded matching w/ suffixarray has taken 2336.000000 seconds.
+[SEGEMEHL] Tue Apr  5 05:17:26 2022: Merging bisulfite bin 0.
+[SEGEMEHL] Tue Apr  5 05:18:27 2022: Merging bisulfite bin 1.
+[SEGEMEHL] Tue Apr  5 05:19:29 2022: Merging bisulfite bin 2.
+[SEGEMEHL] Tue Apr  5 05:20:31 2022: Merging bisulfite bin 3.
+[SEGEMEHL] Tue Apr  5 05:21:32 2022: Merging bisulfite bin 4.
+[SEGEMEHL] Tue Apr  5 05:22:34 2022: Merging bisulfite bin 5.
+[SEGEMEHL] Tue Apr  5 05:23:36 2022: Merging bisulfite bin 6.
+[SEGEMEHL] Tue Apr  5 05:24:38 2022: Merging bisulfite bin 7.
+[SEGEMEHL] Tue Apr  5 05:25:40 2022: Merging bisulfite bin 8.
+[SEGEMEHL] Tue Apr  5 05:26:42 2022: Merging bisulfite bin 9.
+[SEGEMEHL] Tue Apr  5 05:27:45 2022: Merging bisulfite bin 10.
+[SEGEMEHL] Tue Apr  5 05:28:47 2022: Merging bisulfite bin 11.
+[SEGEMEHL] Tue Apr  5 05:29:47 2022: Merging bisulfite bin 12.
+[SEGEMEHL] Tue Apr  5 05:30:50 2022: Merging bisulfite bin 13.
+[SEGEMEHL] Tue Apr  5 05:31:52 2022: Merging bisulfite bin 14.
+[SEGEMEHL] Tue Apr  5 05:32:54 2022: Merging bisulfite bin 15.
+[SEGEMEHL] Tue Apr  5 05:39:07 2022: 
+Goodbye.
+ "Ich hol' jetzt die Hilti!" (Ein verzweifelter Bauarbeiter)
+[bam_sort_core] merging from 3 files...
