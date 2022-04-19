@@ -23,7 +23,7 @@ module load singularity/3.7
 echo "Calling Module"
 
 #Run BAT_mapping script
-singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt \
+singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/04-calling-envfile.txt \
 --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
 /vortexfs1/home/naluru/bat_latest.sif \
 /yaaminiv/04-BAT-calling.sh
@@ -33,7 +33,7 @@ echo "Done with calling"
 echo "Filtering Module"
 
 #Run BAT_mapping_stat script
-singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt \
+singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/04-calling-envfile.txt \
 --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
 /vortexfs1/home/naluru/bat_latest.sif \
 /yaaminiv/04-BAT-calling-filtering.sh
