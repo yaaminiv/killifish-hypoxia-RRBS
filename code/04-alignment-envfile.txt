@@ -1,0 +1,16 @@
+#Variables to use with singularity container, paths may be based on host system or directories bound to container
+
+#Genome
+GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+
+#Genome indices
+INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel
+
+#Mapped files
+MAPPED=/yaaminiv/killifish-hypoxia-RRBS/output/03-mapping/mapped
+
+#Called files
+CALLED=/scratch/04-calling/called
+
+#Filtered files
+FILTERED=/scratch/04-calling/filtered
