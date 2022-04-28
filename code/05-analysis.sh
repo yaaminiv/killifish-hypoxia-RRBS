@@ -36,7 +36,7 @@ module load singularity/3.7
 #> mummichog.chrom.length
 
 ## THIS WAS DONE INTERACTIVELY IN THE FOLDER WHERE THE BEDFILES WERE ##
-#Sort BEDgraphs
+#Sort bedGraphs
 #for f in *bedgraph
 #do
 #/vortexfs1/home/yaamini.venkataraman/bedtools2/bin/sortBed \
@@ -53,8 +53,8 @@ echo "Population irrespective of oxygen"
 mkdir all_pop
 
 #Run BAT_summarize
-#in1: comma-separated BEDgraphs from NBH
-#in2: comma-separated BEDgraphs from SC
+#in1: comma-separated bedGraphs from NBH
+#in2: comma-separated bedGraphs from SC
 #groups: comma-separated list of gorup identifiers
 #h1: comma-separated list of sample identifiers for group 1
 #h2: comma-seaprated list of sample identifiers for group 2
@@ -85,10 +85,26 @@ echo "Done with summarize"
 
 echo "Overview Module"
 
-#Run BAT_mapping_stat script
-singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/04-calling-envfile.txt \
+echo "Population irrespective of oxygen"
+
+#Remove extra columns from output bedGraph
+awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11"\t"$12"\t"$13"\t"$14"\t"$15"\t"$16"\t"$17}' \
+${ALL_POP}_summary_N_S.bedgraph \
+> ${ALL_POP}_summary_N_S.bedgraph.fix
+
+#Run BAT_overview
+#i: input summary bedGraph
+#o: output prefix
+#groups: comma-separated list of gorup identifiers
+singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/05-analysis-envfile.txt \
 --bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
 /vortexfs1/home/naluru/bat_latest.sif \
-/yaaminiv/04-BAT-calling-filtering.sh
+BAT_overview.R  \
+-i ${ALL_POP}_summary_N_S.bedgraph.fix \
+-o ${ALL_POP} \
+--groups N,S
+
+BAT_overview.R  -i data/P10/${dataset}_summary_treatment_control.bedgraph -o data/P10/${dataset}_overview --groups treatment,control
+
 
 echo "Done with overview"
