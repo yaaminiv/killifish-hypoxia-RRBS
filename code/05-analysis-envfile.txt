@@ -1,0 +1,13 @@
+#Variables to use with singularity container, paths may be based on host system or directories bound to container
+
+#Genome
+GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+
+#Chromosome lengths
+CHROM_LENGTH=/naluru/Killifish/mummichog.chrom.length
+
+#Filtered output directory
+FILTERED=/yaaminiv/killifish-hypoxia-RRBS/output/04-calling/filtered
+
+#All population output prefix
+ALL_POP=/scratch/05-analysis/summarize/all_pop
