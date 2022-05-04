@@ -93,7 +93,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir pop_diff_OC
-mv pop_diff_*N_S* pop_diff_OC/.
+mv pop_diff_* pop_diff_OC/.
 
 echo "Oxygen by population: Normoxia"
 
@@ -119,7 +119,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir pop_diff_20
-mv pop_diff_*N_S* pop_diff_20/.
+mv pop_diff_* pop_diff_20/.
 
 echo "Oxygen by population: Hypoxia"
 
@@ -145,7 +145,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir pop_diff_5
-mv pop_diff_*N_S* pop_diff_5/.
+mv pop_diff_* pop_diff_5/.
 
 echo "Oxygen within NB: Normoxia vs. Hypoxia"
 
@@ -171,7 +171,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir N_20_5
-mv N_*20_5* N_20_5/.
+mv N_* N_20_5/.
 
 echo "Oxygen within NB: Normoxia vs. OC"
 
@@ -197,7 +197,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir N_20_OC
-mv N_*20_OC* N_20_OC/.
+mv N_* N_20_OC/.
 
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
@@ -223,7 +223,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir S_20_5
-mv S_*20_5* S_20_5/.
+mv S_* S_20_5/.
 
 echo "Oxygen within SC: Normoxia vs. OC"
 
@@ -249,7 +249,7 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir S_20_OC
-mv S_*20_OC* S_20_OC/.
+mv S_* S_20_OC/.
 
 echo "Done with summarize"
 
