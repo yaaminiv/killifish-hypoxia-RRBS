@@ -8,6 +8,3 @@ CHROM_LENGTH=/naluru/Killifish/mummichog.chrom.length
 
 #Filtered output directory
 FILTERED=/yaaminiv/killifish-hypoxia-RRBS/output/04-calling/filtered
-
-#All population output prefix
-ALL_POP=/scratch/05-analysis/summarize/all_pop
