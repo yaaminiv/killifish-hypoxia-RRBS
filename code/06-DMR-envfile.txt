@@ -1,0 +1,7 @@
+#Variables to use with singularity container, paths may be based on host system or directories bound to container
+
+#Summarize output directory
+SUMMARIZE=/yaaminiv/killifish-hypoxia-RRBS/output/05-analysis/summarize
+
+#DMR output directory
+DMR=/scratch/06-DMR
