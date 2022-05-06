@@ -37,6 +37,7 @@ chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
 #do
 #/vortexfs1/home/yaamini.venkataraman/bedtools2/bin/sortBed \
 #-i ${f} \
+#| awk '{print $1"\t"$5"\t"$6"\t"$7}' \
 #> $(basename ${f%.bedgraph}).sort.bedgraph
 #done
 
