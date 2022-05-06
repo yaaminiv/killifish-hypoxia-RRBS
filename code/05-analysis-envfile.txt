@@ -4,7 +4,10 @@
 GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
 
 #Chromosome lengths
-CHROM_LENGTH=/naluru/Killifish/mummichog.chrom.length
+CHROMLENGTH=/naluru/Killifish/mummichog.chrom.length
 
 #Filtered output directory
 FILTERED=/yaaminiv/killifish-hypoxia-RRBS/output/04-calling/filtered
+
+#Summarize directory
+SUMMARIZE=/scratch/05-analysis/summarize
