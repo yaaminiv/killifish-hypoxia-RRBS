@@ -23,7 +23,7 @@ echo "Oxygen by population: OC"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/OC_pop_diff/OC_pop_diff_metilene_N_S.txt  \
+-q ${SUMMARIZE}/OC_pop_diff/pop_diff_metilene_N_S.txt  \
 -o ${DMR}/OC_pop_diff \
 -a N \
 -b S
@@ -38,7 +38,7 @@ echo "Oxygen by population: Normoxia"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/20_pop_diff/20_pop_diff_metilene_N_S.txt  \
+-q ${SUMMARIZE}/20_pop_diff/pop_diff_metilene_N_S.txt  \
 -o ${DMR}/20_pop_diff \
 -a N \
 -b S
@@ -53,7 +53,7 @@ echo "Oxygen by population: Hypoxia"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/5_pop_diff/5_pop_diff_metilene_N_S.txt  \
+-q ${SUMMARIZE}/5_pop_diff/pop_diff_metilene_N_S.txt  \
 -o ${DMR}/5_pop_diff \
 -a N \
 -b S
@@ -68,10 +68,10 @@ echo "Oxygen within NB: Normoxia vs. Hypoxia"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/20_5_N/20_5_N_metilene_N_S.txt  \
+-q ${SUMMARIZE}/20_5_N/N_metilene_NO_HY.txt  \
 -o ${DMR}/20_5_N \
--a N \
--b S
+-a NO \
+-b HY
 
 #Move files to a new directory
 
@@ -83,10 +83,10 @@ echo "Oxygen within NB: Normoxia vs. OC"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/20_OC_N/20_OC_N_metilene_N_S.txt  \
+-q ${SUMMARIZE}/20_OC_N/N_metilene_NO_OC.txt  \
 -o ${DMR}/20_OC_N \
--a N \
--b S
+-a NO \
+-b OC
 
 #Move files to a new directory
 
@@ -98,10 +98,10 @@ echo "Oxygen within SC: Normoxia vs. Hypoxia"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/20_5_S/20_5_S_metilene_N_S.txt  \
+-q ${SUMMARIZE}/20_5_S/S_metilene_NO_HY.txt  \
 -o ${DMR}/20_5_S \
--a N \
--b S
+-a NO \
+-b HY
 
 #Move files to a new directory
 
@@ -113,10 +113,10 @@ echo "Oxygen within SC: Normoxia vs. OC"
 #Run BAT_DMRcalling
 
 BAT_DMRcalling \
--q ${SUMMARIZE}/20_OC_S/20_OC_S_metilene_N_S.txt  \
+-q ${SUMMARIZE}/20_OC_S/S_metilene_NO_OC.txt  \
 -o ${DMR}/20_OC_S \
--a N \
--b S
+-a NO \
+-b OC
 
 #Move files to a new directory
 
