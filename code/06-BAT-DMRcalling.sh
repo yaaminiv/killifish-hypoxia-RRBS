@@ -17,6 +17,7 @@ BAT_DMRcalling \
 
 mkdir ${DMR}/all_pop
 mv ${DMR}/all_pop_* ${DMR}/all_pop/.
+mv ${DMR}/all_pop.* ${DMR}/all_pop/.
 
 echo "Oxygen by population: OC"
 
@@ -31,7 +32,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/OC_pop_diff
-mv ${DMR}/pop_diff_* ${DMR}/OC_pop_diff/.
+mv ${DMR}/OC_pop_diff_* ${DMR}/OC_pop_diff/.
+mv ${DMR}/OC_pop_diff.* ${DMR}/OC_pop_diff/.
 
 echo "Oxygen by population: Normoxia"
 
@@ -46,7 +48,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/20_pop_diff
-mv ${DMR}/pop_diff_* ${DMR}/20_pop_diff/.
+mv ${DMR}/20_pop_diff_* ${DMR}/20_pop_diff/.
+mv ${DMR}/20_pop_diff.* ${DMR}/20_pop_diff/.
 
 echo "Oxygen by population: Hypoxia"
 
@@ -61,7 +64,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/5_pop_diff
-mv ${DMR}/pop_diff_* ${DMR}/5_pop_diff/.
+mv ${DMR}/5_pop_diff_* ${DMR}/5_pop_diff/.
+mv ${DMR}/5_pop_diff.* ${DMR}/5_pop_diff/.
 
 echo "Oxygen within NB: Normoxia vs. Hypoxia"
 
@@ -76,7 +80,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/20_5_N
-mv ${DMR}/N_* ${DMR}/20_5_N/.
+mv ${DMR}/20_5_N_* ${DMR}/20_5_N/.
+mv ${DMR}/20_5_N.* ${DMR}/20_5_N/.
 
 echo "Oxygen within NB: Normoxia vs. OC"
 
@@ -91,7 +96,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/20_OC_N
-mv ${DMR}/N_* ${DMR}/20_OC_N/.
+mv ${DMR}/20_OC_N_* ${DMR}/20_OC_N/.
+mv ${DMR}/20_OC_N.* ${DMR}/20_OC_N/.
 
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
@@ -106,7 +112,8 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/20_5_S
-mv ${DMR}/S_* ${DMR}/20_5_S/.
+mv ${DMR}/20_5_S_* ${DMR}/20_5_S/.
+mv ${DMR}/20_5_S.* ${DMR}/20_5_S/.
 
 echo "Oxygen within SC: Normoxia vs. OC"
 
@@ -121,4 +128,5 @@ BAT_DMRcalling \
 #Move files to a new directory
 
 mkdir ${DMR}/20_OC_S
-mv /scratch/05-analysis/summarize/S_* ${DMR}/20_OC_S/.
+mv ${DMR}/20_OC_S_* ${DMR}/20_OC_S/.
+mv ${DMR}/20_OC_S.* ${DMR}/20_OC_S/.
