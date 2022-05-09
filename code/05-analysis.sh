@@ -62,6 +62,7 @@ module load singularity/3.7
 
 #Make scripts executable
 chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
+chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-overview.sh
 
 #I will summarize methylation information for each population, irrespective of oxygen conditions. This will provide population-specific methylation information.
 
