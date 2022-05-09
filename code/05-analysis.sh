@@ -10,13 +10,13 @@
 #SBATCH --output=yrv_analysis%j.log  								   					  		# Standard output
 #SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/05-analysis  	# Working directory for this script
 
-#Load the singularity module for BAT
-module load singularity/3.7
+echo "Prepare for analysis"
 
-#Make scripts executable
-chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
+echo "Create chromosome length file"
 
-## THIS WAS DONE INTERACTIVELY IN THE FOLDER WHERE THE GENOME WAS ##
+#Navigate to genome directory
+#cd /vortexfs1/home/naluru/Killifish
+
 #Unzip genome
 #Extract chromosome name and length information
 #Remove extra characters from chromosome name/description
@@ -30,8 +30,17 @@ chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
 #| awk '{print $1"\t"$2}' \
 #| tail -n +2 \
 #> mummichog.chrom.length
+#head mummichog.chrom.length
 
-## THIS WAS DONE INTERACTIVELY IN THE FOLDER WHERE THE BEDFILES WERE ##
+echo "Done creating chromosome file"
+
+echo "Revise bedGraphs"
+
+#The bedGraphs are filtered, but they have extraneous columns (from genome annotation) and need to be sorted for downstream applications
+
+#Navigate to bedGraph directory
+#cd /vortexfs1/home/yaamini.venkataraman/killifish-hypoxia-RRBS/output/04-calling/filtered
+
 #Sort bedGraphs
 #for f in *bedgraph
 #do
@@ -40,8 +49,19 @@ chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
 #| awk '{print $1"\t"$5"\t"$6"\t"$7}' \
 #> $(basename ${f%.bedgraph}).sort.bedgraph
 #done
+#head *sort.bedgraph
+
+echo "Done revising bedGraphs"
+
+echo "Done preparing for analysis"
 
 echo "Summarize Module"
+
+#Load the singularity module for BAT
+module load singularity/3.7
+
+#Make scripts executable
+chmod +x /vortexfs1/home/yaamini.venkataraman/05-BAT-summarize.sh
 
 #I will summarize methylation information for each population, irrespective of oxygen conditions. This will provide population-specific methylation information.
 
