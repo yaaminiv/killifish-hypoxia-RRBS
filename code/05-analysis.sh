@@ -73,27 +73,12 @@ singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/05-analysis-env
 
 echo "Done with summarize"
 
-## TO DO: FIGURE OUT WHY OVERVIEW IS NOT WORKING
-
-#echo "Overview Module"
-
-# echo "Population irrespective of oxygen"
-
-#Remove extra columns from output bedGraph
-#awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9"\t"$10"\t"$11"\t"$12"\t"$13"\t"$14"\t"$15"\t"$16"\t"$17}' \
-#/scratch/05-analysis/summarize/all_pop_summary_N_S.bedgraph \
-#> /scratch/05-analysis/summarize/all_pop_summary_N_S.bedgraph.fix
+echo "Overview Module"
 
 #Run BAT_overview
-#i: input summary bedGraph
-#o: output prefix
-#groups: comma-separated list of gorup identifiers
-#singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/05-analysis-envfile.txt \
-#--bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
-#/vortexfs1/home/naluru/bat_latest.sif \
-#BAT_overview.R  \
-#-i /scratch/05-analysis/summarize/all_pop_summary_N_S.bedgraph.fix \
-#-o /scratch/05-analysis/summarize/all_pop \
-#--groups N,S
+singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/05-analysis-envfile.txt \
+--bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
+/vortexfs1/home/naluru/bat_latest.sif \
+/yaaminiv/05-BAT-overview.sh
 
-#echo "Done with overview"
+echo "Done with overview"
