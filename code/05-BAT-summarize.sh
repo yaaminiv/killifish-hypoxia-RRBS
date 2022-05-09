@@ -108,7 +108,7 @@ echo "Oxygen within NB: Normoxia vs. Hypoxia"
 BAT_summarize \
 --in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-N4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_20-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_20-N1_CG.sort.bedgraph \
 --in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-N1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_5-N3_CG.sort.bedgraph \
---groups 20,5 \
+--groups NO,HY \
 --h1 20-N4,20-N2,20-N1 \
 --h2 5-N1,5-N2,5-N3 \
 --out ${SUMMARIZE}/N \
@@ -132,7 +132,7 @@ echo "Oxygen within NB: Normoxia vs. OC"
 BAT_summarize \
 --in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-N4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_20-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_20-N1_CG.sort.bedgraph \
 --in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N5_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N4_CG.sort.bedgraph \
---groups 20,OC \
+--groups NO,OC \
 --h1 20-N4,20-N2,20-N1 \
 --h2 OC-N5,OC-N1,OC-N2,OC-N4 \
 --out ${SUMMARIZE}/N \
@@ -156,7 +156,7 @@ echo "Oxygen within SC: Normoxia vs. Hypoxia"
 BAT_summarize \
 --in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_20-S2_CG.sort.bedgraph \
 --in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-S4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_5-S2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_5-S1_CG.sort.bedgraph \
---groups 20,5 \
+--groups NO,HY \
 --h1 20-S1,20-S3,20-S4,20-S2 \
 --h2 5-S3,5-S4,5-S2,5-S1 \
 --out ${SUMMARIZE}/S \
@@ -180,7 +180,7 @@ echo "Oxygen within SC: Normoxia vs. OC"
 BAT_summarize \
 --in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_20-S4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_20-S2_CG.sort.bedgraph \
 --in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_OC-S1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-S2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_OC-S5_CG.sort.bedgraph \
---groups 20,OC \
+--groups NO,OC \
 --h1 20-S1,20-S3,20-S4,20-S2 \
 --h2 OC-S1,OC-S2,OC-S3,OC-S5 \
 --out ${SUMMARIZE}/S \
