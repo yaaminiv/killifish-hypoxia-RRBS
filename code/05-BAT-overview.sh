@@ -58,7 +58,7 @@ echo "Oxygen within NB: Normoxia vs. Hypoxia"
 BAT_overview.R  \
 -i ${SUMMARIZE}/20_5_N/N_summary_20_5.bedgraph \
 -o ${OVERVIEW}/20_5_N \
---groups 20,5
+--groups NO,HY
 
 echo "Oxygen within NB: Normoxia vs. OC"
 
@@ -70,7 +70,7 @@ echo "Oxygen within NB: Normoxia vs. OC"
 BAT_overview.R  \
 -i ${SUMMARIZE}/20_OC_N/N_summary_20_OC.bedgraph \
 -o ${OVERVIEW}/20_OC_N \
---groups 20,OC
+--groups NO,OC
 
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
@@ -82,7 +82,7 @@ echo "Oxygen within SC: Normoxia vs. Hypoxia"
 BAT_overview.R  \
 -i ${SUMMARIZE}/20_5_S/S_summary_20_5.bedgraph \
 -o ${OVERVIEW}/20_5_S \
---groups 20,5
+--groups NO,HY
 
 echo "Oxygen within SC: Normoxia vs. OC"
 
@@ -94,4 +94,4 @@ echo "Oxygen within SC: Normoxia vs. OC"
 BAT_overview.R  \
 -i ${SUMMARIZE}/20_OC_S/S_summary_20_OC.bedgraph \
 -o ${OVERVIEW}/20_OC_S \
---groups 20,OC
+--groups NO,OC
