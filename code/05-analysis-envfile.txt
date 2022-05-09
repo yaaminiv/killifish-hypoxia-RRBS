@@ -11,3 +11,6 @@ FILTERED=/yaaminiv/killifish-hypoxia-RRBS/output/04-calling/filtered
 
 #Summarize directory
 SUMMARIZE=/scratch/05-analysis/summarize
+
+#Overview directory
+OVERVIEW=/scratch/05-analysis/overview
