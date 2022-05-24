@@ -19,5 +19,5 @@ do
   --vcf ${CALLED}/${f}.vcf.gz \
   --out ${FILTERED}/${f}_CG.vcf.gz \
   --context CG \
-  --MDP_min 10 --MDP_max 100
+  --MDP_min 10 --MDP_max 500
 done
