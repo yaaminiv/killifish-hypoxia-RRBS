@@ -11,7 +11,6 @@ FASTQ=(190626_I114_FCH7TVNBBXY_L2_20-N4 190626_I114_FCH7TVNBBXY_L2_20-S1 190626_
 #Output directory and prefixes
 #Methylation context
 #Minimum and maximum reads
-#Minimum methylation rate
 
 for f in "${FASTQ[@]}"
 do
@@ -19,5 +18,5 @@ do
   --vcf ${CALLED}/${f}.vcf.gz \
   --out ${FILTERED}/${f}_CG.vcf.gz \
   --context CG \
-  --MDP_min 10 --MDP_max 100
+  --MDP_min 10 --MDP_max 500
 done
