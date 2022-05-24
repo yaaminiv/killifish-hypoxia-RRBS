@@ -1,0 +1,14 @@
+[INFO]	Thu May 19, 11:30:48, 2022	Calling DMRs.
+[metilene]	Thu May 19, 11:30:48, 2022	
+0: column: 0, name:N_20-N4
+1: column: 1, name:N_20-N2
+2: column: 2, name:N_20-N1
+0: column: 3, name:S_20-S1
+1: column: 4, name:S_20-S3
+2: column: 5, name:S_20-S4
+3: column: 6, name:S_20-S2
+[INFO]	Thu May 19, 11:30:48, 2022	Filtering DMRs.
+[INFO]	Thu May 19, 11:30:48, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 1 and a minimum length [nt] >= 0
+[INFO]	Thu May 19, 11:30:48, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_pop_diff_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_pop_diff_qval.0.05.bed
+[INFO]	Thu May 19, 11:30:48, 2022	Plotting DMR statistics (/scratch/06-DMR/20_pop_diff_qval.0.05.pdf).

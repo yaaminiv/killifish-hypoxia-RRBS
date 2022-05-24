@@ -1,0 +1,46 @@
+DMR Calling Module
+Oxygen within NB: Normoxia vs. Hypoxia
+[INFO]	Mon May 23, 17:41:41, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 23, 17:41:41, 2022	Checking flags
+[INFO]	Mon May 23, 17:41:41, 2022	Calling DMRs.
+[INFO]	Mon May 23, 17:41:42, 2022	Filtering DMRs.
+[INFO]	Mon May 23, 17:41:42, 2022	Wrote 16 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 23, 17:41:42, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_5_N_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_5_N_qval.0.05.bed
+[INFO]	Mon May 23, 17:41:42, 2022	Plotting DMR statistics (/scratch/06-DMR/20_5_N_qval.0.05.pdf).
+Oxygen within NB: Normoxia vs. OC
+[INFO]	Mon May 23, 17:41:45, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 23, 17:41:45, 2022	Checking flags
+[INFO]	Mon May 23, 17:41:45, 2022	Calling DMRs.
+[INFO]	Mon May 23, 17:41:46, 2022	Filtering DMRs.
+[INFO]	Mon May 23, 17:41:46, 2022	Wrote 2 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 23, 17:41:46, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_N_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_OC_N_qval.0.05.bed
+[INFO]	Mon May 23, 17:41:46, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_N_qval.0.05.pdf).
+Oxygen within SC: Normoxia vs. Hypoxia
+[INFO]	Mon May 23, 17:41:47, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 23, 17:41:47, 2022	Checking flags
+[INFO]	Mon May 23, 17:41:47, 2022	Calling DMRs.
+[INFO]	Mon May 23, 17:41:47, 2022	Filtering DMRs.
+[INFO]	Mon May 23, 17:41:47, 2022	Wrote 1 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 23, 17:41:47, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_5_S_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_5_S_qval.0.05.bed
+[INFO]	Mon May 23, 17:41:47, 2022	Plotting DMR statistics (/scratch/06-DMR/20_5_S_qval.0.05.pdf).
+geom_path: Each group consists of only one observation. Do you need to adjust
+the group aesthetic?
+geom_path: Each group consists of only one observation. Do you need to adjust
+the group aesthetic?
+Oxygen within SC: Normoxia vs. OC
+[INFO]	Mon May 23, 17:41:48, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 23, 17:41:48, 2022	Checking flags
+[INFO]	Mon May 23, 17:41:48, 2022	Calling DMRs.
+[INFO]	Mon May 23, 17:41:49, 2022	Filtering DMRs.
+[INFO]	Mon May 23, 17:41:49, 2022	Wrote 1 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 23, 17:41:49, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_S_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_OC_S_qval.0.05.bed
+[INFO]	Mon May 23, 17:41:49, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_S_qval.0.05.pdf).
+geom_path: Each group consists of only one observation. Do you need to adjust
+the group aesthetic?
+geom_path: Each group consists of only one observation. Do you need to adjust
+the group aesthetic?
+Done with DMR calling

@@ -1,0 +1,81 @@
+DMR Calling Module
+Population irrespective of oxygen
+[INFO]	Mon May 9, 15:34:52, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:52, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:52, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:52, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:52, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:52, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/all_pop_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/all_pop_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:52, 2022	Plotting DMR statistics (/scratch/06-DMR/all_pop_qval.0.05.pdf).
+Oxygen by population: OC
+[INFO]	Mon May 9, 15:34:55, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:55, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:55, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:55, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:55, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:55, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/OC_pop_diff_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/OC_pop_diff_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:55, 2022	Plotting DMR statistics (/scratch/06-DMR/OC_pop_diff_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/pop_diff_*’: No such file or directory
+Oxygen by population: Normoxia
+[INFO]	Mon May 9, 15:34:56, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:56, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:56, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:56, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:56, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:56, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_pop_diff_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_pop_diff_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:56, 2022	Plotting DMR statistics (/scratch/06-DMR/20_pop_diff_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/pop_diff_*’: No such file or directory
+Oxygen by population: Hypoxia
+[INFO]	Mon May 9, 15:34:57, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:57, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:57, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:57, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:57, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:57, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/5_pop_diff_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/5_pop_diff_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:57, 2022	Plotting DMR statistics (/scratch/06-DMR/5_pop_diff_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/pop_diff_*’: No such file or directory
+Oxygen within NB: Normoxia vs. Hypoxia
+[INFO]	Mon May 9, 15:34:58, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:58, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:58, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:58, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:58, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:58, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_5_N_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_5_N_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:58, 2022	Plotting DMR statistics (/scratch/06-DMR/20_5_N_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/N_*’: No such file or directory
+Oxygen within NB: Normoxia vs. OC
+[INFO]	Mon May 9, 15:34:58, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:58, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:59, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:34:59, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:59, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:59, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_N_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_OC_N_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:59, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_N_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/N_*’: No such file or directory
+Oxygen within SC: Normoxia vs. Hypoxia
+[INFO]	Mon May 9, 15:34:59, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:34:59, 2022	Checking flags
+[INFO]	Mon May 9, 15:34:59, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:35:0, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:35:0, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:35:0, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_5_S_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_5_S_qval.0.05.bed
+[INFO]	Mon May 9, 15:35:0, 2022	Plotting DMR statistics (/scratch/06-DMR/20_5_S_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/06-DMR/S_*’: No such file or directory
+Oxygen within SC: Normoxia vs. OC
+[INFO]	Mon May 9, 15:35:0, 2022	BAT_DMRcalling v0.1 started
+[INFO]	Mon May 9, 15:35:0, 2022	Checking flags
+[INFO]	Mon May 9, 15:35:0, 2022	Calling DMRs.
+[INFO]	Mon May 9, 15:35:1, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:35:1, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:35:1, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_S_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_OC_S_qval.0.05.bed
+[INFO]	Mon May 9, 15:35:1, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_S_qval.0.05.pdf).
+mv: cannot stat ‘/scratch/05-analysis/summarize/S_*’: No such file or directory
+Done with DMR calling

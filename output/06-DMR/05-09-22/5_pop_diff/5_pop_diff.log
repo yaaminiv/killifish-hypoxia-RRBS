@@ -1,0 +1,14 @@
+[INFO]	Mon May 9, 15:34:57, 2022	Calling DMRs.
+[metilene]	Mon May 9, 15:34:57, 2022	
+0: column: 0, name:N_5-N1
+1: column: 1, name:N_5-N2
+2: column: 2, name:N_5-N3
+0: column: 3, name:S_5-S3
+1: column: 4, name:S_5-S4
+2: column: 5, name:S_5-S2
+3: column: 6, name:S_5-S1
+[INFO]	Mon May 9, 15:34:57, 2022	Filtering DMRs.
+[INFO]	Mon May 9, 15:34:57, 2022	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Mon May 9, 15:34:57, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/5_pop_diff_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/5_pop_diff_qval.0.05.bed
+[INFO]	Mon May 9, 15:34:57, 2022	Plotting DMR statistics (/scratch/06-DMR/5_pop_diff_qval.0.05.pdf).
