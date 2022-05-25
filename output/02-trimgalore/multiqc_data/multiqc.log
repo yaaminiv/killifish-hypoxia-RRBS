@@ -1,0 +1,728 @@
+[2022-02-15 10:12:55,956] multiqc                                            [DEBUG  ]  This is MultiQC v1.11
+[2022-02-15 10:12:55,956] multiqc                                            [DEBUG  ]  No MultiQC config found: /vortexfs1/home/yaamini.venkataraman/miniconda3/lib/python3.9/site-packages/multiqc_config.yaml
+[2022-02-15 10:12:55,957] multiqc                                            [DEBUG  ]  No MultiQC config found: /vortexfs1/home/yaamini.venkataraman/.multiqc_config.yaml
+[2022-02-15 10:12:55,957] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-02-15 10:12:55,957] multiqc                                            [DEBUG  ]  Command used: /vortexfs1/home/yaamini.venkataraman/miniconda3/bin/multiqc /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/.
+[2022-02-15 10:12:56,710] multiqc                                            [WARNING]  MultiQC Version v1.12 now available!
+[2022-02-15 10:12:56,710] multiqc                                            [DEBUG  ]  Command     : /vortexfs1/home/yaamini.venkataraman/miniconda3/bin/multiqc /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/.
+[2022-02-15 10:12:56,710] multiqc                                            [DEBUG  ]  Working dir : /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore
+[2022-02-15 10:12:56,710] multiqc                                            [DEBUG  ]  Template    : default
+[2022-02-15 10:12:56,710] multiqc                                            [DEBUG  ]  Running Python 3.9.5 (default, Jun  4 2021, 12:28:51)  [GCC 7.5.0]
+[2022-02-15 10:12:56,711] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype
+[2022-02-15 10:12:56,711] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpx3pvseqx
+[2022-02-15 10:12:57,375] multiqc                                            [INFO   ]  Search path : /vortexfs1/scratch/yaamini.venkataraman/02-trimgalore
+[2022-02-15 10:12:57,392] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1.fq.gz
+[2022-02-15 10:12:57,411] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,413] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,413] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,413] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,415] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,416] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2_fastqc.html
+[2022-02-15 10:12:57,485] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,486] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,486] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,486] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,488] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,488] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,547] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz
+[2022-02-15 10:12:57,558] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1.fq.gz
+[2022-02-15 10:12:57,585] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,586] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,586] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,586] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,588] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,606] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,607] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,608] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,623] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,624] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,624] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,624] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,626] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,626] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,672] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,673] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,673] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,673] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,674] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,683] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1.fq.gz
+[2022-02-15 10:12:57,685] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,686] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,688] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,698] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,699] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,699] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,699] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,700] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,705] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1.fq.gz
+[2022-02-15 10:12:57,708] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,709] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,711] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,728] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,729] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,729] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,729] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,731] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,731] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2_fastqc.html
+[2022-02-15 10:12:57,785] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,786] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,786] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,786] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,787] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,787] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,821] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1.fq.gz
+[2022-02-15 10:12:57,838] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,839] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,839] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,839] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,840] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,840] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:57,883] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,884] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,884] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,885] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,886] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,902] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,902] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,903] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,903] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,904] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2.fq.gz
+[2022-02-15 10:12:57,946] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,947] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,947] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,947] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,949] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,949] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:57,989] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,989] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,989] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,990] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,991] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:57,997] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: yrv_trimgalore2285460.log
+[2022-02-15 10:12:57,998] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: yrv_trimgalore2285460.log
+[2022-02-15 10:12:58,000] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: yrv_trimgalore2285460.log
+[2022-02-15 10:12:58,017] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,017] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,018] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,018] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,019] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,019] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,054] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,055] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,057] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,073] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,073] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,073] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,073] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,075] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,082] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,083] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,084] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,108] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,109] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,110] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,110] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,111] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,111] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1_val_1_fastqc.html
+[2022-02-15 10:12:58,144] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1.fq.gz
+[2022-02-15 10:12:58,144] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1.fq.gz
+[2022-02-15 10:12:58,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1.fq.gz
+[2022-02-15 10:12:58,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2.fq.gz
+[2022-02-15 10:12:58,146] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1.fq.gz
+[2022-02-15 10:12:58,163] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,164] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,164] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,164] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,166] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,166] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,202] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,203] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,205] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,218] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,219] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,220] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,237] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,238] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,238] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,238] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,240] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,240] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,282] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,283] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,283] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,283] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,285] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,285] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,329] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,330] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,330] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,330] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,332] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,332] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,379] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,380] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,380] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,380] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,381] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,381] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:58,423] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,424] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,424] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,424] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,425] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,430] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S3_2_val_2.fq.gz
+[2022-02-15 10:12:58,433] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,434] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,435] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,442] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,443] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,444] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,458] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,459] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,460] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,477] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,478] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,478] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,478] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,480] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,480] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:58,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1.fq.gz
+[2022-02-15 10:12:58,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_20-N1_2_val_2.fq.gz
+[2022-02-15 10:12:58,523] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,524] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,524] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,524] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,525] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1.fq.gz
+[2022-02-15 10:12:58,550] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,551] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,551] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,551] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,553] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,553] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2.fq.gz
+[2022-02-15 10:12:58,601] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,602] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,602] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,602] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,604] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,604] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2_fastqc.html
+[2022-02-15 10:12:58,640] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: yrv_trimgalore2285634.log
+[2022-02-15 10:12:58,641] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: yrv_trimgalore2285634.log
+[2022-02-15 10:12:58,641] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: yrv_trimgalore2285634.log
+[2022-02-15 10:12:58,641] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: yrv_trimgalore2285634.log
+[2022-02-15 10:12:58,642] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: yrv_trimgalore2285634.log
+[2022-02-15 10:12:58,657] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,658] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,660] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,667] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,668] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,669] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,676] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,677] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,677] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,679] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,704] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,704] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,705] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,705] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,706] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,706] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:58,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1.fq.gz
+[2022-02-15 10:12:58,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1.fq.gz
+[2022-02-15 10:12:58,768] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,769] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,769] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,769] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,770] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,770] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:58,817] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,817] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,818] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,818] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,819] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,819] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:58,853] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2.fq.gz
+[2022-02-15 10:12:58,856] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,857] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,859] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,882] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,883] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,883] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,883] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,884] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:58,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2.fq.gz
+[2022-02-15 10:12:58,904] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,905] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,905] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,905] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,906] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,907] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:58,974] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,974] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,975] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,975] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,976] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:58,976] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,019] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,019] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,019] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,020] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,021] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1_val_1.fq.gz
+[2022-02-15 10:12:59,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-S4_2_val_2.fq.gz
+[2022-02-15 10:12:59,028] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,029] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,031] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,044] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,045] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,045] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,045] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,047] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,066] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,067] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,067] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,067] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,069] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,069] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,119] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,120] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,120] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,121] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,122] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,122] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,171] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,172] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,172] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,172] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,174] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,174] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1_fastqc.html
+[2022-02-15 10:12:59,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_OC-N3_1.fq.gz_qual_trimmed.fastq
+[2022-02-15 10:12:59,209] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S4_1_val_1.fq.gz
+[2022-02-15 10:12:59,221] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,222] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,222] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,222] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,223] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,231] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,231] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,232] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,232] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,233] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,248] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,249] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,249] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,249] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,251] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,251] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,286] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,287] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,289] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,296] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,297] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,298] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,330] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,331] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,331] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,331] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,332] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,333] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,367] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,368] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,369] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_5-N3_2_val_2.fq.gz
+[2022-02-15 10:12:59,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-N1_1_val_1.fq.gz
+[2022-02-15 10:12:59,385] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,386] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,386] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,386] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,388] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,388] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,420] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2.fq.gz
+[2022-02-15 10:12:59,433] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,434] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,434] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,434] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,435] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,435] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,467] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2.fq.gz
+[2022-02-15 10:12:59,476] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,477] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,477] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,477] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,478] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2_val_2.fq.gz
+[2022-02-15 10:12:59,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_20-S2_1_val_1.fq.gz
+[2022-02-15 10:12:59,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1.fq.gz
+[2022-02-15 10:12:59,486] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,487] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,488] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,493] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz
+[2022-02-15 10:12:59,506] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,507] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,507] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,508] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,509] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,509] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1_val_1_fastqc.html
+[2022-02-15 10:12:59,544] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,545] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,546] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,553] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,554] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,555] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,568] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,569] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,569] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,569] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,570] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,574] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2_val_2.fq.gz
+[2022-02-15 10:12:59,578] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,579] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,579] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,579] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,580] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,580] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1_val_1_fastqc.html
+[2022-02-15 10:12:59,625] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,626] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,626] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,626] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,628] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,628] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2_fastqc.html
+[2022-02-15 10:12:59,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2.fq.gz
+[2022-02-15 10:12:59,676] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,677] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,677] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,677] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,678] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,678] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-N1_2_val_2.fq.gz
+[2022-02-15 10:12:59,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_5-N2_1_val_1.fq.gz
+[2022-02-15 10:12:59,724] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,725] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,725] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,725] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,726] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,726] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1_fastqc.html
+[2022-02-15 10:12:59,768] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,768] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,769] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,769] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,770] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,770] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_20-S4_2_val_2_fastqc.html
+[2022-02-15 10:12:59,805] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,806] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,806] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,808] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_5-N3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,825] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,826] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,827] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,827] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,828] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,828] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2_fastqc.html
+[2022-02-15 10:12:59,860] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_20-S1_2_val_2.fq.gz
+[2022-02-15 10:12:59,862] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-N3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,863] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-N3_1.fq.gz_trimming_report.txt
+[2022-02-15 10:12:59,869] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: yrv_trimgalore2285565.log
+[2022-02-15 10:12:59,870] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: yrv_trimgalore2285565.log
+[2022-02-15 10:12:59,871] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: yrv_trimgalore2285565.log
+[2022-02-15 10:12:59,894] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,895] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,895] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,895] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,897] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,897] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S4_1_val_1_fastqc.html
+[2022-02-15 10:12:59,963] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,964] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,964] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,964] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,965] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,965] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-S3_2_val_2_fastqc.html
+[2022-02-15 10:12:59,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_20-N2_2_val_2.fq.gz
+[2022-02-15 10:12:59,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2_val_2.fq.gz
+[2022-02-15 10:13:00,014] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,014] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,015] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,015] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,016] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,016] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2_val_2_fastqc.html
+[2022-02-15 10:13:00,344] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,345] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,345] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,345] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,346] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,347] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_5-S1_1_val_1_fastqc.html
+[2022-02-15 10:13:00,395] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,396] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,396] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,396] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,398] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,398] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1_val_1_fastqc.html
+[2022-02-15 10:13:00,435] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,436] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,436] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,437] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,464] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,465] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,465] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,465] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_20-N1_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,483] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,484] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,484] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,484] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,486] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,503] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,504] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,504] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,504] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,505] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,505] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: yrv_trimgalore2267902.log
+[2022-02-15 10:13:00,665] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,666] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,666] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,666] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,668] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,685] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,686] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,686] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,686] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,687] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,687] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1_fastqc.html
+[2022-02-15 10:13:00,805] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,806] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,806] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,807] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,807] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1_val_1_fastqc.html
+[2022-02-15 10:13:00,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2_val_2.fq.gz
+[2022-02-15 10:13:00,841] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1_val_1.fq.gz
+[2022-02-15 10:13:00,844] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,845] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:00,846] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:01,056] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,057] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,057] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,057] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,059] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,059] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L2_5-N2_2_val_2_fastqc.html
+[2022-02-15 10:13:01,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_20-N2_1_val_1.fq.gz
+[2022-02-15 10:13:01,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2_val_2.fq.gz
+[2022-02-15 10:13:01,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2_val_2.fq.gz
+[2022-02-15 10:13:01,095] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:01,096] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:01,097] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1.fq.gz_trimming_report.txt
+[2022-02-15 10:13:07,009] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.3.4
+[2022-02-15 10:13:07,034] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.3.4
+[2022-02-15 10:13:07,072] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-02-15 10:13:07,129] multiqc                                            [DEBUG  ]  No samples found: ccs
+[2022-02-15 10:13:07,221] multiqc                                            [DEBUG  ]  No samples found: ngsderive
+[2022-02-15 10:13:07,295] multiqc                                            [DEBUG  ]  No samples found: purple
+[2022-02-15 10:13:07,340] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-02-15 10:13:07,385] multiqc                                            [DEBUG  ]  No samples found: lima
+[2022-02-15 10:13:07,427] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-02-15 10:13:07,491] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2022-02-15 10:13:07,547] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-02-15 10:13:07,715] multiqc.modules.mosdepth.mosdepth                  [DEBUG  ]  include_contigs: []
+[2022-02-15 10:13:07,716] multiqc.modules.mosdepth.mosdepth                  [DEBUG  ]  exclude_contigs: []
+[2022-02-15 10:13:07,716] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-02-15 10:13:07,776] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-02-15 10:13:07,805] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-02-15 10:13:07,863] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-02-15 10:13:07,923] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-02-15 10:13:07,996] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-02-15 10:13:08,062] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-02-15 10:13:08,126] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2022-02-15 10:13:08,221] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-02-15 10:13:08,410] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-02-15 10:13:08,459] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-02-15 10:13:08,519] multiqc                                            [DEBUG  ]  No samples found: bustools
+[2022-02-15 10:13:08,586] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-02-15 10:13:08,704] multiqc                                            [DEBUG  ]  No samples found: gffcompare
+[2022-02-15 10:13:08,740] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-02-15 10:13:08,826] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-02-15 10:13:09,048] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-02-15 10:13:09,151] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-02-15 10:13:09,227] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-02-15 10:13:09,312] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-02-15 10:13:09,358] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-02-15 10:13:09,423] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2022-02-15 10:13:09,507] multiqc                                            [DEBUG  ]  No samples found: sambamba
+[2022-02-15 10:13:09,628] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-02-15 10:13:09,678] multiqc                                            [DEBUG  ]  No samples found: hops
+[2022-02-15 10:13:09,742] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-02-15 10:13:09,792] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-02-15 10:13:09,811] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-02-15 10:13:09,926] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-02-15 10:13:09,973] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-02-15 10:13:10,051] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-02-15 10:13:10,091] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-02-15 10:13:10,260] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-02-15 10:13:10,520] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2022-02-15 10:13:10,649] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-02-15 10:13:10,708] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-02-15 10:13:11,191] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-02-15 10:13:11,253] multiqc                                            [DEBUG  ]  No samples found: jcvi
+[2022-02-15 10:13:11,283] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-02-15 10:13:11,286] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-02-15 10:13:11,394] multiqc                                            [DEBUG  ]  No samples found: vep
+[2022-02-15 10:13:11,509] multiqc                                            [DEBUG  ]  No samples found: sentieon
+[2022-02-15 10:13:11,566] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-02-15 10:13:11,637] multiqc                                            [DEBUG  ]  No samples found: qc3C
+[2022-02-15 10:13:11,687] multiqc                                            [DEBUG  ]  No samples found: nanostat
+[2022-02-15 10:13:11,736] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-02-15 10:13:11,877] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-02-15 10:13:11,932] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-02-15 10:13:11,965] multiqc                                            [DEBUG  ]  No samples found: eigenstratdatabasetools
+[2022-02-15 10:13:12,018] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-02-15 10:13:12,099] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-02-15 10:13:12,235] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-02-15 10:13:12,298] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-02-15 10:13:12,362] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-02-15 10:13:12,416] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2022-02-15 10:13:12,453] multiqc                                            [DEBUG  ]  No samples found: snippy
+[2022-02-15 10:13:12,634] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-02-15 10:13:12,710] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-02-15 10:13:12,766] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-02-15 10:13:12,831] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-02-15 10:13:12,978] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-02-15 10:13:13,034] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-02-15 10:13:13,068] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-02-15 10:13:13,142] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-02-15 10:13:13,251] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-02-15 10:13:13,366] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-02-15 10:13:13,425] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-02-15 10:13:13,502] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-02-15 10:13:13,550] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-02-15 10:13:13,616] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-02-15 10:13:13,678] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2022-02-15 10:13:13,755] multiqc                                            [DEBUG  ]  No samples found: odgi
+[2022-02-15 10:13:13,829] multiqc                                            [DEBUG  ]  No samples found: pangolin
+[2022-02-15 10:13:13,873] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-02-15 10:13:13,917] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-02-15 10:13:14,002] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-02-15 10:13:14,070] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-02-15 10:13:14,146] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1
+[2022-02-15 10:13:14,147] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-S5_1
+[2022-02-15 10:13:14,148] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2
+[2022-02-15 10:13:14,181] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-N3_1
+[2022-02-15 10:13:14,185] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-N4_1
+[2022-02-15 10:13:14,186] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-N4_1
+[2022-02-15 10:13:14,187] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-N4_2
+[2022-02-15 10:13:14,188] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-N4_2
+[2022-02-15 10:13:14,190] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S1_1
+[2022-02-15 10:13:14,191] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S1_1
+[2022-02-15 10:13:14,192] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S1_2
+[2022-02-15 10:13:14,193] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S1_2
+[2022-02-15 10:13:14,195] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S3_1
+[2022-02-15 10:13:14,195] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S3_1
+[2022-02-15 10:13:14,197] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S3_2
+[2022-02-15 10:13:14,197] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S3_2
+[2022-02-15 10:13:14,200] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S4_1
+[2022-02-15 10:13:14,200] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S4_1
+[2022-02-15 10:13:14,202] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S4_2
+[2022-02-15 10:13:14,202] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_20-S4_2
+[2022-02-15 10:13:14,204] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N1_1
+[2022-02-15 10:13:14,205] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N1_1
+[2022-02-15 10:13:14,206] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N1_2
+[2022-02-15 10:13:14,207] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N1_2
+[2022-02-15 10:13:14,209] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N2_1
+[2022-02-15 10:13:14,210] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N2_1
+[2022-02-15 10:13:14,211] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N2_2
+[2022-02-15 10:13:14,211] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-N2_2
+[2022-02-15 10:13:14,214] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S3_1
+[2022-02-15 10:13:14,214] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S3_1
+[2022-02-15 10:13:14,216] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S3_2
+[2022-02-15 10:13:14,216] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S3_2
+[2022-02-15 10:13:14,218] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S4_1
+[2022-02-15 10:13:14,219] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S4_1
+[2022-02-15 10:13:14,220] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S4_2
+[2022-02-15 10:13:14,221] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_5-S4_2
+[2022-02-15 10:13:14,223] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1
+[2022-02-15 10:13:14,224] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_OC-S1_1
+[2022-02-15 10:13:14,225] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2
+[2022-02-15 10:13:14,226] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L2_OC-S1_2
+[2022-02-15 10:13:14,228] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_20-N2_1
+[2022-02-15 10:13:14,228] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_20-N2_1
+[2022-02-15 10:13:14,230] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_20-N2_2
+[2022-02-15 10:13:14,230] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_20-N2_2
+[2022-02-15 10:13:14,232] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-N3_1
+[2022-02-15 10:13:14,233] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-N3_1
+[2022-02-15 10:13:14,234] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-N3_2
+[2022-02-15 10:13:14,235] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-N3_2
+[2022-02-15 10:13:14,237] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-S2_1
+[2022-02-15 10:13:14,238] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-S2_1
+[2022-02-15 10:13:14,239] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-S2_2
+[2022-02-15 10:13:14,240] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_5-S2_2
+[2022-02-15 10:13:14,242] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1
+[2022-02-15 10:13:14,244] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2
+[2022-02-15 10:13:14,244] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N1_2
+[2022-02-15 10:13:14,246] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1
+[2022-02-15 10:13:14,247] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N2_1
+[2022-02-15 10:13:14,248] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2
+[2022-02-15 10:13:14,249] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N2_2
+[2022-02-15 10:13:14,252] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1
+[2022-02-15 10:13:14,253] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2
+[2022-02-15 10:13:14,253] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N4_2
+[2022-02-15 10:13:14,256] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1
+[2022-02-15 10:13:14,256] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N5_1
+[2022-02-15 10:13:14,257] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2
+[2022-02-15 10:13:14,258] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N5_2
+[2022-02-15 10:13:14,260] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1
+[2022-02-15 10:13:14,261] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S2_1
+[2022-02-15 10:13:14,262] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2
+[2022-02-15 10:13:14,263] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S2_2
+[2022-02-15 10:13:14,265] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1
+[2022-02-15 10:13:14,265] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S3_1
+[2022-02-15 10:13:14,267] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2
+[2022-02-15 10:13:14,267] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-S3_2
+[2022-02-15 10:13:14,270] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-N1_1
+[2022-02-15 10:13:14,270] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-N1_1
+[2022-02-15 10:13:14,271] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-N1_2
+[2022-02-15 10:13:14,272] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-N1_2
+[2022-02-15 10:13:14,274] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-S2_1
+[2022-02-15 10:13:14,275] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-S2_1
+[2022-02-15 10:13:14,276] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-S2_2
+[2022-02-15 10:13:14,277] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_20-S2_2
+[2022-02-15 10:13:14,279] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_5-S1_1
+[2022-02-15 10:13:14,279] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_5-S1_1
+[2022-02-15 10:13:14,281] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_5-S1_2
+[2022-02-15 10:13:14,281] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_5-S1_2
+[2022-02-15 10:13:14,284] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-N3_1
+[2022-02-15 10:13:14,284] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L4_OC-S5_2
+[2022-02-15 10:13:14,286] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N1_1
+[2022-02-15 10:13:14,287] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Duplicate sample name found! Overwriting: 190626_I114_FCH7TVNBBXY_L3_OC-N4_1
+[2022-02-15 10:13:14,288] multiqc.modules.cutadapt.cutadapt                  [INFO   ]  Found 45 reports
+[2022-02-15 10:13:14,336] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-02-15 10:13:14,389] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2022-02-15 10:13:14,449] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2022-02-15 10:13:14,494] multiqc                                            [DEBUG  ]  No samples found: malt
+[2022-02-15 10:13:14,590] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2022-02-15 10:13:14,649] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2022-02-15 10:13:14,689] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-02-15 10:13:14,720] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-02-15 10:13:14,804] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-02-15 10:13:14,867] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-02-15 10:13:14,947] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-02-15 10:13:15,021] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-02-15 10:13:17,151] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 44 reports
+[2022-02-15 10:13:17,507] multiqc                                            [DEBUG  ]  No samples found: pychopper
+[2022-02-15 10:13:17,598] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2022-02-15 10:13:17,698] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-02-15 10:13:17,762] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2022-02-15 10:13:17,836] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-02-15 10:13:17,908] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-02-15 10:13:17,974] multiqc                                            [DEBUG  ]  No samples found: bclconvert
+[2022-02-15 10:13:18,044] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-02-15 10:13:18,136] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2022-02-15 10:13:18,196] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-02-15 10:13:18,255] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-02-15 10:13:18,296] multiqc                                            [DEBUG  ]  No samples found: optitype
+[2022-02-15 10:13:18,347] multiqc                                            [INFO   ]  Compressing plot data
+[2022-02-15 10:13:19,025] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2022-02-15 10:13:19,025] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2022-02-15 10:13:19,025] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpx3pvseqx/multiqc_data' to '/vortexfs1/scratch/yaamini.venkataraman/02-trimgalore/multiqc_data'
+[2022-02-15 10:13:19,642] multiqc                                            [INFO   ]  MultiQC complete
