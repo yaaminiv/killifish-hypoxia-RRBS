@@ -2,3 +2,6 @@
 genome-features/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gff
 *.gff
 genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.105.gtf
+genome-features/Fundulus_heteroclitus-3.0.2.105-intron.bed
+genome-features/Fundulus_heteroclitus-3.0.2.105-nonCDS.bed
+genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa
