@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="../../genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa" locus="KN811384.1:0-1786201" version="8">
+    <Resources>
+        <Resource path="20_5_N/20_5_N_qval.0.05.bedgraph" type="bedgraph"/>
+        <Resource path="20_OC_S/20_OC_S_qval.0.05.bedgraph" type="bedgraph"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-exon.gff" type="gff"/>
+        <Resource path="5_pop_diff/5_pop_diff_qval.0.05.bedgraph" type="bedgraph"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-three_prime_utr.gff" type="gff"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-nonCDS.bed" type="bed"/>
+        <Resource path="OC_pop_diff/OC_pop_diff_qval.0.05.bedgraph" type="bedgraph"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-gene.gff" type="gff"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-CDS.gff" type="gff"/>
+        <Resource path="20_5_S/20_5_S_qval.0.05.bedgraph" type="bedgraph"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-five_prime_utr.gff" type="gff"/>
+        <Resource path="../../genome-features/Fundulus_heteroclitus-3.0.2.105-intron.bed" type="bed"/>
+        <Resource path="20_pop_diff/20_pop_diff_qval.0.05.bedgraph" type="bedgraph"/>
+    </Resources>
+    <Panel height="826" name="FeaturePanel" width="1903">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-gene.gff" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-gene.gff" name="Fundulus_heteroclitus-3.0.2.105-gene.gff" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-five_prime_utr.gff" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-five_prime_utr.gff" name="Fundulus_heteroclitus-3.0.2.105-five_prime_utr.gff" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-exon.gff" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-exon.gff" name="Fundulus_heteroclitus-3.0.2.105-exon.gff" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-CDS.gff" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-CDS.gff" name="Fundulus_heteroclitus-3.0.2.105-CDS.gff" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-intron.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-intron.bed" name="Fundulus_heteroclitus-3.0.2.105-intron.bed" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-three_prime_utr.gff" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-three_prime_utr.gff" name="Fundulus_heteroclitus-3.0.2.105-three_prime_utr.gff" visible="true"/>
+        <Track attributeKey="Fundulus_heteroclitus-3.0.2.105-nonCDS.bed" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" groupByStrand="false" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/genome-features/Fundulus_heteroclitus-3.0.2.105-nonCDS.bed" name="Fundulus_heteroclitus-3.0.2.105-nonCDS.bed" visible="true"/>
+        <Track attributeKey="5_pop_diff_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/5_pop_diff/5_pop_diff_qval.0.05.bedgraph" name="5_pop_diff_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.517333" minimum="-0.565449" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="20_5_N_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/20_5_N/20_5_N_qval.0.05.bedgraph" name="20_5_N_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.241" minimum="-0.222821" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="20_5_S_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/20_5_S/20_5_S_qval.0.05.bedgraph" name="20_5_S_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.33225" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="20_OC_S_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/20_OC_S/20_OC_S_qval.0.05.bedgraph" name="20_OC_S_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.33575" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="20_pop_diff_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/20_pop_diff/20_pop_diff_qval.0.05.bedgraph" name="20_pop_diff_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.0" minimum="-0.270357" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="OC_pop_diff_qval.0.05.bedgraph" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" fontSize="10" id="/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/06-DMR/OC_pop_diff/OC_pop_diff_qval.0.05.bedgraph" name="OC_pop_diff_qval.0.05.bedgraph" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="0.72475" minimum="0.0" type="LINEAR"/>
+        </Track>
+    </Panel>
+    <PanelLayout dividerFractions="0.007168458781362007"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

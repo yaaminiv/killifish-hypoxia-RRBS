@@ -5,3 +5,6 @@ genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.105.gtf
 genome-features/Fundulus_heteroclitus-3.0.2.105-intron.bed
 genome-features/Fundulus_heteroclitus-3.0.2.105-nonCDS.bed
 genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa
+genome-features/Fundulus_heteroclitus-3.0.2.105-CDS.gff.idx
+genome-features/Fundulus_heteroclitus-3.0.2.105-exon.gff.idx
+genome-features/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.fai
