@@ -1,5 +1,5 @@
-[INFO]	Tue May 24, 14:6:12, 2022	Calling DMRs.
-[metilene]	Tue May 24, 14:6:12, 2022	
+[INFO]	Thu Jun 2, 11:49:52, 2022	Calling DMRs.
+[metilene]	Thu Jun 2, 11:49:52, 2022	
 0: column: 0, name:NO_20-S1
 1: column: 1, name:NO_20-S3
 2: column: 2, name:NO_20-S4
@@ -8,8 +8,8 @@
 1: column: 5, name:OC_OC-S2
 2: column: 6, name:OC_OC-S3
 3: column: 7, name:OC_OC-S5
-[INFO]	Tue May 24, 14:6:12, 2022	Filtering DMRs.
-[INFO]	Tue May 24, 14:6:12, 2022	Wrote 1 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
-[INFO]	Tue May 24, 14:6:12, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_S_qval.0.05.bedgraph
+[INFO]	Thu Jun 2, 11:49:52, 2022	Filtering DMRs.
+[INFO]	Thu Jun 2, 11:49:52, 2022	Wrote 1 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Thu Jun 2, 11:49:52, 2022	Bedgraph file containing DMR difference: /scratch/06-DMR/20_OC_S_qval.0.05.bedgraph
 Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/20_OC_S_qval.0.05.bed
-[INFO]	Tue May 24, 14:6:12, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_S_qval.0.05.pdf).
+[INFO]	Thu Jun 2, 11:49:52, 2022	Plotting DMR statistics (/scratch/06-DMR/20_OC_S_qval.0.05.pdf).
