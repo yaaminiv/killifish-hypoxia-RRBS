@@ -1,2 +1,2 @@
-KN811321.1	578486	578795	DMR_2	hypomethylated	KN811321.1	ensembl	stop_codon	556474	556476	.	+	0	gene_id "ENSFHEG00000011518"; gene_version "1"; transcript_id "ENSFHET00000031086"; transcript_version "1"; exon_number "25"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_source "ensembl"; transcript_biotype "protein_coding";	22011
+KN811321.1	578486	578795	DMR_2	hypomethylated	KN811321.1	ensembl	stop_codon	556474	556476	.	+	0	gene_id "ENSFHEG00000011518"; gene_version "1"; transcript_id "ENSFHET00000031086"; transcript_version "1"; exon_number "25"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_source "ensembl"; transcript_biotype "protein_coding";	-22011
 KN806487.1	130260	130476	DMR_1	hypermethylated	.	.	.	-1	-1	.	.	.	.	-1

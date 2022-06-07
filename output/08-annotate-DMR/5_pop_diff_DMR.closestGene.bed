@@ -1,2 +1,2 @@
 KN811384.1	437656	437724	DMR_2	hypermethylated	KN811384.1	ensembl	gene	426481	448512	.	-	.	gene_id "ENSFHEG00000006153"; gene_version "1"; gene_name "aspa"; gene_source "ensembl"; gene_biotype "protein_coding";	0
-KN805688.1	500679	500775	DMR_1	hypomethylated	KN805688.1	ensembl	gene	438919	445512	.	-	.	gene_id "ENSFHEG00000009972"; gene_version "1"; gene_name "znf423"; gene_source "ensembl"; gene_biotype "protein_coding";	55168
+KN805688.1	500679	500775	DMR_1	hypomethylated	KN805688.1	ensembl	gene	438919	445512	.	-	.	gene_id "ENSFHEG00000009972"; gene_version "1"; gene_name "znf423"; gene_source "ensembl"; gene_biotype "protein_coding";	-55168
