@@ -25,7 +25,7 @@ echo "Mapping Module"
 
 #Run BAT_mapping script
 singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt \
---bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
+--bind /vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
 /vortexfs1/home/naluru/bat_latest.sif \
 /yaaminiv/03-BAT-mapping.sh
 
@@ -35,7 +35,7 @@ echo "Statistics Module"
 
 #Run BAT_mapping_stat script
 singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/03-alignment-envfile.txt \
---bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
+--bind /vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
 /vortexfs1/home/naluru/bat_latest.sif \
 /yaaminiv/03-BAT-mapping-stat.sh
 
