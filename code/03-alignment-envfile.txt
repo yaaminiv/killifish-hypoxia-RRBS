@@ -1,13 +1,13 @@
 #Variables to use with singularity container, paths may be based on host system or directories bound to container
 
 #Genome
-GENOME=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+GENOME=/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.gz
 
 #Trimmed files
 TRIMMED=/scratch/02-trimgalore
 
 #Genome indices
-INDICES=/naluru/Killifish/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel
+INDICES=/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic
 
 #Mapped files
 SINGMAPPED=/scratch/03-mapping/mapped #Mapping directory within singularity container
