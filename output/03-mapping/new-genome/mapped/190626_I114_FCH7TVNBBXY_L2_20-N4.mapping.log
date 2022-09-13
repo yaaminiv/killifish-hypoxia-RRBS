@@ -1,0 +1,1026 @@
+[INFO]	Wed Sep 7, 11:35:50, 2022	Build genome indicies
+[SYSTEM CALL] 	Wed Sep 7, 11:35:50, 2022	 segemehl.x -s -x /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx -y /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx -d /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.gz -F 2 >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.mapping.log 2>&1
+
+[INFO]	Wed Sep 7, 12:10:0, 2022	Start mapping
+[SYSTEM CALL] 	Wed Sep 7, 12:10:0, 2022	 segemehl.x -s -d /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.gz -i /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx -j /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx -F 2 -t 16 -q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz -u /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.unmapped -o /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.sam -p /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.mapping.log 2>&1
+
+[INFO]	Wed Sep 7, 16:14:56, 2022	Exclude reads from sam file (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.sam) and convert nonexcluded and excluded output to bam files (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.bam and /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.excluded.bam)
+[SYSTEM CALL] 	Wed Sep 7, 17:14:51, 2022	 remove /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.sam
+[INFO]	Wed Sep 7, 17:14:51, 2022	Gzip unmapped out file
+[SYSTEM CALL] 	Wed Sep 7, 17:14:51, 2022	 gzip -f /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.unmapped >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.mapping.log 2>&1
+
+[INFO]	Wed Sep 7, 17:24:47, 2022	Index regular bam file
+[SYSTEM CALL] 	Wed Sep 7, 17:24:47, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.mapping.log 2>&1
+
+[INFO]	Wed Sep 7, 17:26:22, 2022	Index excluded bam file
+[SYSTEM CALL] 	Wed Sep 7, 17:26:22, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.excluded.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L2_20-N4.mapping.log 2>&1
+
+ countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:36:54 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:36:54 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:36:54 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:36:54 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:36:56 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:36:56 2022: countsortint: exiting
+init bit array of 26394337
+[SEGEMEHL] Wed Sep  7 11:36:56 2022: arrayB: allocating B with 211154694 elements
+[SEGEMEHL] Wed Sep  7 11:36:56 2022: arrayB: iterating to lenA=509470944
+[SEGEMEHL] Wed Sep  7 11:36:58 2022: arrayB: exiting
+init bit array of 63683868
+[SEGEMEHL] Wed Sep  7 11:37:01 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:37:01 2022: getlistsL: memsetting list of 509470943 elements
+[SEGEMEHL] Wed Sep  7 11:37:01 2022: getlistsL: iter from 509470943 down to 0
+[SEGEMEHL] Wed Sep  7 11:37:14 2022: scanning A (509470944 elems)
+[SEGEMEHL] Wed Sep  7 11:37:15 2022: scanning accdist (1001 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:37:15 2022: scanning accdist (1001 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:37:16 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:37:16 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:37:16 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:37:17 2022: sortlistL: iterating 211154694 elems[SEGEMEHL] Wed Sep  7 11:37:20 2022: sortlistL: looping 509470943 elems[SEGEMEHL] Wed Sep  7 11:37:43 2022: sortlistL: iterating 509470944 elems[SEGEMEHL] Wed Sep  7 11:37:45 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:37:45 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:37:45 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:37:46 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:37:49 2022: tprime: iterating i=509470944 elements with lenB=211154694
+[SEGEMEHL] Wed Sep  7 11:37:50 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:37:50 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:37:50 2022: alurusortint: classify int
+init bit array of 26394337
+[SEGEMEHL] Wed Sep  7 11:37:51 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:37:51 2022: alurusortint: init bcktsA
+init bit array of 26394337
+[SEGEMEHL] Wed Sep  7 11:37:51 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:37:52 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:37:52 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:37:52 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:37:52 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:37:52 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: 93500590	117654104	211154694
+
+init bit array of 11687574
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: arrayB: allocating B with 93500590 elements
+[SEGEMEHL] Wed Sep  7 11:37:54 2022: arrayB: iterating to lenA=211154694
+[SEGEMEHL] Wed Sep  7 11:37:56 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:37:56 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:37:56 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:37:57 2022: alurusortint: enter distCount
+init bit array of 26394337
+[SEGEMEHL] Wed Sep  7 11:37:57 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:37:57 2022: getlistsS: memsetting list of 211154693 elements
+[SEGEMEHL] Wed Sep  7 11:37:57 2022: getlistsS: iter up to 211154694
+[SEGEMEHL] Wed Sep  7 11:38:07 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:38:08 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:38:08 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:38:08 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:38:08 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:38:08 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:38:09 2022: sortlistS: iterating 93500590 elems[SEGEMEHL] Wed Sep  7 11:38:10 2022: sortlistS: looping 211154693 elems[SEGEMEHL] Wed Sep  7 11:38:20 2022: sortlistS: iterating 211154694 elems[SEGEMEHL] Wed Sep  7 11:38:22 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:38:22 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:38:22 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:38:23 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:38:24 2022: tprime: iterating i=211154694 elements with lenB=93500590
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: alurusortint: classify int
+init bit array of 11687574
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: alurusortint: init bcktsA
+init bit array of 11687574
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:38:25 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:26 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:26 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:29 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:38:30 2022: countsortint: exiting
+init bit array of 5195750
+[SEGEMEHL] Wed Sep  7 11:38:30 2022: arrayB: allocating B with 41565999 elements
+[SEGEMEHL] Wed Sep  7 11:38:30 2022: arrayB: iterating to lenA=93500590
+[SEGEMEHL] Wed Sep  7 11:38:30 2022: arrayB: exiting
+init bit array of 11687574
+[SEGEMEHL] Wed Sep  7 11:38:31 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:38:31 2022: getlistsL: memsetting list of 93500587 elements
+[SEGEMEHL] Wed Sep  7 11:38:31 2022: getlistsL: iter from 93500589 down to 0
+[SEGEMEHL] Wed Sep  7 11:38:34 2022: scanning A (93500590 elems)
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: scanning accdist (152 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: scanning accdist (152 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:38:36 2022: sortlistL: iterating 41565999 elems[SEGEMEHL] Wed Sep  7 11:38:37 2022: sortlistL: looping 93500587 elems[SEGEMEHL] Wed Sep  7 11:38:42 2022: sortlistL: iterating 93500590 elems[SEGEMEHL] Wed Sep  7 11:38:44 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:38:44 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:38:44 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:38:44 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: tprime: iterating i=93500590 elements with lenB=41565999
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: alurusortint: classify int
+init bit array of 5195750
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: alurusortint: init bcktsA
+init bit array of 5195750
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:45 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: 18697839	22868160	41565999
+
+init bit array of 2337230
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: arrayB: allocating B with 18697839 elements
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: arrayB: iterating to lenA=41565999
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:38:47 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:38:48 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:38:48 2022: alurusortint: enter distCount
+init bit array of 5195750
+[SEGEMEHL] Wed Sep  7 11:38:48 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:38:48 2022: getlistsS: memsetting list of 41565998 elements
+[SEGEMEHL] Wed Sep  7 11:38:48 2022: getlistsS: iter up to 41565999
+[SEGEMEHL] Wed Sep  7 11:38:49 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:38:50 2022: sortlistS: iterating 18697839 elems[SEGEMEHL] Wed Sep  7 11:38:50 2022: sortlistS: looping 41565998 elems[SEGEMEHL] Wed Sep  7 11:38:53 2022: sortlistS: iterating 41565999 elems[SEGEMEHL] Wed Sep  7 11:38:53 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:38:53 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:38:53 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:38:53 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: tprime: iterating i=41565999 elements with lenB=18697839
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: alurusortint: classify int
+init bit array of 2337230
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: alurusortint: init bcktsA
+init bit array of 2337230
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:54 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: countsortint: exiting
+init bit array of 1044173
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: arrayB: allocating B with 8353382 elements
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: arrayB: iterating to lenA=18697839
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: arrayB: exiting
+init bit array of 2337230
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: getlistsL: memsetting list of 18697838 elements
+[SEGEMEHL] Wed Sep  7 11:38:55 2022: getlistsL: iter from 18697838 down to 0
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: scanning A (18697839 elems)
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: scanning accdist (103 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: scanning accdist (103 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:38:56 2022: sortlistL: iterating 8353382 elems[SEGEMEHL] Wed Sep  7 11:38:56 2022: sortlistL: looping 18697838 elems[SEGEMEHL] Wed Sep  7 11:38:57 2022: sortlistL: iterating 18697839 elems[SEGEMEHL] Wed Sep  7 11:38:58 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: tprime: iterating i=18697839 elements with lenB=8353382
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: classify int
+init bit array of 1044173
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: init bcktsA
+init bit array of 1044173
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: 3751517	4601865	8353382
+
+init bit array of 468940
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: arrayB: allocating B with 3751517 elements
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: arrayB: iterating to lenA=8353382
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter distCount
+init bit array of 1044173
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: getlistsS: memsetting list of 8353380 elements
+[SEGEMEHL] Wed Sep  7 11:38:58 2022: getlistsS: iter up to 8353382
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: sortlistS: iterating 3751517 elems[SEGEMEHL] Wed Sep  7 11:38:59 2022: sortlistS: looping 8353380 elems[SEGEMEHL] Wed Sep  7 11:38:59 2022: sortlistS: iterating 8353382 elems[SEGEMEHL] Wed Sep  7 11:38:59 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: tprime: iterating i=8353382 elements with lenB=3751517
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: classify int
+init bit array of 468940
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: init bcktsA
+init bit array of 468940
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: countsortint: exiting
+init bit array of 209410
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: arrayB: allocating B with 1675277 elements
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: arrayB: iterating to lenA=3751517
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: arrayB: exiting
+init bit array of 468940
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: getlistsL: memsetting list of 3751516 elements
+[SEGEMEHL] Wed Sep  7 11:38:59 2022: getlistsL: iter from 3751516 down to 0
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning A (3751517 elems)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (20 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (20 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 1675277 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: looping 3751516 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 3751517 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: iterating i=3751517 elements with lenB=1675277
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: classify int
+init bit array of 209410
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: init bcktsA
+init bit array of 209410
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: 751917	923360	1675277
+
+init bit array of 93990
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: allocating B with 751917 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: iterating to lenA=1675277
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter distCount
+init bit array of 209410
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: memsetting list of 1675275 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: iter up to 1675277
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: iterating 751917 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: looping 1675275 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: iterating 1675277 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: iterating i=1675277 elements with lenB=751917
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: classify int
+init bit array of 93990
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: init bcktsA
+init bit array of 93990
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: exiting
+init bit array of 42169
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: allocating B with 337352 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: iterating to lenA=751917
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: exiting
+init bit array of 93990
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: memsetting list of 751916 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: iter from 751916 down to 0
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning A (751917 elems)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (21 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (21 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 337352 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: looping 751916 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 751917 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: iterating i=751917 elements with lenB=337352
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: classify int
+init bit array of 42169
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: init bcktsA
+init bit array of 42169
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: 151800	185552	337352
+
+init bit array of 18975
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: allocating B with 151800 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: iterating to lenA=337352
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter distCount
+init bit array of 42169
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: memsetting list of 337349 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: iter up to 337352
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: iterating 151800 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: looping 337349 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistS: iterating 337352 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: iterating i=337352 elements with lenB=151800
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: classify int
+init bit array of 18975
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: init bcktsA
+init bit array of 18975
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: countsortint: exiting
+init bit array of 8545
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: allocating B with 68359 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: iterating to lenA=151800
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: arrayB: exiting
+init bit array of 18975
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: memsetting list of 151799 elements
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: iter from 151799 down to 0
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning A (151800 elems)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (11 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: scanning accdist (11 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 68359 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: looping 151799 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistL: iterating 151800 elems[SEGEMEHL] Wed Sep  7 11:39:00 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: alurusortint: valbitarraysortedL.
+init bit array of 18975
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: iteration over 337352 elems
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: scan B (size: 151800)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: exitinit bit array of 42169
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: iteration over 751917 elems
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: scan B (size: 337352)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: exitinit bit array of 93990
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: iteration over 1675277 elems
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: scan B (size: 751917)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: exitinit bit array of 209410
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: iteration over 3751517 elems
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: scan B (size: 1675277)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: exitinit bit array of 468940
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: iteration over 8353382 elems
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: scan B (size: 3751517)
+[SEGEMEHL] Wed Sep  7 11:39:00 2022: reconstruct: exitinit bit array of 1044173
+[SEGEMEHL] Wed Sep  7 11:39:01 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:39:01 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:01 2022: reconstruct: iteration over 18697839 elems
+[SEGEMEHL] Wed Sep  7 11:39:01 2022: reconstruct: scan B (size: 8353382)
+[SEGEMEHL] Wed Sep  7 11:39:01 2022: reconstruct: exitinit bit array of 2337230
+[SEGEMEHL] Wed Sep  7 11:39:02 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:39:02 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:02 2022: reconstruct: iteration over 41565999 elems
+[SEGEMEHL] Wed Sep  7 11:39:02 2022: reconstruct: scan B (size: 18697839)
+[SEGEMEHL] Wed Sep  7 11:39:02 2022: reconstruct: exitinit bit array of 5195750
+[SEGEMEHL] Wed Sep  7 11:39:04 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:39:04 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:04 2022: reconstruct: iteration over 93500590 elems
+[SEGEMEHL] Wed Sep  7 11:39:05 2022: reconstruct: scan B (size: 41565999)
+[SEGEMEHL] Wed Sep  7 11:39:05 2022: reconstruct: exitinit bit array of 11687574
+[SEGEMEHL] Wed Sep  7 11:39:10 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:39:10 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:10 2022: reconstruct: iteration over 211154694 elems
+[SEGEMEHL] Wed Sep  7 11:39:10 2022: reconstruct: scan B (size: 93500590)
+[SEGEMEHL] Wed Sep  7 11:39:11 2022: reconstruct: exitinit bit array of 26394337
+[SEGEMEHL] Wed Sep  7 11:39:19 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:39:19 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:19 2022: reconstruct: iteration over 509470944 elems
+[SEGEMEHL] Wed Sep  7 11:39:20 2022: reconstruct: scan B (size: 211154694)
+[SEGEMEHL] Wed Sep  7 11:39:22 2022: reconstruct: exitinit bit array of 63683868
+[SEGEMEHL] Wed Sep  7 11:39:41 2022: reconstructcharS
+[SEGEMEHL] Wed Sep  7 11:39:41 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:39:41 2022: reconstruct: iteration over 1203506770 elems
+[SEGEMEHL] Wed Sep  7 11:39:44 2022: reconstruct: scan B (size: 509470944)
+[SEGEMEHL] Wed Sep  7 11:39:49 2022: reconstruct: exit[SEGEMEHL] Wed Sep  7 11:39:49 2022: enter aluruSuffixArrayS start
+init bit array of 150438347
+[SEGEMEHL] Wed Sep  7 11:40:45 2022: constructing inv_suftab (1203506770).
+[SEGEMEHL] Wed Sep  7 11:41:09 2022: inv_suftab constructed.
+[SEGEMEHL] Wed Sep  7 11:41:09 2022: constructing lcp.
+[s[K[SEGEMEHL] Wed Sep  7 11:42:06 2022: deleting inv_suftab
+[SEGEMEHL] Wed Sep  7 11:42:06 2022: constructing child tab.
+[SEGEMEHL] Wed Sep  7 11:43:22 2022: constructing suffix links.
+[SEGEMEHL] Wed Sep  7 11:43:22 2022: constructing id.
+[SEGEMEHL] Wed Sep  7 11:45:46 2022: constructing suflinks - bottom up.
+[SEGEMEHL] Wed Sep  7 11:47:38 2022: constructing suflinks - top down.
+suflink construction. pushes: 968380421, maxstack: 1029
+[SEGEMEHL] Wed Sep  7 11:52:43 2022: building  the suffix array has taken 993.000000 seconds.
+[SEGEMEHL] Wed Sep  7 11:52:43 2022: total length of suffix array was 1203505739.
+[SEGEMEHL] Wed Sep  7 11:52:43 2022: writing suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx' to disk.
+[SEGEMEHL] Wed Sep  7 11:52:51 2022: reading database sequences.
+[SEGEMEHL] Wed Sep  7 11:53:07 2022: 1031 database sequences found.
+[SEGEMEHL] Wed Sep  7 11:53:07 2022: total length of db sequences: 1203505739
+[SEGEMEHL] Wed Sep  7 11:53:15 2022: alphabet of size (6): ACNT~
+[SEGEMEHL] Wed Sep  7 11:53:15 2022: size of db sequence: 1203506770
+[SEGEMEHL] Wed Sep  7 11:53:15 2022: constructing suftab.
+[SEGEMEHL] Wed Sep  7 11:53:15 2022: alurusort: classify
+init bit array of 150438347
+[SEGEMEHL] Wed Sep  7 11:53:22 2022: alurusort: getting bit
+[SEGEMEHL] Wed Sep  7 11:53:22 2022: bit alurusort: alloc B of size 502094277
+[SEGEMEHL] Wed Sep  7 11:53:22 2022: alurusort: initbitarray of size 502094277
+init bit array of 62761785
+[SEGEMEHL] Wed Sep  7 11:53:22 2022: alurusort: Qmaxdist in cl of size 1203506770
+[SEGEMEHL] Wed Sep  7 11:53:25 2022: enter alurusort: substringsort
+[SEGEMEHL] Wed Sep  7 11:53:25 2022: setting bit array to zero
+[SEGEMEHL] Wed Sep  7 11:53:25 2022: allocating space for buckets and buffers
+[SEGEMEHL] Wed Sep  7 11:53:25 2022: memsetting
+[SEGEMEHL] Wed Sep  7 11:53:40 2022: substring sort ... ok
+[SEGEMEHL] Wed Sep  7 11:53:40 2022: checking valbitarray
+[SEGEMEHL] Wed Sep  7 11:53:40 2022: enter Tprime calculation[SEGEMEHL] Wed Sep  7 11:53:40 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:53:43 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:53:48 2022: tprime: iterating i=1203506770 elements with lenB=502094277
+[SEGEMEHL] Wed Sep  7 11:53:51 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:53:51 2022: enter alursortint 
+[SEGEMEHL] Wed Sep  7 11:53:51 2022: alurusortint: classify int
+init bit array of 62761785
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: alurusortint: init bcktsA
+init bit array of 62761785
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:53:54 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:53:55 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:53:55 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: 206485077	295609200	502094277
+
+init bit array of 25810635
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: arrayB: allocating B with 206485077 elements
+[SEGEMEHL] Wed Sep  7 11:53:57 2022: arrayB: iterating to lenA=502094277
+[SEGEMEHL] Wed Sep  7 11:53:59 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:53:59 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:53:59 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:54:01 2022: alurusortint: enter distCount
+init bit array of 62761785
+[SEGEMEHL] Wed Sep  7 11:54:01 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:54:01 2022: getlistsS: memsetting list of 502094276 elements
+[SEGEMEHL] Wed Sep  7 11:54:01 2022: getlistsS: iter up to 502094277
+[SEGEMEHL] Wed Sep  7 11:54:14 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:54:16 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:54:16 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:54:16 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:54:16 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:54:16 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:54:17 2022: sortlistS: iterating 206485077 elems[SEGEMEHL] Wed Sep  7 11:54:20 2022: sortlistS: looping 502094276 elems[SEGEMEHL] Wed Sep  7 11:54:42 2022: sortlistS: iterating 502094277 elems[SEGEMEHL] Wed Sep  7 11:54:44 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:54:44 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:54:44 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:54:45 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:54:49 2022: tprime: iterating i=502094277 elements with lenB=206485077
+[SEGEMEHL] Wed Sep  7 11:54:50 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:54:50 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:54:50 2022: alurusortint: classify int
+init bit array of 25810635
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: alurusortint: init bcktsA
+init bit array of 25810635
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:54:51 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:54:52 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:54:52 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:54:53 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:54:53 2022: countsortint: exiting
+init bit array of 11397229
+[SEGEMEHL] Wed Sep  7 11:54:53 2022: arrayB: allocating B with 91177825 elements
+[SEGEMEHL] Wed Sep  7 11:54:53 2022: arrayB: iterating to lenA=206485077
+[SEGEMEHL] Wed Sep  7 11:54:55 2022: arrayB: exiting
+init bit array of 25810635
+[SEGEMEHL] Wed Sep  7 11:54:56 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:54:56 2022: getlistsL: memsetting list of 206485074 elements
+[SEGEMEHL] Wed Sep  7 11:54:56 2022: getlistsL: iter from 206485076 down to 0
+[SEGEMEHL] Wed Sep  7 11:55:06 2022: scanning A (206485077 elems)
+[SEGEMEHL] Wed Sep  7 11:55:07 2022: scanning accdist (533 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:55:07 2022: scanning accdist (533 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:55:07 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:55:07 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:55:07 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:55:08 2022: sortlistL: iterating 91177825 elems[SEGEMEHL] Wed Sep  7 11:55:09 2022: sortlistL: looping 206485074 elems[SEGEMEHL] Wed Sep  7 11:55:23 2022: sortlistL: iterating 206485077 elems[SEGEMEHL] Wed Sep  7 11:55:26 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:55:26 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:55:26 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:55:26 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:55:27 2022: tprime: iterating i=206485077 elements with lenB=91177825
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: alurusortint: classify int
+init bit array of 11397229
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: alurusortint: init bcktsA
+init bit array of 11397229
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:55:28 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:29 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:29 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: 40533868	50643957	91177825
+
+init bit array of 5066734
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: arrayB: allocating B with 40533868 elements
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: arrayB: iterating to lenA=91177825
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:55:33 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:55:34 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:55:34 2022: alurusortint: enter distCount
+init bit array of 11397228
+[SEGEMEHL] Wed Sep  7 11:55:34 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:55:34 2022: getlistsS: memsetting list of 91177824 elements
+[SEGEMEHL] Wed Sep  7 11:55:34 2022: getlistsS: iter up to 91177825
+[SEGEMEHL] Wed Sep  7 11:55:37 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:55:38 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:55:38 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:55:38 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:55:38 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:55:38 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:55:39 2022: sortlistS: iterating 40533868 elems[SEGEMEHL] Wed Sep  7 11:55:40 2022: sortlistS: looping 91177824 elems[SEGEMEHL] Wed Sep  7 11:55:45 2022: sortlistS: iterating 91177825 elems[SEGEMEHL] Wed Sep  7 11:55:46 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:55:46 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:55:46 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:55:46 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: tprime: iterating i=91177825 elements with lenB=40533868
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: alurusortint: classify int
+init bit array of 5066734
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: alurusortint: init bcktsA
+init bit array of 5066734
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:55:47 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:48 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:48 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:49 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:55:49 2022: countsortint: exiting
+init bit array of 2274111
+[SEGEMEHL] Wed Sep  7 11:55:49 2022: arrayB: allocating B with 18192883 elements
+[SEGEMEHL] Wed Sep  7 11:55:49 2022: arrayB: iterating to lenA=40533868
+[SEGEMEHL] Wed Sep  7 11:55:50 2022: arrayB: exiting
+init bit array of 5066734
+[SEGEMEHL] Wed Sep  7 11:55:50 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:55:50 2022: getlistsL: memsetting list of 40533866 elements
+[SEGEMEHL] Wed Sep  7 11:55:50 2022: getlistsL: iter from 40533867 down to 0
+[SEGEMEHL] Wed Sep  7 11:55:51 2022: scanning A (40533868 elems)
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: scanning accdist (106 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: scanning accdist (106 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:55:52 2022: sortlistL: iterating 18192883 elems[SEGEMEHL] Wed Sep  7 11:55:53 2022: sortlistL: looping 40533866 elems[SEGEMEHL] Wed Sep  7 11:55:55 2022: sortlistL: iterating 40533868 elems[SEGEMEHL] Wed Sep  7 11:55:56 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: tprime: iterating i=40533868 elements with lenB=18192883
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: classify int
+init bit array of 2274111
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: init bcktsA
+init bit array of 2274111
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:55:56 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: 8146220	10046663	18192883
+
+init bit array of 1018278
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: arrayB: allocating B with 8146220 elements
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: arrayB: iterating to lenA=18192883
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:55:57 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: alurusortint: enter distCount
+init bit array of 2274111
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: getlistsS: memsetting list of 18192882 elements
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: getlistsS: iter up to 18192883
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:55:58 2022: sortlistS: iterating 8146220 elems[SEGEMEHL] Wed Sep  7 11:55:59 2022: sortlistS: looping 18192882 elems[SEGEMEHL] Wed Sep  7 11:56:00 2022: sortlistS: iterating 18192883 elems[SEGEMEHL] Wed Sep  7 11:56:00 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: tprime: iterating i=18192883 elements with lenB=8146220
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: classify int
+init bit array of 1018278
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: init bcktsA
+init bit array of 1018278
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: countsortint: exiting
+init bit array of 456371
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: arrayB: allocating B with 3650966 elements
+[SEGEMEHL] Wed Sep  7 11:56:00 2022: arrayB: iterating to lenA=8146220
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: arrayB: exiting
+init bit array of 1018278
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: getlistsL: memsetting list of 8146218 elements
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: getlistsL: iter from 8146219 down to 0
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: scanning A (8146220 elems)
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: scanning accdist (25 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: scanning accdist (25 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: sortlistL: iterating 3650966 elems[SEGEMEHL] Wed Sep  7 11:56:01 2022: sortlistL: looping 8146218 elems[SEGEMEHL] Wed Sep  7 11:56:01 2022: sortlistL: iterating 8146220 elems[SEGEMEHL] Wed Sep  7 11:56:01 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:56:01 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: iterating i=8146220 elements with lenB=3650966
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: classify int
+init bit array of 456371
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: init bcktsA
+init bit array of 456371
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: 1634304	2016662	3650966
+
+init bit array of 204288
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: allocating B with 1634304 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: iterating to lenA=3650966
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter distCount
+init bit array of 456371
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: memsetting list of 3650964 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: iter up to 3650966
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: iterating 1634304 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: looping 3650964 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: iterating 3650966 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: iterating i=3650966 elements with lenB=1634304
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: classify int
+init bit array of 204288
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: init bcktsA
+init bit array of 204288
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: exiting
+init bit array of 91473
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: allocating B with 731779 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: iterating to lenA=1634304
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: exiting
+init bit array of 204288
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: memsetting list of 1634302 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: iter from 1634303 down to 0
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning A (1634304 elems)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning accdist (23 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning accdist (23 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: iterating 731779 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: looping 1634302 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: iterating 1634304 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: iterating i=1634304 elements with lenB=731779
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: classify int
+init bit array of 91473
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: init bcktsA
+init bit array of 91473
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: Sorting type S suffixes. Init bcktsB.
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: 328564	403215	731779
+
+init bit array of 41071
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: allocating B with 328564 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: iterating to lenA=731779
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter Qmaxdist
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter Qdist
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter distCount
+init bit array of 91473
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter get listsS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: memsetting list of 731777 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: iter up to 731779
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: scan A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: set accidst
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsS: exiting
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: freeing stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter sortlistsS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: iterating 328564 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: looping 731777 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistS: iterating 731779 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistsS: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter tprime
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: init arrays
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: scan B
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: iterating i=731779 elements with lenB=328564
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: tprime: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter alurusortint
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: classify int
+init bit array of 41071
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: getting bit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: init bcktsA
+init bit array of 41071
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: countingsort
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countingsortint: init buffers and A
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: setting buffer to zero
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (1 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (2 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (3 of 3)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: scanning buffer (to set borders)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: countsortint: exiting
+init bit array of 18504
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: allocating B with 148028 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: iterating to lenA=328564
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: arrayB: exiting
+init bit array of 41071
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: enter get listsL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: memsetting list of 328562 elements
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: iter from 328563 down to 0
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning A (328564 elems)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning accdist (11 elems) (1)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: scanning accdist (11 elems) (2)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: getlistsL: exit
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: sort listsL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: allocating stuff
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: iterating 148028 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: looping 328562 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistL: iterating 328564 elems[SEGEMEHL] Wed Sep  7 11:56:02 2022: sortlistsL: exiting happily!
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: alurusortint: valbitarraysortedL.
+init bit array of 41071
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: iteration over 731779 elems
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: scan B (size: 328564)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: exitinit bit array of 91473
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: iteration over 1634304 elems
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: scan B (size: 731779)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: exitinit bit array of 204288
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: iteration over 3650966 elems
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: scan B (size: 1634304)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: exitinit bit array of 456371
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: iteration over 8146220 elems
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: scan B (size: 3650966)
+[SEGEMEHL] Wed Sep  7 11:56:02 2022: reconstruct: exitinit bit array of 1018278
+[SEGEMEHL] Wed Sep  7 11:56:03 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:56:03 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:03 2022: reconstruct: iteration over 18192883 elems
+[SEGEMEHL] Wed Sep  7 11:56:03 2022: reconstruct: scan B (size: 8146220)
+[SEGEMEHL] Wed Sep  7 11:56:03 2022: reconstruct: exitinit bit array of 2274111
+[SEGEMEHL] Wed Sep  7 11:56:04 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:56:04 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:04 2022: reconstruct: iteration over 40533868 elems
+[SEGEMEHL] Wed Sep  7 11:56:04 2022: reconstruct: scan B (size: 18192883)
+[SEGEMEHL] Wed Sep  7 11:56:04 2022: reconstruct: exitinit bit array of 5066734
+[SEGEMEHL] Wed Sep  7 11:56:06 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:56:06 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:06 2022: reconstruct: iteration over 91177825 elems
+[SEGEMEHL] Wed Sep  7 11:56:07 2022: reconstruct: scan B (size: 40533868)
+[SEGEMEHL] Wed Sep  7 11:56:07 2022: reconstruct: exitinit bit array of 11397229
+[SEGEMEHL] Wed Sep  7 11:56:13 2022: reconstructintL
+[SEGEMEHL] Wed Sep  7 11:56:13 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:13 2022: reconstruct: iteration over 206485077 elems
+[SEGEMEHL] Wed Sep  7 11:56:13 2022: reconstruct: scan B (size: 91177825)
+[SEGEMEHL] Wed Sep  7 11:56:14 2022: reconstruct: exitinit bit array of 25810635
+[SEGEMEHL] Wed Sep  7 11:56:25 2022: reconstructintS
+[SEGEMEHL] Wed Sep  7 11:56:25 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:25 2022: reconstruct: iteration over 502094277 elems
+[SEGEMEHL] Wed Sep  7 11:56:26 2022: reconstruct: scan B (size: 206485077)
+[SEGEMEHL] Wed Sep  7 11:56:28 2022: reconstruct: exitinit bit array of 62761785
+[SEGEMEHL] Wed Sep  7 11:56:47 2022: enter reconstruction
+[SEGEMEHL] Wed Sep  7 11:56:47 2022: reconstruct: init
+[SEGEMEHL] Wed Sep  7 11:56:47 2022: reconstruct: iteration over 1203506770 elems
+[SEGEMEHL] Wed Sep  7 11:56:50 2022: reconstruct: scan B (size: 502094277)
+[SEGEMEHL] Wed Sep  7 11:56:55 2022: reconstruct: exit[SEGEMEHL] Wed Sep  7 11:56:55 2022: enter aluruSuffixArrayL start
+[SEGEMEHL] Wed Sep  7 11:56:55 2022: aluruSuffixArrayL: initalizning arrays
+init bit array of 150438347
+[SEGEMEHL] Wed Sep  7 11:56:55 2022: aluruSuffixArrayL: memsetting count
+[SEGEMEHL] Wed Sep  7 11:56:55 2022: aluruSuffixArrayL: setting b
+[SEGEMEHL] Wed Sep  7 11:56:56 2022: aluruSuffixArrayL: iteration
+[SEGEMEHL] Wed Sep  7 11:57:49 2022: aluruSuffixArrayL: exit ok
+[SEGEMEHL] Wed Sep  7 11:57:49 2022: constructing inv_suftab (1203506770).
+[SEGEMEHL] Wed Sep  7 11:58:14 2022: inv_suftab constructed.
+[SEGEMEHL] Wed Sep  7 11:58:14 2022: constructing lcp.
+[s[K[SEGEMEHL] Wed Sep  7 11:59:11 2022: deleting inv_suftab
+[SEGEMEHL] Wed Sep  7 11:59:11 2022: constructing child tab.
+[SEGEMEHL] Wed Sep  7 12:00:28 2022: constructing suffix links.
+[SEGEMEHL] Wed Sep  7 12:00:28 2022: constructing id.
+[SEGEMEHL] Wed Sep  7 12:02:52 2022: constructing suflinks - bottom up.
+[SEGEMEHL] Wed Sep  7 12:04:47 2022: constructing suflinks - top down.
+suflink construction. pushes: 968453587, maxstack: 1030
+[SEGEMEHL] Wed Sep  7 12:09:53 2022: building  the suffix array has taken 1002.000000 seconds.
+[SEGEMEHL] Wed Sep  7 12:09:53 2022: total length of suffix array was 1203505739.
+[SEGEMEHL] Wed Sep  7 12:09:53 2022: writing suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx' to disk.
+[SEGEMEHL] Wed Sep  7 12:10:00 2022: 
+Goodbye.
+ "Mahlzeit!" (Ditsche, Ingo, Schildkroede)
+[SEGEMEHL] Wed Sep  7 12:10:00 2022: Warning: file with unmapped reads may contain reads that are mapped             in one but not in both matching runs.
+[SEGEMEHL] Wed Sep  7 12:10:00 2022: reading queries in '/scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_1_val_1.fq.gz'.
+[SEGEMEHL] Wed Sep  7 12:11:15 2022: 31986987 query sequences found.
+[SEGEMEHL] Wed Sep  7 12:11:15 2022: reading mates in '/scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L2_20-N4_2_val_2.fq.gz'.
+[SEGEMEHL] Wed Sep  7 12:12:31 2022: 31986987 mate sequences found.
+[SEGEMEHL] Wed Sep  7 12:12:31 2022: creating bisulfite bins.
+[SEGEMEHL] Wed Sep  7 12:12:31 2022: reading database sequences.
+[SEGEMEHL] Wed Sep  7 12:12:47 2022: 1031 database sequences found.
+[SEGEMEHL] Wed Sep  7 12:12:47 2022: total length of db sequences: 1203505739
+[SEGEMEHL] Wed Sep  7 12:12:51 2022: reading suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx' from disk.
+[SEGEMEHL] Wed Sep  7 12:12:54 2022: reading lcpc/vtab.
+[SEGEMEHL] Wed Sep  7 12:12:55 2022: reading childtab.
+[SEGEMEHL] Wed Sep  7 12:12:56 2022: reading suflinks.
+[SEGEMEHL] Wed Sep  7 12:12:58 2022: reading lsint id.
+[SEGEMEHL] Wed Sep  7 12:12:59 2022: read suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx' with 1203506770 elements.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: md5 keys of index and db match.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: reading the suffix array has taken 10.000000 seconds.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: starting 16 threads.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999353 reads in thread 0.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999353 reads in thread 1.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999279 reads in thread 2.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 3.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 4.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 5.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 6.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 7.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 8.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 9.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 10.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 11.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 12.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 13.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 14.
+[SEGEMEHL] Wed Sep  7 12:13:01 2022: 1999154 reads in thread 15.
+[SEGEMEHL] Wed Sep  7 13:28:37 2022: threaded matching w/ suffixarray has taken 4536.000000 seconds.
+[SEGEMEHL] Wed Sep  7 13:28:37 2022: reading database sequences.
+[SEGEMEHL] Wed Sep  7 13:28:54 2022: 1031 database sequences found.
+[SEGEMEHL] Wed Sep  7 13:28:54 2022: total length of db sequences: 1203505739
+[SEGEMEHL] Wed Sep  7 13:28:58 2022: reading suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx' from disk.
+[SEGEMEHL] Wed Sep  7 13:29:06 2022: reading lcpc/vtab.
+[SEGEMEHL] Wed Sep  7 13:29:06 2022: reading childtab.
+[SEGEMEHL] Wed Sep  7 13:29:10 2022: reading suflinks.
+[SEGEMEHL] Wed Sep  7 13:29:12 2022: reading lsint id.
+[SEGEMEHL] Wed Sep  7 13:29:12 2022: read suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx' with 1203506770 elements.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: md5 keys of index and db match.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: reading the suffix array has taken 16.000000 seconds.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: starting 16 threads.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999353 reads in thread 0.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999353 reads in thread 1.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999279 reads in thread 2.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 3.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 4.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 5.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 6.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 7.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 8.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 9.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 10.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 11.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 12.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 13.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 14.
+[SEGEMEHL] Wed Sep  7 13:29:14 2022: 1999154 reads in thread 15.
+[SEGEMEHL] Wed Sep  7 14:47:57 2022: threaded matching w/ suffixarray has taken 4723.000000 seconds.
+[SEGEMEHL] Wed Sep  7 14:47:58 2022: Merging bisulfite bin 0.
+[SEGEMEHL] Wed Sep  7 14:51:55 2022: Merging bisulfite bin 1.
+[SEGEMEHL] Wed Sep  7 14:55:52 2022: Merging bisulfite bin 2.
+[SEGEMEHL] Wed Sep  7 14:59:52 2022: Merging bisulfite bin 3.
+[SEGEMEHL] Wed Sep  7 15:03:57 2022: Merging bisulfite bin 4.
+[SEGEMEHL] Wed Sep  7 15:08:00 2022: Merging bisulfite bin 5.
+[SEGEMEHL] Wed Sep  7 15:12:03 2022: Merging bisulfite bin 6.
+[SEGEMEHL] Wed Sep  7 15:16:08 2022: Merging bisulfite bin 7.
+[SEGEMEHL] Wed Sep  7 15:20:16 2022: Merging bisulfite bin 8.
+[SEGEMEHL] Wed Sep  7 15:24:21 2022: Merging bisulfite bin 9.
+[SEGEMEHL] Wed Sep  7 15:28:28 2022: Merging bisulfite bin 10.
+[SEGEMEHL] Wed Sep  7 15:32:37 2022: Merging bisulfite bin 11.
+[SEGEMEHL] Wed Sep  7 15:36:50 2022: Merging bisulfite bin 12.
+[SEGEMEHL] Wed Sep  7 15:40:56 2022: Merging bisulfite bin 13.
+[SEGEMEHL] Wed Sep  7 15:45:01 2022: Merging bisulfite bin 14.
+[SEGEMEHL] Wed Sep  7 15:49:09 2022: Merging bisulfite bin 15.
+[SEGEMEHL] Wed Sep  7 16:14:56 2022: 
+Goodbye.
+ "Hab' ich gerade inner Bild gelesen!" (Bienchen)
+[bam_sort_core] merging from 9 files...

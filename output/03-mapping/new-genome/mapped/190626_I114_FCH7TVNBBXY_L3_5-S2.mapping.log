@@ -1,0 +1,84 @@
+[INFO]	Fri Sep 9, 20:50:24, 2022	Start mapping
+[SYSTEM CALL] 	Fri Sep 9, 20:50:24, 2022	 segemehl.x -s -d /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.gz -i /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx -j /yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx -F 2 -t 16 -q /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_5-S2_1_val_1.fq.gz -u /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.unmapped -o /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.sam -p /scratch/02-trimgalore/190626_I114_FCH7TVNBBXY_L3_5-S2_2_val_2.fq.gz >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.mapping.log 2>&1
+
+[INFO]	Fri Sep 9, 23:56:24, 2022	Exclude reads from sam file (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.sam) and convert nonexcluded and excluded output to bam files (/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.bam and /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.excluded.bam)
+[SYSTEM CALL] 	Sat Sep 10, 0:39:45, 2022	 remove /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.sam
+[INFO]	Sat Sep 10, 0:39:45, 2022	Gzip unmapped out file
+[SYSTEM CALL] 	Sat Sep 10, 0:39:45, 2022	 gzip -f /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.unmapped >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.mapping.log 2>&1
+
+[INFO]	Sat Sep 10, 0:47:52, 2022	Index regular bam file
+[SYSTEM CALL] 	Sat Sep 10, 0:47:52, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.mapping.log 2>&1
+
+[INFO]	Sat Sep 10, 0:49:4, 2022	Index excluded bam file
+[SYSTEM CALL] 	Sat Sep 10, 0:49:4, 2022	 samtools index /scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.excluded.bam >>/scratch/03-mapping/mapped/190626_I114_FCH7TVNBBXY_L3_5-S2.mapping.log 2>&1
+
+i Sep  9 20:54:05 2022: read suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.ctidx' with 1203506770 elements.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: md5 keys of index and db match.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: reading the suffix array has taken 47.000000 seconds.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: starting 16 threads.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 0.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 1.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 2.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 3.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 4.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 5.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 6.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 7.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 8.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 9.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616923 reads in thread 10.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616861 reads in thread 11.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616762 reads in thread 12.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616762 reads in thread 13.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616762 reads in thread 14.
+[SEGEMEHL] Fri Sep  9 20:54:07 2022: 1616762 reads in thread 15.
+[SEGEMEHL] Fri Sep  9 21:55:34 2022: threaded matching w/ suffixarray has taken 3687.000000 seconds.
+[SEGEMEHL] Fri Sep  9 21:55:34 2022: reading database sequences.
+[SEGEMEHL] Fri Sep  9 21:55:53 2022: 1031 database sequences found.
+[SEGEMEHL] Fri Sep  9 21:55:53 2022: total length of db sequences: 1203505739
+[SEGEMEHL] Fri Sep  9 21:55:57 2022: reading suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx' from disk.
+[SEGEMEHL] Fri Sep  9 21:56:03 2022: reading lcpc/vtab.
+[SEGEMEHL] Fri Sep  9 21:56:04 2022: reading childtab.
+[SEGEMEHL] Fri Sep  9 21:56:08 2022: reading suflinks.
+[SEGEMEHL] Fri Sep  9 21:56:13 2022: reading lsint id.
+[SEGEMEHL] Fri Sep  9 21:56:14 2022: read suffix array '/yaaminiv/killifish-hypoxia-RRBS/data/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.gaidx' with 1203506770 elements.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: md5 keys of index and db match.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: reading the suffix array has taken 19.000000 seconds.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: starting 16 threads.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 0.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 1.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 2.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 3.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 4.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 5.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 6.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 7.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 8.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 9.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616923 reads in thread 10.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616861 reads in thread 11.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616762 reads in thread 12.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616762 reads in thread 13.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616762 reads in thread 14.
+[SEGEMEHL] Fri Sep  9 21:56:16 2022: 1616762 reads in thread 15.
+[SEGEMEHL] Fri Sep  9 22:59:42 2022: threaded matching w/ suffixarray has taken 3806.000000 seconds.
+[SEGEMEHL] Fri Sep  9 22:59:42 2022: Merging bisulfite bin 0.
+[SEGEMEHL] Fri Sep  9 23:02:15 2022: Merging bisulfite bin 1.
+[SEGEMEHL] Fri Sep  9 23:04:49 2022: Merging bisulfite bin 2.
+[SEGEMEHL] Fri Sep  9 23:07:23 2022: Merging bisulfite bin 3.
+[SEGEMEHL] Fri Sep  9 23:09:58 2022: Merging bisulfite bin 4.
+[SEGEMEHL] Fri Sep  9 23:12:35 2022: Merging bisulfite bin 5.
+[SEGEMEHL] Fri Sep  9 23:15:12 2022: Merging bisulfite bin 6.
+[SEGEMEHL] Fri Sep  9 23:17:51 2022: Merging bisulfite bin 7.
+[SEGEMEHL] Fri Sep  9 23:20:32 2022: Merging bisulfite bin 8.
+[SEGEMEHL] Fri Sep  9 23:23:12 2022: Merging bisulfite bin 9.
+[SEGEMEHL] Fri Sep  9 23:25:51 2022: Merging bisulfite bin 10.
+[SEGEMEHL] Fri Sep  9 23:28:33 2022: Merging bisulfite bin 11.
+[SEGEMEHL] Fri Sep  9 23:31:09 2022: Merging bisulfite bin 12.
+[SEGEMEHL] Fri Sep  9 23:33:53 2022: Merging bisulfite bin 13.
+[SEGEMEHL] Fri Sep  9 23:36:37 2022: Merging bisulfite bin 14.
+[SEGEMEHL] Fri Sep  9 23:39:20 2022: Merging bisulfite bin 15.
+[SEGEMEHL] Fri Sep  9 23:56:24 2022: 
+Goodbye.
+ "Tschüss, Herr Kayser!" (Shorty)
+[bam_sort_core] merging from 6 files...
