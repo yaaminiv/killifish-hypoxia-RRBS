@@ -189,4 +189,4 @@ BAT_summarize \
 #Move files to a new directory
 
 mkdir ${SUMMARIZE}/20_OC_S
-mv /scratch/05-analysis/summarize/S_* ${SUMMARIZE}/20_OC_S/.
+mv ${SUMMARIZE}/S_* ${SUMMARIZE}/20_OC_S/.
