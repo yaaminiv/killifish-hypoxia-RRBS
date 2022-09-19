@@ -15,7 +15,7 @@ echo "Prepare for analysis"
 echo "Create chromosome length file"
 
 #Navigate to genome directory
-#cd /vortexfs1/home/naluru/Killifish
+#cd /vortexfs1/home/yaamini.venkataraman/killifish-hypoxia-RRBS/data
 
 #Unzip genome
 #Extract chromosome name and length information
@@ -23,10 +23,10 @@ echo "Create chromosome length file"
 #Print two columns
 #Remove empty line at the header
 #Create file with chromosome lengths
-#gzip -d Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa.gz
+#gzip -d GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.gz
 #awk '$0 ~ ">" {print c; c=0;printf substr($0,2,14) "\t"; } $0 !~ ">" {c+=length($0);} END { print c; }' \
-#Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.dna.toplevel.fa \
-#| sed 's/dna//g' \
+#GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna \
+#| sed 's/Fu//g' \
 #| awk '{print $1"\t"$2}' \
 #| tail -n +2 \
 #> mummichog.chrom.length
@@ -39,7 +39,7 @@ echo "Revise bedGraphs"
 #The bedGraphs are filtered, but they have extraneous columns (from genome annotation) and need to be sorted for downstream applications
 
 #Navigate to bedGraph directory
-#cd /vortexfs1/home/yaamini.venkataraman/killifish-hypoxia-RRBS/output/04-calling/filtered
+#cd /vortexfs1/home/yaamini.venkataraman/killifish-hypoxia-RRBS/output/04-calling/new-genome/filtered
 
 #Sort bedGraphs
 #for f in *bedgraph
