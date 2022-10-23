@@ -378,7 +378,7 @@ circos.yaxis(at = c(0, 0.5, 1),
 ```
 
 ```{r}
-write.table(NavgMethNormCircos, file = "NavgMethNormCircos.tab", quote = FALSE, sep = "\t", col.names = TRUE)
+write.table(NavgMethNormCircos, file = "NavgMethNormCircos.tab", quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
 ```
 
 
