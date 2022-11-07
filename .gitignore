@@ -13,3 +13,5 @@ genome-features/Fundulus_heteroclitus-3.0.2.105-intergenic.bed
 .Rhistory
 output/05-analysis/methylation-landscape/union_10x.bedgraph
 output/05-analysis/methylation-landscape/all-samples-averages-union.bedgraph
+data/17.05.q30.vcf.gz
+data/17.05.q30.vcf.gz.tbi
