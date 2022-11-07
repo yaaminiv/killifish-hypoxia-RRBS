@@ -1,0 +1,95 @@
+---
+title: "RNA-Seq Analysis"
+author: "Yaamini Venkataraman"
+date: "2022-11-07"
+output: html_document
+---
+
+In this R Markdown script, I will visualize DEG results previously obtained from `edgeR`, then conduct a pathway analysis.
+
+# Set up R Markdown document
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/09-RNA-Seq/") #Set root directory
+```
+
+#Install packages
+
+```{r}
+# if ("tidyverse" %in% rownames(installed.packages()) == 'FALSE') install.packages('tidyverse') 
+# if ("RColorBrewer" %in% rownames(installed.packages()) == 'FALSE') install.packages('RColorBrewer') 
+# if ("cowplot" %in% rownames(installed.packages()) == 'FALSE') install.packages('cowplot') 
+# if ("pheatmap" %in% rownames(installed.packages()) == 'FALSE') install.packages('pheatmap') 
+```
+
+```{r}
+require(tidyverse)
+require(RColorBrewer)
+require(cowplot)
+require(pheatmap)
+```
+
+```{r}
+sessionInfo()
+```
+
+# Create color scheme
+
+```{r}
+plotColors <- c(brewer.pal(5, "GnBu"), brewer.pal(5, "BuGn"))
+plotColors <- plotColors[c(4,5,9,10)]
+```
+
+# Import data
+
+```{r}
+NBHhypoxiaDEG <- read.csv("NBH_hypoxia_DEG.csv", header = TRUE) #Import DEG
+nrow(NBHhypoxiaDEG) #132 DEG
+head(NBHhypoxiaDEG)
+```
+
+```{r}
+SChypoxiaDEG <- read.csv("SC_hypoxia_DEG.csv", header = TRUE) #Import DEG
+nrow(SChypoxiaDEG) #417 DEG
+head(SChypoxiaDEG)
+```
+
+# Visualize DEG
+
+# Common DEG
+
+```{r}
+commonDEG <- inner_join(NBHhypoxiaDEG, SChypoxiaDEG, by = "ID") %>%
+  select(., ID, logFC.x, logFC.y) %>%
+  rename(., logFC.NBH = logFC.x, logFC.SC = logFC.y) %>%
+  column_to_rownames(., var = "ID") #Inner join to get common DEG, keep only FC columns, and rename columns
+nrow(commonDEG) #30 common DEG
+head(commonDEG) #Confirm changes
+```
+
+```{r}
+write.csv(commonDEG, "common-DEG.csv", row.names = TRUE, quote = FALSE) #Save dataframe
+```
+
+
+```{r}
+#pdf("commonDEG-heatmap.pdf", width = 11, height = 11)
+
+pheatmap(mat = commonDEG, color = rev(brewer.pal(n = 11, name = "RdBu")),
+         cluster_rows = TRUE, show_rownames = TRUE, 
+         cluster_cols = FALSE, labels_col = c("Tolerant", "Sensitive"), angle_col = 0) #Create heatmap for common DEG to determine if they are all differentially expressed in the same direction
+
+#dev.off()
+```
+
+Genes with the largest differences in FC:
+
+- Funhe2EKm021334: NADH dehydrogenase subunit
+- Funhe2EKm006719: RING finger protein
+- Funhe2EKm002577: Class E basic helix loop helix protein 40
+- Funhe2EKm039163: neuronal cell death-inducible putative kinase
+- Funhe2EKm027081: uncharacterized protein
+
+
+
