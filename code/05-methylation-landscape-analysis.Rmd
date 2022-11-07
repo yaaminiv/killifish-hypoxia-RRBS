@@ -88,6 +88,16 @@ nrow(avgMethTreat) #Total number positions
 head(avgMethTreat)
 ```
 
+```{r}
+avgMethTreatLong <- avgMethTreat %>% 
+  pivot_longer(., cols = 4:7, names_to = "treatment") %>%
+  mutate(., legend = case_when(treatment == "mean_NBH_HY" ~ "NBH Hypoxia",
+                               treatment == "mean_NBH_NO" ~ "NBH Normoxia",
+                               treatment == "mean_SC_HY" ~ "SC Hypoxia",
+                               treatment == "mean_SC_NO" ~ "SC Hypoxia"))
+head(avgMethTreatLong)
+```
+
 ## Plot data
 
 ```{r}
@@ -121,15 +131,16 @@ ggplot(SavgMethHyp) + geom_density(mapping = aes(x = mean_HY, color = "SC Hypoxi
                           axis.text.y = element_text(size = 13),
                           axis.title.y = element_text(size = 20))
 ```
+
 ```{r}
 #Create main plot
 #Create inset plot
 #Plot together
 
-mainPlot <- ggplot(avgMethTreat) + geom_density(mapping = aes(x = mean_NBH_HY, color = "NBH Hypoxia", fill = "NBH Hypoxia"), alpha = 0.1) +
-  geom_density(mapping = aes(x = mean_NBH_NO, color = "NBH Normoxia", fill = "NBH Normoxia"), alpha = 0.1) +
-  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Hypoxia", fill = "SC Hypoxia"), alpha = 0.1) +
-  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Normoxia", fill = "SC Normoxia"), alpha = 0.1) +
+mainPlot <- ggplot(avgMethTreat) + geom_density(mapping = aes(x = mean_NBH_HY, color = "NBH Hypoxia")) +
+  geom_density(mapping = aes(x = mean_NBH_NO, color = "NBH Normoxia")) +
+  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Normoxia")) +
+  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Hypoxia")) +
   scale_y_continuous(limits = c(0,25)) +
   labs(x = "Proportion CpG Methylation", y = "Density") +
   scale_color_manual(name = "Population and Treatment",
@@ -160,6 +171,35 @@ methWithInset
 
 ggsave("average-methylation-density-plot.pdf", methWithInset, height = 8.5, width = 11, dpi = 300)
 ```
+
+```{r}
+mainPlot <- ggplot(avgMethTreatLong) + 
+  geom_density(mapping = aes(x = value, color = treatment), show.legend = FALSE) +
+  scale_y_continuous(limits = c(0,25)) +
+  labs(x = "Proportion CpG Methylation", y = "Density") +
+  scale_color_manual(values = c("mean_NBH_NO" = plotColors[2],
+                                "mean_NBH_HY" = plotColors[1],
+                                "mean_SC_NO" = plotColors[4],
+                                "mean_SC_HY" = plotColors[3])) +
+  theme_classic() + theme(axis.text.x = element_text(size = 13),
+                          axis.title.x = element_text(size = 20),
+                          axis.text.y = element_text(size = 13),
+                          axis.title.y = element_text(size = 20))
+
+insetPlot <- mainPlot +
+  scale_x_continuous(limits = c(0,0.25)) +
+  scale_y_continuous(limits = c(0,10)) +
+  theme_classic() + theme(legend.position = "none")
+
+methWithInset <- ggdraw() +
+  draw_plot(mainPlot) +
+  draw_plot(insetPlot, x = 0.25, y = 0.5, width = 0.5, height = 0.5)
+
+methWithInset
+
+ggsave("average-methylation-density-plot.pdf", methWithInset, height = 8.5, width = 11, dpi = 300)
+```
+
 
 # Methylation difference by population and treatment
 
