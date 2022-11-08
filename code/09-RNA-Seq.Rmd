@@ -31,7 +31,49 @@ require(pheatmap)
 ```
 
 ```{r}
+if(!"GSEABase" %in% installed.packages()){
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+    BiocManager::install("GSEABase", update = FALSE)
+} #Need to install GSEABase before any other pathway analysis package due to dependency conflicts
+require(GSEABase)
+```
+
+```{r}
+BiocManager::install("rWikiPathways", update = FALSE)
+require(rWikiPathways)
+```
+
+```{r}
+load.libs <- c(
+  "DOSE",
+  "GO.db",
+  "GSEABase",
+  "org.Hs.eg.db",
+  "clusterProfiler",
+  "rWikiPathways",
+  "RCy3")
+options(install.packages.check.source = "no")
+options(install.packages.compile.from.source = "never")
+if (!require("pacman")) install.packages("pacman"); library(pacman)
+p_load(load.libs, update = TRUE, character.only = TRUE)
+status <- sapply(load.libs,require,character.only = TRUE)
+if(all(status)){
+    print("SUCCESS: You have successfully installed and loaded all required libraries.")
+} else{
+    cat("ERROR: One or more libraries failed to install correctly. Check the following list for FALSE cases and try again...\n\n")
+    status
+}
+```
+
+```{r}
 sessionInfo()
+```
+
+```{r}
+#Need to download, instal, and open Cytoscape GUI
+
+cytoscapePing() #This will tell you if you're able to successfully connect to Cytoscape or not
 ```
 
 # Create color scheme
@@ -56,6 +98,55 @@ head(SChypoxiaDEG)
 ```
 
 # Visualize DEG
+
+```{r}
+allSampleData <- read.delim("logcpm.funhe.txt", sep = "\t", header = TRUE, col.names = c("NBH1", "NBH2", "NBH3", "NBH4", "NBH5", "SC1", "SC2", "SC3", "SC4", "SC5")) %>%
+  rownames_to_column(., var = "ID") #Import logCPM data for all samples
+nrow(allSampleData) #Data for 8114 genes
+head(allSampleData)
+```
+
+## New Bedford Harbor 
+
+```{r}
+allNBHData <- allSampleData %>%
+  right_join(., NBHhypoxiaDEG, by = "ID") %>%
+  column_to_rownames(., var = "ID") %>%
+  select(., 1:5) %>% 
+  drop_na(.) #Subset NBH data for DEG
+tail(allNBHData) #Confirm subset
+```
+
+```{r}
+#pdf("NBH-DEG-heatmap.pdf", width = 11, height = 8.5)
+
+pheatmap(mat = allNBHData, color = rev(brewer.pal(n = 11, name = "RdBu")),
+         cluster_rows = TRUE, show_rownames = FALSE, 
+         cluster_cols = TRUE, show_colnames = TRUE, angle_col = 0) #Create heatmap for NBH DEG
+
+#dev.off()
+```
+
+## Scorton Creek
+
+```{r}
+allSCData <- allSampleData %>%
+  right_join(., SChypoxiaDEG, by = "ID") %>%
+  column_to_rownames(., var = "ID") %>%
+  select(., 1:5) %>% 
+  drop_na(.) #Subset SC data for DEG
+tail(allSCData) #Confirm subset
+```
+
+```{r}
+#pdf("SC-DEG-heatmap.pdf", width = 11, height = 8.5)
+
+pheatmap(mat = allSCData, color = rev(brewer.pal(n = 11, name = "RdBu")),
+         cluster_rows = TRUE, show_rownames = FALSE, 
+         cluster_cols = TRUE, show_colnames = TRUE, angle_col = 0) #Create heatmap for SC DEG
+
+#dev.off()
+```
 
 # Common DEG
 
@@ -90,6 +181,15 @@ Genes with the largest differences in FC:
 - Funhe2EKm002577: Class E basic helix loop helix protein 40
 - Funhe2EKm039163: neuronal cell death-inducible putative kinase
 - Funhe2EKm027081: uncharacterized protein
+
+# Gene ontology analysis
+
+Prior to GO and pathway analysis with `rWikiPathways`, I need to get Ensembl IDs and reformat the files:
+
+> gene identifiers (Ensembl IDs), gene symbols, log2foldchange values, adjusted P-Values
+
+# Pathway analysis
+
 
 
 
