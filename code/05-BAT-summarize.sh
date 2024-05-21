@@ -143,6 +143,30 @@ BAT_summarize \
 mkdir ${SUMMARIZE}/20_OC_N
 mv ${SUMMARIZE}/N_* ${SUMMARIZE}/20_OC_N/.
 
+echo "Oxygen within NB: Hypoxia vs. OC"
+
+#Run BAT_summarize
+#in1: comma-separated bedGraphs from NBH hypoxia
+#in2: comma-separated bedGraphs from NBH OC
+#groups: comma-separated list of gorup identifiers
+#h1: comma-separated list of sample identifiers for group 1
+#h2: comma-seaprated list of sample identifiers for group 2
+#out: prefix for output files
+
+BAT_summarize \
+--in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-N1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_5-N3_CG.sort.bedgraph \
+--in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N5_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-N4_CG.sort.bedgraph \
+--groups NO,OC \
+--h1 5-N1,5-N2,5-N3  \
+--h2 OC-N5,OC-N1,OC-N2,OC-N4 \
+--out ${SUMMARIZE}/N \
+--cs ${CHROMLENGTH}
+
+#Move files to a new directory
+
+mkdir ${SUMMARIZE}/5_OC_N
+mv ${SUMMARIZE}/N_* ${SUMMARIZE}/5_OC_N/.
+
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
 #Run BAT_summarize
@@ -190,3 +214,27 @@ BAT_summarize \
 
 mkdir ${SUMMARIZE}/20_OC_S
 mv ${SUMMARIZE}/S_* ${SUMMARIZE}/20_OC_S/.
+
+echo "Oxygen within SC: Hypoxia vs. OC"
+
+#Run BAT_summarize
+#in1: comma-separated bedGraphs from SC hypoxia
+#in2: comma-separated bedGraphs from SC OC
+#groups: comma-separated list of gorup identifiers
+#h1: comma-separated list of sample identifiers for group 1
+#h2: comma-seaprated list of sample identifiers for group 2
+#out: prefix for output files
+
+BAT_summarize \
+--in1 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L2_5-S4_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_5-S2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_5-S1_CG.sort.bedgraph \
+--in2 ${FILTERED}/190626_I114_FCH7TVNBBXY_L2_OC-S1_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-S2_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L3_OC-S3_CG.sort.bedgraph,${FILTERED}/190626_I114_FCH7TVNBBXY_L4_OC-S5_CG.sort.bedgraph \
+--groups NO,OC \
+--h2 5-S3,5-S4,5-S2,5-S1 \
+--h2 OC-S1,OC-S2,OC-S3,OC-S5 \
+--out ${SUMMARIZE}/S \
+--cs ${CHROMLENGTH}
+
+#Move files to a new directory
+
+mkdir ${SUMMARIZE}/5_OC_S
+mv ${SUMMARIZE}/S_* ${SUMMARIZE}/5_OC_S/.
