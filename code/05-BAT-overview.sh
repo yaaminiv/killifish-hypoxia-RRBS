@@ -72,6 +72,18 @@ BAT_overview.R  \
 -o ${OVERVIEW}/20_OC_N \
 --groups NO,OC
 
+echo "Oxygen within NB: Hypoxia vs. OC"
+
+#Run BAT_overview
+#-i: Input bedGraph from BAT_summarize
+#-o: Output prefix
+#--groups: comma-separated list of group identifiers
+
+BAT_overview.R  \
+-i ${SUMMARIZE}/5_OC_N/N_summary_HY_OC.bedgraph \
+-o ${OVERVIEW}/5_OC_N \
+--groups HY,OC
+
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
 #Run BAT_overview
@@ -95,3 +107,15 @@ BAT_overview.R  \
 -i ${SUMMARIZE}/20_OC_S/S_summary_NO_OC.bedgraph \
 -o ${OVERVIEW}/20_OC_S \
 --groups NO,OC
+
+echo "Oxygen within SC: Hypoxia vs. OC"
+
+#Run BAT_overview
+#-i: Input bedGraph from BAT_summarize
+#-o: Output prefix
+#--groups: comma-separated list of group identifiers
+
+BAT_overview.R  \
+-i ${SUMMARIZE}/5_OC_S/S_summary_HY_OC.bedgraph \
+-o ${OVERVIEW}/5_OC_S \
+--groups HY,OC
