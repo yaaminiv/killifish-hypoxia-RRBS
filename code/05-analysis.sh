@@ -42,13 +42,13 @@ echo "Revise bedGraphs"
 #cd /vortexfs1/home/yaamini.venkataraman/killifish-hypoxia-RRBS/output/04-calling/new-genome/filtered
 
 #Sort bedGraphs
-#for f in *bedgraph
-#do
-#/vortexfs1/home/yaamini.venkataraman/bedtools2/bin/sortBed \
-#-i ${f} \
-#| awk '{print $1"\t"$5"\t"$6"\t"$7}' \
-#> $(basename ${f%.bedgraph}).sort.bedgraph
-#done
+for f in *bedgraph
+do
+/vortexfs1/home/yaamini.venkataraman/bedtools2/bin/sortBed \
+-i ${f} | \
+awk 'NF{print $1,$(NF-2),$(NF-1),$NF}'  OFS="\t" \
+> $(basename ${f%.bedgraph}).sort.bedgraph
+done
 #head *sort.bedgraph
 
 echo "Done revising bedGraphs"
