@@ -99,6 +99,22 @@ mkdir ${DMR}/20_OC_N
 mv ${DMR}/20_OC_N_* ${DMR}/20_OC_N/.
 mv ${DMR}/20_OC_N.* ${DMR}/20_OC_N/.
 
+echo "Oxygen within NB: Hypoxia vs. OC"
+
+#Run BAT_DMRcalling
+
+BAT_DMRcalling \
+-q ${SUMMARIZE}/5_OC_N/N_metilene_HY_OC.txt  \
+-o ${DMR}/5_OC_N \
+-a HY \
+-b OC
+
+#Move files to a new directory
+
+mkdir ${DMR}/5_OC_N
+mv ${DMR}/5_OC_N_* ${DMR}/5_OC_N/.
+mv ${DMR}/5_OC_N.* ${DMR}/5_OC_N/.
+
 echo "Oxygen within SC: Normoxia vs. Hypoxia"
 
 #Run BAT_DMRcalling
@@ -130,3 +146,19 @@ BAT_DMRcalling \
 mkdir ${DMR}/20_OC_S
 mv ${DMR}/20_OC_S_* ${DMR}/20_OC_S/.
 mv ${DMR}/20_OC_S.* ${DMR}/20_OC_S/.
+
+echo "Oxygen within SC: Hypoxia vs. OC"
+
+#Run BAT_DMRcalling
+
+BAT_DMRcalling \
+-q ${SUMMARIZE}/5_OC_S/S_metilene_HY_OC.txt  \
+-o ${DMR}/5_OC_S \
+-a NO \
+-b OC
+
+#Move files to a new directory
+
+mkdir ${DMR}/5_OC_S
+mv ${DMR}/5_OC_S_* ${DMR}/5_OC_S/.
+mv ${DMR}/5_OC_S.* ${DMR}/5_OC_S/.
