@@ -1,0 +1,11 @@
+[INFO]	Tue May 21, 15:15:21, 2024	Calling DMRs.
+[metilene]	Tue May 21, 15:15:21, 2024	
+0: column: 4, name:OC_OC-S1
+1: column: 5, name:OC_OC-S2
+2: column: 6, name:OC_OC-S3
+3: column: 7, name:OC_OC-S5
+[INFO]	Tue May 21, 15:15:22, 2024	Filtering DMRs.
+[INFO]	Tue May 21, 15:15:22, 2024	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Tue May 21, 15:15:22, 2024	Bedgraph file containing DMR difference: /scratch/06-DMR/new-genome/5_OC_S_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/new-genome/5_OC_S_qval.0.05.bed
+[INFO]	Tue May 21, 15:15:22, 2024	Plotting DMR statistics (/scratch/06-DMR/new-genome/5_OC_S_qval.0.05.pdf).

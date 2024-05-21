@@ -1,0 +1,29 @@
+[INFO]	Tue May 21, 15:15:10, 2024	Calling DMRs.
+[metilene]	Tue May 21, 15:15:10, 2024	
+0: column: 0, name:N_20-N4
+1: column: 1, name:N_5-N1
+2: column: 2, name:N_5-N2
+3: column: 3, name:N_20-N2
+4: column: 4, name:N_5-N3
+5: column: 5, name:N_20-N1
+6: column: 6, name:N_OC-N5
+7: column: 7, name:N_OC-N1
+8: column: 8, name:N_OC-N2
+9: column: 9, name:N_OC-N4
+0: column: 10, name:S_20-S1
+1: column: 11, name:S_20-S3
+2: column: 12, name:S_20-S4
+3: column: 13, name:S_5-S3
+4: column: 14, name:S_5-S4
+5: column: 15, name:S_5-S2
+6: column: 16, name:S_20-S2
+7: column: 17, name:S_5-S1
+8: column: 18, name:S_OC-S1
+9: column: 19, name:S_OC-S2
+10: column: 20, name:S_OC-S3
+11: column: 21, name:S_OC-S5
+[INFO]	Tue May 21, 15:15:11, 2024	Filtering DMRs.
+[INFO]	Tue May 21, 15:15:11, 2024	Wrote 0 DMRs with adj. p-value < 0.05, a minimum absolute difference >= 0.1, a minimum length [CpG] >= 10 and a minimum length [nt] >= 0
+[INFO]	Tue May 21, 15:15:11, 2024	Bedgraph file containing DMR difference: /scratch/06-DMR/new-genome/all_pop_qval.0.05.bedgraph
+Bed file containing unique DMR identifier and hypo/hypermethylated annotation: /scratch/06-DMR/new-genome/all_pop_qval.0.05.bed
+[INFO]	Tue May 21, 15:15:11, 2024	Plotting DMR statistics (/scratch/06-DMR/new-genome/all_pop_qval.0.05.pdf).
