@@ -10,7 +10,7 @@ CHROMLENGTH=/yaaminiv/killifish-hypoxia-RRBS/data/mummichog.chrom.length
 FILTERED=/yaaminiv/killifish-hypoxia-RRBS/output/04-calling/new-genome/filtered
 
 #Summarize directory
-SUMMARIZE=/scratch/05-analysis/new-genome/summarize
+SUMMARIZE=/scratch/05-analysis/new-genome/summarize/missing_1
 
 #Overview directory
-OVERVIEW=/scratch/05-analysis/new-genome/overview
+OVERVIEW=/scratch/05-analysis/new-genome/overview/missing_1
