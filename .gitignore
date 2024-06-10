@@ -81,3 +81,5 @@ output/04-calling/new-genome/filtered/190626_I114_FCH7TVNBBXY_L4_5-S1_CG.vcf.gz
 output/04-calling/new-genome/filtered/190626_I114_FCH7TVNBBXY_L4_OC-S5_CG.bedgraph
 output/04-calling/new-genome/filtered/190626_I114_FCH7TVNBBXY_L4_OC-S5_CG.sort.bedgraph
 output/04-calling/new-genome/filtered/190626_I114_FCH7TVNBBXY_L4_OC-S5_CG.vcf.gz
+genome-features/GCF_011125445.2_MU-UCD_Fhet_4.1_cds_from_genomic.fna
+genome-features/GCF_011125445.2_MU-UCD_Fhet_4.1_cds_from_genomic.fna
