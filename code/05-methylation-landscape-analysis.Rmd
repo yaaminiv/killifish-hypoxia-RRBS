@@ -9,7 +9,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/05-analysis/methylation-landscape/") #Set root directory
+knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/05-analysis/new-genome/methylation-landscape/") #Set root directory
 ```
 
 #Install packages
@@ -32,49 +32,187 @@ sessionInfo()
 # Create color scheme
 
 ```{r}
-plotColors <- c(brewer.pal(5, "GnBu"), brewer.pal(5, "BuGn"))
-plotColors <- plotColors[c(4,5,9,10)]
+plotColors <- c(brewer.pal(9, "GnBu"), 
+                brewer.pal(9, "BuGn")) #Create color scheme with greys (outside controls), green-blues, and blue-greens
+plotColors <- plotColors[c(9,8,6,18,16,14)] #Pick colors to use in figures
 ```
+
+# Import data
+
+```{r}
+avgMethUnion <- read.delim("all-samples-averages-union.bedgraph", header = TRUE, sep = "\t", row.names = 1, na.strings = "N/A") #Import union bedgraph with average methylation across all positions
+head(avgMethUnion) #Confirm import
+```
+
+```{r}
+avgMethCommonLoci <- read.delim("missing_1/all-common-loci-averages.bedgraph", header = TRUE, sep = "\t", row.names = 1, na.strings = "N/A") #Import bedgraph with common loci across all samples
+head(avgMethCommonLoci) #Confirm import
+```
+
+```{r}
+chrLength <- read.delim("../../../../genome-features/mummichog.chrom.length", header = FALSE, col.names = c("chr", "length")) #Import chr length information
+head(chrLength)
+```
+
+# Chromosomal positions of methylation by population
+
+I will create a circos plot to visualize methylation at common positions across populations and treatments.
+
+## Format data
+
+To format the data for the plot, I need to know which chromosomes to visualize. I'll choose chromosomes based on the positions of important genes such as HIF-1a and AHR.
+
+```{bash}
+grep "hypoxia" ../../../../genome-features/GCF_011125445.2_MU-UCD_Fhet_4.1_cds_from_genomic.fna
+```
+
+```{bash}
+grep "aryl hydrocarbon receptor" ../../../../genome-features/GCF_011125445.2_MU-UCD_Fhet_4.1_cds_from_genomic.fna
+```
+
+HIF-1a is in NC_046379.1 and AHR is in NC_046384.1, so I'll plot these chromosomes.
+
+```{r}
+#Select relevant columns and filter out the two chromosomes with HIF and AHR.
+
+NavgMethOCCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, NBH.OC.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+NavgMethNOCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, NBH.NO.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+NavgMethHYCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, NBH.HY.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+head(NavgMethOCCircos)
+head(NavgMethNOCircos)
+head(NavgMethHYCircos)
+```
+
+```{r}
+#Select relevant columns and filter out the two chromosomes with HIF and AHR.
+
+SavgMethOCCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, SC.OC.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+SavgMethNOCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, SC.NO.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+SavgMethHYCircos <- avgMethCommonLoci %>%
+  select(., chr, pos, SC.HY.average) %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+head(SavgMethOCCircos)
+head(SavgMethNOCircos)
+head(SavgMethHYCircos)
+```
+
+```{r}
+chrLength %>%
+  filter(chr == c("NC_046379.1", "NC_046384.1"))
+```
+
+## Plot data
+
+Relevant tutorials:
+
+- https://jokergoo.github.io/circlize_book/book/
+- https://www.royfrancis.com/beautiful-circos-plots-in-r/
+
+```{r}
+pdf("N-S-circos.pdf", width = 11, height = 8.5)
+
+circos.clear() #Create a blank circos plot
+col_text <- "grey20" #Add text color
+circos.par(gap.degree = 10,
+           cell.padding = c(0, 0, 0, 0)) #par information for plot
+circos.initialize(factors = c("NC_046379.1", "NC_046384.1"), 
+                  xlim = matrix(c(rep(0, 2), 
+                                  33976892, 28860465), 
+                                ncol = 2)) #Initialize circos
+
+# Add chromosome delinations
+circos.track(ylim = c(0, 1), panel.fun = function(x, y) {
+  chr = CELL_META$sector.index
+  xlim = CELL_META$xlim
+  ylim = CELL_META$ylim
+  circos.text(mean(xlim), mean(ylim), chr, cex = 0.75, col = col_text, 
+              facing = "bending.inside", niceFacing = TRUE)
+}, bg.col = "grey90", bg.border = FALSE, track.height = 0.06)
+
+# Genome x axis
+brk <- c(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5)*10^7 #Set axis breaks
+circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
+  circos.axis(h = "top", major.at = brk, labels = round(brk/10^7, 1), labels.cex = 1, 
+              col = col_text, labels.col = col_text, lwd = 1, labels.facing = "clockwise")
+}, bg.border = FALSE)
+
+# NBH Outside Control
+circos.track(factors = NavgMethOCCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = NavgMethOCCircos$chr == CELL_META$sector.index
+  value = NavgMethOCCircos$NBH.OC.average[l]
+  pos = NavgMethOCCircos$pos[l]
+  circos.barplot(value, pos,
+                 border = plotColors[1], col = plotColors[1])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+circos.yaxis(at = c(0, 0.5, 1), 
+             labels.cex = 1, lwd = 1, tick.length = 1, labels.col = col_text, col = "grey20") #Add y-axis
+
+# NBH Normoxia
+circos.track(factors = NavgMethNOCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = NavgMethNOCircos$chr == CELL_META$sector.index
+  value = NavgMethNOCircos$NBH.NO.average[l]
+  pos = NavgMethNOCircos$pos[l]
+  circos.barplot(value, pos,
+                 border = plotColors[2], col = plotColors[2])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+# NBH Hypoxia
+circos.track(factors = NavgMethHYCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = NavgMethHYCircos$chr == CELL_META$sector.index
+  value = NavgMethHYCircos$NBH.HY.average[l]
+  pos = NavgMethHYCircos$pos[l]
+  circos.barplot(value, pos, border = plotColors[3], col = plotColors[3])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+# SC Outside Control
+circos.track(factors = SavgMethOCCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = SavgMethOCCircos$chr == CELL_META$sector.index
+  value = SavgMethOCCircos$SC.OC.average[l]
+  pos = SavgMethOCCircos$pos[l]
+  circos.barplot(value, pos,
+                 border = plotColors[4], col = plotColors[4])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+# SC Normoxia
+circos.track(factors = SavgMethNOCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = SavgMethNOCircos$chr == CELL_META$sector.index
+  value = SavgMethNOCircos$SC.NO.average[l]
+  pos = SavgMethNOCircos$pos[l]
+  circos.barplot(value, pos,
+                 border = plotColors[5], col = plotColors[5])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+# SC Hypoxia
+circos.track(factors = SavgMethHYCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
+  l = SavgMethHYCircos$chr == CELL_META$sector.index
+  value = SavgMethHYCircos$SC.HY.average[l]
+  pos = SavgMethHYCircos$pos[l]
+  circos.barplot(value, pos, border = plotColors[6], col = plotColors[6])
+}, track.height = 0.13, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
+
+dev.off()
+```
+
+# Number of methylated and unmethylated CpGs
+
+## Format data
+
+
 
 # Percent methylation by population and treatment
 
 ## Import and format data
-
-```{r}
-NavgMeth <- read.delim("N-samples-averages.bedgraph", header = TRUE, sep = "\t") %>%
-  select(., -1) #Import data and remove first column
-head(NavgMeth) #Confirm import
-```
-
-```{r}
-NavgMethHyp <- read.delim("../summarize/20_5_N/N_mean_HY.bedgraph", header = TRUE, sep = "\t") %>%
-  rename(., chr = X.chr) #Average methylation for hypoxia samples
-head(NavgMethHyp)
-```
-
-```{r}
-NavgMethNorm <- read.delim("../summarize/20_5_N/N_mean_NO.bedgraph", header = TRUE, sep = "\t") %>%
-  rename(., chr = X.chr) #Average methylation for normoxia samples
-head(NavgMethNorm)
-```
-
-```{r}
-SavgMeth <- read.delim("S-samples-averages.bedgraph", header = TRUE, sep = "\t") %>%
-  select(., -1) #Import data and remove first column
-head(SavgMeth) #Confirm import
-```
-
-```{r}
-SavgMethHyp <- read.delim("../summarize/20_5_S/S_mean_HY.bedgraph", header = TRUE, sep = "\t") %>%
-  rename(., chr = X.chr) #Average methylation for hypoxia samples
-head(SavgMethHyp)
-```
-
-```{r}
-SavgMethNorm <- read.delim("../summarize/20_5_S/S_mean_NO.bedgraph", header = TRUE, sep = "\t") %>%
-  rename(., chr = X.chr) #Average methylation for normoxia samples
-head(SavgMethNorm)
-```
 
 ```{r}
 avgMethTreat <- full_join(x = NavgMethHyp, y = NavgMethNorm, by = c("chr", "start", "end")) %>%
@@ -200,226 +338,6 @@ methWithInset
 ggsave("average-methylation-density-plot.pdf", methWithInset, height = 8.5, width = 11, dpi = 300)
 ```
 
-
-# Methylation difference by population and treatment
-
-## Import and format data
-
-```{r}
-NdiffMeth <- read.delim("../summarize/20_5_N/N_diff_NO_HY.bedgraph", header = TRUE) %>%
-  rename(chr = X.chr) %>%
-  mutate(diff_HY_minus_NO_NBH = -1 * diff_NO_minus_HY) %>%
-  select(-diff_NO_minus_HY) #Import data, rename column, create a new column with HY-NO meth diff, and drop old meth diff column
-head(NdiffMeth)
-```
-
-```{r}
-SdiffMeth <- read.delim("../summarize/20_5_S/S_diff_NO_HY.bedgraph", header = TRUE) %>%
-  rename(chr = X.chr) %>%
-  mutate(diff_HY_minus_NO_SC = -1 * diff_NO_minus_HY) %>%
-  select(-diff_NO_minus_HY) #Import data, rename column, create a new column with HY-NO meth diff, and drop old meth diff column
-head(SdiffMeth)
-```
-
-```{r}
-diffMethTreat <- full_join(x = NdiffMeth, y = SdiffMeth, by = c("chr", "start", "end")) #Combine all data using full_join to account for positions that are not common across populations
-nrow(diffMethTreat) #Total number positions
-head(diffMethTreat)
-```
-
-## Plot data
-
-```{r}
-ggplot(NdiffMeth) + geom_density(mapping = aes(x = diff_HY_minus_NO_NBH, color = "NBH", fill = "NBH"), alpha = 0.1) +
-  labs(x = "Methylation Difference (HY - NO)", y = "Density") +
-  scale_y_continuous(limits = c(0,45)) +
-  scale_color_manual(name = "Population",
-                     breaks = c("NBH"),
-                     values = c("NBH" = plotColors[2]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
-```
-
-```{r}
-ggplot(SdiffMeth) + geom_density(mapping = aes(x = diff_HY_minus_NO_SC, color = "SC", fill = "SC"), alpha = 0.1) +
-  labs(x = "Methylation Difference (HY - NO)", y = "Density") +
-  scale_y_continuous(limits = c(0,45)) +
-  scale_color_manual(name = "Population",
-                     breaks = c("SC"),
-                     values = c("SC" = plotColors[4]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
-```
-
-```{r}
-#Create main plot
-#Create inset plot
-#Plot together
-
-mainPlotMethDiff <- ggplot(diffMethTreat) + geom_density(mapping = aes(x = diff_HY_minus_NO_NBH, color = "NBH", fill = "NBH"), alpha = 0.1) +
-  geom_density(mapping = aes(x = diff_HY_minus_NO_SC, color = "SC", fill = "SC"), alpha = 0.1) +
-  labs(x = "Methylation Difference (HY - NO)", y = "Density") +
-  scale_color_manual(name = "Population",
-                     breaks = c("NBH", "SC"),
-                     values = c("NBH" = plotColors[2],
-                                "SC" = plotColors[4]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
-
-insetPlotMethDiff <- mainPlotMethDiff +
-  scale_x_continuous(limits = c(-0.25,0.25)) +
-  scale_y_continuous(limits = c(0,10)) +
-  theme(legend.position = "none")
-
-methDiffWithInset <- ggdraw() +
-  draw_plot(mainPlotMethDiff) +
-  draw_plot(insetPlotMethDiff, x = 0.5, y = 0.65, width = 0.5, height = 0.3)
-
-methDiffWithInset
-
-ggsave("diff-methylation-density-plot.pdf", methDiffWithInset, height = 8.5, width = 11, dpi = 300)
-```
-
-# Chromosomal positions of methylation by population
-
-## Import and format data
-
-```{r}
-methByChrNBH <- avgMethTreat %>%
-  filter(mean_NBH_HY != "NA") %>%
-  group_by(., chr) %>%
-  summarize(., n = n()) %>%
-  arrange(., desc(n)) #Remove rows without NBH data, group by chromosome, count the number of methylated positions with data per chromosome, and arrange in order of chromosomes with most to least data
-head(methByChrNBH)
-```
-
-```{r}
-methByChrSC <- avgMethTreat %>%
-  filter(mean_SC_HY != "NA") %>%
-  group_by(., chr) %>%
-  summarize(., n = n()) %>%
-  arrange(., desc(n))
-head(methByChrSC)
-```
-
-I'm going to plot data for four chromosomes: KN805526.1 and KN805525.1 (chr with most data for NBH) and KN811310.1 and KN811340.1 (chr with most data for SC).
-
-```{r}
-NavgMethHypCircos <- NavgMethHyp %>%
-  filter(chr == c("KN805525.1", "KN805526.1", "KN811310.1", "KN811340.1"))
-NavgMethNormCircos <- NavgMethNorm %>%
-  filter(chr == c("KN805525.1", "KN805526.1", "KN811310.1", "KN811340.1"))
-head(NavgMethHypCircos)
-head(NavgMethNormCircos)
-```
-
-```{r}
-SavgMethHypCircos <- SavgMethHyp %>%
-  filter(chr == c("KN805525.1", "KN805526.1", "KN811310.1", "KN811340.1"))
-SavgMethNormCircos <- SavgMethNorm %>%
-  filter(chr == c("KN805525.1", "KN805526.1", "KN811310.1", "KN811340.1"))
-head(SavgMethHypCircos)
-head(SavgMethNormCircos)
-```
-
-```{r}
-chrLength <- read.delim("../../../genome-features/mummichog.chrom.length", header = FALSE, col.names = c("chr", "length")) #Import chr length information
-head(chrLength)
-```
-
-## Plot data
-
-Relevant tutorials:
-
-- https://jokergoo.github.io/circlize_book/book/
-- https://www.royfrancis.com/beautiful-circos-plots-in-r/
-
-```{r}
-#pdf("N-S-circos.pdf", width = 11, height = 8.5)
-
-
-circos.clear() #Create a blank circos plot
-col_text <- "grey20" #Add text color
-circos.par(gap.degree = 10,
-           cell.padding = c(0, 0, 0, 0)) #par information for plot
-circos.initialize(factors = c("KN805525.1", "KN805526.1", "KN811310.1", "KN811340.1"), 
-                  xlim = matrix(c(rep(0, 4), 
-                                6356336, 6250690, 5246820, 5018176), 
-                              ncol = 2)) #Initialize circos
-
-# Add chromosome delinations
-circos.track(ylim = c(0, 1), panel.fun = function(x, y) {
-  chr = CELL_META$sector.index
-  xlim = CELL_META$xlim
-  ylim = CELL_META$ylim
-  circos.text(mean(xlim), mean(ylim), chr, cex = 0.75, col = col_text, 
-              facing = "bending.inside", niceFacing = TRUE)
-}, bg.col = "grey90", bg.border = FALSE, track.height = 0.06)
-
-# Genome x axis
-brk <- c(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7)*10^6 #Set axis breaks
-circos.track(track.index = get.current.track.index(), panel.fun = function(x, y) {
-  circos.axis(h = "top", major.at = brk, labels = round(brk/10^6, 1), labels.cex = 0.75, 
-              col = col_text, labels.col = col_text, lwd = 0.7, labels.facing = "clockwise")
-}, bg.border = FALSE)
-
-# NBH Normoxia
-circos.track(factors = NavgMethNormCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
-  value = NavgMethNormCircos$mean_NO
-  pos = NavgMethNormCircos$start
-  circos.barplot(value, pos,
-                 border = plotColors[1], col = plotColors[1])
-}, track.height = 0.15, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
-
-circos.yaxis(at = c(0, 0.5, 1), 
-             labels.cex = 0.75, lwd = 0, tick.length = 0, labels.col = col_text, col = "#FFFFFF") #Add yaxis
-
-# NBH Hypoxia
-circos.track(factors = NavgMethHypCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
-  value = NavgMethHypCircos$mean_HY
-  pos = NavgMethHypCircos$start
-circos.barplot(value, pos, border = plotColors[2], col = plotColors[2])
-}, track.height = 0.15, bg.border = FALSE)
-
-circos.yaxis(at = c(0, 0.5, 1), 
-             labels.cex = 0.75, lwd = 0, tick.length = 0, labels.col = col_text, col = "#FFFFFF") #Add yaxis
-
-# SC Normoxia
-circos.track(factors = SavgMethNormCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
-  value = SavgMethNormCircos$mean_NO
-  pos = SavgMethNormCircos$start
-  circos.barplot(value, pos,
-                 border = plotColors[3], col = plotColors[3])
-}, track.height = 0.15, bg.border = FALSE) #Add a barplot specifying chr as a factor (sector), and ylim. Add mean as values for barplot and start bp as pos.
-
-circos.yaxis(at = c(0, 0.5, 1), 
-             labels.cex = 0.75, lwd = 0, tick.length = 0, labels.col = col_text, col = "#FFFFFF") #Add yaxis
-
-# SC Hypoxia
-circos.track(factors = SavgMethHypCircos$chr, ylim = c(0,1), panel.fun=function(x, y) {
-  value = SavgMethHypCircos$mean_HY
-  pos = SavgMethHypCircos$start
-circos.barplot(value, pos, border = plotColors[4], col = plotColors[4])
-}, track.height = 0.15, bg.border = FALSE)
-
-circos.yaxis(at = c(0, 0.5, 1), 
-             labels.cex = 0.75, lwd = 0, tick.length = 0, labels.col = col_text, col = "#FFFFFF") #Add yaxis
-
-#dev.off()
-```
-
-```{r}
-write.table(NavgMethNormCircos, file = "NavgMethNormCircos.tab", quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
-```
 
 
 # TO DO
