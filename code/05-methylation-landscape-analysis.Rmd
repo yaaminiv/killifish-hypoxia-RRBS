@@ -40,7 +40,7 @@ plotColors <- plotColors[c(9,8,6,18,16,14)] #Pick colors to use in figures
 # Import data
 
 ```{r}
-avgMethUnion <- read.delim("all-samples-averages-union.bedgraph", header = TRUE, sep = "\t", row.names = 1, na.strings = "N/A") #Import union bedgraph with average methylation across all positions
+avgMethUnion <- read.delim("missing_1/all-samples-averages-union.bedgraph", header = TRUE, sep = "\t", row.names = 1, na.strings = "N/A") #Import union bedgraph with average methylation across all positions
 head(avgMethUnion) #Confirm import
 ```
 
@@ -212,62 +212,69 @@ dev.off()
 
 # Percent methylation by population and treatment
 
-## Import and format data
+## Format data
 
 ```{r}
-avgMethTreat <- full_join(x = NavgMethHyp, y = NavgMethNorm, by = c("chr", "start", "end")) %>%
-  rename(mean_NBH_HY = mean_HY) %>%
-  rename(mean_NBH_NO = mean_NO) %>%
-  full_join(x = ., y = SavgMethHyp, by = c("chr", "start", "end")) %>%
-  rename(mean_SC_HY = mean_HY) %>%
-  full_join(x = ., y = SavgMethNorm, by = c("chr", "start", "end")) %>%
-  rename(mean_SC_NO = mean_NO) #Combine all data using full_join to account for positions that are not common across populations
-nrow(avgMethTreat) #Total number positions
-head(avgMethTreat)
-```
-
-```{r}
-avgMethTreatLong <- avgMethTreat %>% 
-  pivot_longer(., cols = 4:7, names_to = "treatment") %>%
-  mutate(., legend = case_when(treatment == "mean_NBH_HY" ~ "NBH Hypoxia",
-                               treatment == "mean_NBH_NO" ~ "NBH Normoxia",
-                               treatment == "mean_SC_HY" ~ "SC Hypoxia",
-                               treatment == "mean_SC_NO" ~ "SC Hypoxia"))
-head(avgMethTreatLong)
+avgMethTreatLong <- avgMethUnion %>% 
+  select(., chrom, start, 
+         NBH.OC.average, NBH.NO.average, NBH.HY.average,
+         SC.OC.average, SC.NO.average, SC.HY.average) %>%
+  pivot_longer(., cols = 3:8, names_to = "treatment") %>%
+  mutate(., population = gsub(x = treatment, pattern = ".OC.average", replacement = "")) %>%
+  mutate(., population = gsub(x = population, pattern = ".NO.average", replacement = "")) %>%
+  mutate(., population = gsub(x = population, pattern = ".HY.average", replacement = "")) #Take union data and select relevant columns. Pivot longer so treatment x population information is in a separate column. Create a new column with population using a series of gsub commands.
+head(avgMethTreatLong) #Confirm formatting
 ```
 
 ## Plot data
 
 ```{r}
-ggplot(NavgMethHyp) + geom_density(mapping = aes(x = mean_HY, color = "NBH Hypoxia", fill = "NBH Hypoxia"), alpha = 0.1) +
-  geom_density(mapping = aes(x = NavgMethNorm$mean_NO, color = "NBH Normoxia", fill = "NBH Normoxia"), alpha = 0.1) +
-  scale_y_continuous(limits = c(0,10)) +
+ggplot(avgMethTreatLong) +
+  geom_density(mapping = aes(x = value, color = treatment, linetype = treatment)) +
   labs(x = "Proportion CpG Methylation", y = "Density") +
   scale_color_manual(name = "Population and Treatment",
-                     breaks = c("NBH Hypoxia", "NBH Normoxia"),
-                     values = c("NBH Hypoxia" = plotColors[2],
-                                "NBH Normoxia" = plotColors[1]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
-```
-
-```{r}
-ggplot(SavgMethHyp) + geom_density(mapping = aes(x = mean_HY, color = "SC Hypoxia", fill = "SC Hypoxia"), alpha = 0.1) +
-  geom_density(mapping = aes(x = SavgMethNorm$mean_NO, color = "SC Normoxia", fill = "SC Normoxia"), alpha = 0.1) +
-  scale_y_continuous(limits = c(0,25)) +
-  labs(x = "Proportion CpG Methylation", y = "Density") +
-  scale_color_manual(name = "Population and Treatment",
-                     breaks = c("SC Hypoxia", "SC Normoxia"),
-                     values = c("SC Hypoxia" = plotColors[4],
-                                "SC Normoxia" = plotColors[3]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
+                     breaks = c("NBH.OC.average", 
+                                "NBH.NO.average", 
+                                "NBH.HY.average",
+                                "SC.OC.average", 
+                                "SC.NO.average", 
+                                "SC.HY.average"),
+                     labels = c("NBH Outside Control",
+                                "NBH Normoxia",
+                                "NBH Hypoxia",
+                                "SC Outside Control",
+                                "SC Normoxia",
+                                "SC Hypoxia"),
+                     values = c("NBH.OC.average" = plotColors[1], 
+                                "NBH.NO.average" = plotColors[2], 
+                                "NBH.HY.average" = plotColors[3],
+                                "SC.OC.average" = plotColors[4], 
+                                "SC.NO.average" = plotColors[5], 
+                                "SC.HY.average" = plotColors[6])) +
+  scale_linetype_manual(name = "Population and Treatment",
+                        breaks = c("NBH.OC.average", 
+                                "NBH.NO.average", 
+                                "NBH.HY.average",
+                                "SC.OC.average", 
+                                "SC.NO.average", 
+                                "SC.HY.average"),
+                     labels = c("NBH Outside Control",
+                                "NBH Normoxia",
+                                "NBH Hypoxia",
+                                "SC Outside Control",
+                                "SC Normoxia",
+                                "SC Hypoxia"),
+                     values = c("NBH.OC.average" = 1, 
+                                "NBH.NO.average" = 1, 
+                                "NBH.HY.average" = 1,
+                                "SC.OC.average" = 2, 
+                                "SC.NO.average" = 2, 
+                                "SC.HY.average" = 2),
+                     aesthetics = c("linetype")) +
+  theme_classic(base_size = 13) + theme(axis.text.x = element_text(size = 13),
+                                        axis.title.x = element_text(size = 20),
+                                        axis.text.y = element_text(size = 13),
+                                        axis.title.y = element_text(size = 20))
 ```
 
 ```{r}
@@ -275,71 +282,64 @@ ggplot(SavgMethHyp) + geom_density(mapping = aes(x = mean_HY, color = "SC Hypoxi
 #Create inset plot
 #Plot together
 
-mainPlot <- ggplot(avgMethTreat) + geom_density(mapping = aes(x = mean_NBH_HY, color = "NBH Hypoxia")) +
-  geom_density(mapping = aes(x = mean_NBH_NO, color = "NBH Normoxia")) +
-  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Normoxia")) +
-  geom_density(mapping = aes(x = mean_SC_HY, color = "SC Hypoxia")) +
-  scale_y_continuous(limits = c(0,25)) +
+mainPlot <- ggplot(avgMethTreatLong) +
+  geom_density(mapping = aes(x = value, color = treatment, linetype = treatment)) +
   labs(x = "Proportion CpG Methylation", y = "Density") +
   scale_color_manual(name = "Population and Treatment",
-                     breaks = c("NBH Hypoxia", 
-                                "NBH Normoxia", 
-                                "SC Hypoxia", 
-                                "SC Normoxia"),
-                     values = c("NBH Hypoxia" = plotColors[2],
-                                "NBH Normoxia" = plotColors[1],
-                                "SC Hypoxia" = plotColors[4],
-                                "SC Normoxia" = plotColors[3]),
-                     aesthetics = c("color", "fill")) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
+                     breaks = c("NBH.OC.average", 
+                                "NBH.NO.average", 
+                                "NBH.HY.average",
+                                "SC.OC.average", 
+                                "SC.NO.average", 
+                                "SC.HY.average"),
+                     labels = c("NBH Outside Control",
+                                "NBH Normoxia",
+                                "NBH Hypoxia",
+                                "SC Outside Control",
+                                "SC Normoxia",
+                                "SC Hypoxia"),
+                     values = c("NBH.OC.average" = plotColors[1], 
+                                "NBH.NO.average" = plotColors[2], 
+                                "NBH.HY.average" = plotColors[3],
+                                "SC.OC.average" = plotColors[4], 
+                                "SC.NO.average" = plotColors[5], 
+                                "SC.HY.average" = plotColors[6])) +
+  scale_linetype_manual(name = "Population and Treatment",
+                        breaks = c("NBH.OC.average", 
+                                "NBH.NO.average", 
+                                "NBH.HY.average",
+                                "SC.OC.average", 
+                                "SC.NO.average", 
+                                "SC.HY.average"),
+                     labels = c("NBH Outside Control",
+                                "NBH Normoxia",
+                                "NBH Hypoxia",
+                                "SC Outside Control",
+                                "SC Normoxia",
+                                "SC Hypoxia"),
+                     values = c("NBH.OC.average" = 1, 
+                                "NBH.NO.average" = 1, 
+                                "NBH.HY.average" = 1,
+                                "SC.OC.average" = 2, 
+                                "SC.NO.average" = 2, 
+                                "SC.HY.average" = 2),
+                     aesthetics = c("linetype")) +
+  theme_classic(base_size = 13) + theme(axis.text.x = element_text(size = 13),
+                                        axis.title.x = element_text(size = 20),
+                                        axis.text.y = element_text(size = 13),
+                                        axis.title.y = element_text(size = 20))
 
 insetPlot <- mainPlot +
   scale_x_continuous(limits = c(0,0.25)) +
-  scale_y_continuous(limits = c(0,10)) +
+  scale_y_continuous(limits = c(0,3)) +
   theme_classic() + theme(legend.position = "none")
 
 methWithInset <- ggdraw() +
   draw_plot(mainPlot) +
-  draw_plot(insetPlot, x = 0.25, y = 0.5, width = 0.5, height = 0.5)
+  draw_plot(insetPlot, x = 0.2, y = 0.5, width = 0.5, height = 0.5)
 
 methWithInset
 
 ggsave("average-methylation-density-plot.pdf", methWithInset, height = 8.5, width = 11, dpi = 300)
 ```
 
-```{r}
-mainPlot <- ggplot(avgMethTreatLong) + 
-  geom_density(mapping = aes(x = value, color = treatment), show.legend = FALSE) +
-  scale_y_continuous(limits = c(0,25)) +
-  labs(x = "Proportion CpG Methylation", y = "Density") +
-  scale_color_manual(values = c("mean_NBH_NO" = plotColors[2],
-                                "mean_NBH_HY" = plotColors[1],
-                                "mean_SC_NO" = plotColors[4],
-                                "mean_SC_HY" = plotColors[3])) +
-  theme_classic() + theme(axis.text.x = element_text(size = 13),
-                          axis.title.x = element_text(size = 20),
-                          axis.text.y = element_text(size = 13),
-                          axis.title.y = element_text(size = 20))
-
-insetPlot <- mainPlot +
-  scale_x_continuous(limits = c(0,0.25)) +
-  scale_y_continuous(limits = c(0,10)) +
-  theme_classic() + theme(legend.position = "none")
-
-methWithInset <- ggdraw() +
-  draw_plot(mainPlot) +
-  draw_plot(insetPlot, x = 0.25, y = 0.5, width = 0.5, height = 0.5)
-
-methWithInset
-
-ggsave("average-methylation-density-plot.pdf", methWithInset, height = 8.5, width = 11, dpi = 300)
-```
-
-
-
-# TO DO
-
-- Fix points out of plotting sector
