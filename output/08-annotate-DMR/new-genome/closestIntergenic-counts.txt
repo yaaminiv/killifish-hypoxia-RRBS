@@ -1,0 +1,6 @@
+23	20_5_N_DMR.closestIntergenic.bed
+10	20_OC_N_DMR.closestIntergenic.bed
+59	5_OC_N_DMR.closestIntergenic.bed
+13	5_pop_diff_DMR.closestIntergenic.bed
+1	OC_pop_diff_DMR.closestIntergenic.bed
+11	all_pop_DMR.closestIntergenic.bed

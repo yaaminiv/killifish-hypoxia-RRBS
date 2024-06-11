@@ -1,0 +1,6 @@
+55	20_5_N_DMR.closestCDS.bed
+33	20_OC_N_DMR.closestCDS.bed
+146	5_OC_N_DMR.closestCDS.bed
+36	5_pop_diff_DMR.closestCDS.bed
+1	OC_pop_diff_DMR.closestCDS.bed
+29	all_pop_DMR.closestCDS.bed

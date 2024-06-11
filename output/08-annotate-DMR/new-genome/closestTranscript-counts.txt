@@ -1,0 +1,6 @@
+37	20_5_N_DMR.closestTranscript.bed
+12	20_OC_N_DMR.closestTranscript.bed
+60	5_OC_N_DMR.closestTranscript.bed
+19	5_pop_diff_DMR.closestTranscript.bed
+4	OC_pop_diff_DMR.closestTranscript.bed
+13	all_pop_DMR.closestTranscript.bed

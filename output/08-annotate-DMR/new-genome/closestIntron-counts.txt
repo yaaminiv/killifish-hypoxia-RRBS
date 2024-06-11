@@ -1,0 +1,6 @@
+24	20_5_N_DMR.closestIntron.bed
+10	20_OC_N_DMR.closestIntron.bed
+61	5_OC_N_DMR.closestIntron.bed
+13	5_pop_diff_DMR.closestIntron.bed
+1	OC_pop_diff_DMR.closestIntron.bed
+11	all_pop_DMR.closestIntron.bed

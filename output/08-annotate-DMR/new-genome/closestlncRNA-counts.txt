@@ -1,0 +1,6 @@
+26	20_5_N_DMR.closestlncRNA.bed
+13	20_OC_N_DMR.closestlncRNA.bed
+64	5_OC_N_DMR.closestlncRNA.bed
+15	5_pop_diff_DMR.closestlncRNA.bed
+1	OC_pop_diff_DMR.closestlncRNA.bed
+14	all_pop_DMR.closestlncRNA.bed

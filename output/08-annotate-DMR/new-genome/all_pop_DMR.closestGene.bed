@@ -1,0 +1,11 @@
+NC_046362.1	39864318	39864358	DMR_1	hypermethylated	NC_046362.1	Gnomon	gene	39845359	39876638	.	+	.	ID=gene-znf276;Dbxref=GeneID:105931444;Name=znf276;gbkey=Gene;gene=znf276;gene_biotype=protein_coding	0
+NC_046363.1	203897	205027	DMR_2	hypomethylated	NC_046363.1	Gnomon	gene	203450	205473	.	-	.	ID=gene-LOC118558079;Dbxref=GeneID:118558079;Name=LOC118558079;gbkey=Gene;gene=LOC118558079;gene_biotype=lncRNA	0
+NC_046363.1	11482768	11483020	DMR_3	hypomethylated	NC_046363.1	Gnomon	gene	11522076	11524507	.	-	.	ID=gene-LOC118559404;Dbxref=GeneID:118559404;Name=LOC118559404;gbkey=Gene;gene=LOC118559404;gene_biotype=lncRNA	39056
+NC_046366.1	15952916	15953096	DMR_4	hypermethylated	NC_046366.1	Gnomon	gene	15950377	15964525	.	-	.	ID=gene-LOC105937584;Dbxref=GeneID:105937584;Name=LOC105937584;gbkey=Gene;gene=LOC105937584;gene_biotype=protein_coding	0
+NC_046366.1	32856829	32857009	DMR_5	hypermethylated	NC_046366.1	Gnomon	gene	32793873	32940154	.	+	.	ID=gene-LOC105930928;Dbxref=GeneID:105930928;Name=LOC105930928;gbkey=Gene;gene=LOC105930928;gene_biotype=protein_coding	0
+NC_046367.1	32848978	32849069	DMR_6	hypomethylated	NC_046367.1	Gnomon	gene	32875070	33003639	.	+	.	ID=gene-epha3;Dbxref=GeneID:105936158;Name=epha3;gbkey=Gene;gene=epha3;gene_biotype=protein_coding	26001
+NC_046372.1	26908073	26908253	DMR_7	hypermethylated	NC_046372.1	Gnomon	gene	26784506	27015252	.	-	.	ID=gene-adamts3;Dbxref=GeneID:105921104;Name=adamts3;gbkey=Gene;gene=adamts3;gene_biotype=protein_coding	0
+NC_046373.1	7352980	7353160	DMR_8	hypermethylated	NC_046373.1	Gnomon	gene	7357911	7474622	.	+	.	ID=gene-col16a1;Dbxref=GeneID:105934472;Name=col16a1;gbkey=Gene;gene=col16a1;gene_biotype=protein_coding	4751
+NC_046381.1	4397623	4397714	DMR_9	hypomethylated	NC_046381.1	Gnomon	gene	4297404	4392946	.	-	.	ID=gene-cnksr2a;Dbxref=GeneID:105919350;Name=cnksr2a;gbkey=Gene;gene=cnksr2a;gene_biotype=protein_coding	-4678
+NW_023396868.1	506268	506448	DMR_10	hypermethylated	NW_023396868.1	Gnomon	gene	513149	519541	.	-	.	ID=gene-LOC118560570;Dbxref=GeneID:118560570;Name=LOC118560570;gbkey=Gene;gene=LOC118560570;gene_biotype=lncRNA	6701
+NW_023397165.1	42333	42513	DMR_11	hypermethylated	NW_023397165.1	Gnomon	gene	19541	52509	.	+	.	ID=gene-LOC118561803;Dbxref=GeneID:118561803;Name=LOC118561803;gbkey=Gene;gene=LOC118561803;gene_biotype=lncRNA	0

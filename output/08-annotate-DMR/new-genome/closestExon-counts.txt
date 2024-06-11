@@ -1,0 +1,6 @@
+52	20_5_N_DMR.closestExon.bed
+11	20_OC_N_DMR.closestExon.bed
+105	5_OC_N_DMR.closestExon.bed
+34	5_pop_diff_DMR.closestExon.bed
+1	OC_pop_diff_DMR.closestExon.bed
+23	all_pop_DMR.closestExon.bed

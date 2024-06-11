@@ -1,0 +1,10 @@
+NC_046363.1	3538100	3538292	DMR_1	hypermethylated	NC_046363.1	Gnomon	gene	3636267	3637000	.	-	.	ID=gene-LOC118557730;Dbxref=GeneID:118557730;Name=LOC118557730;gbkey=Gene;gene=LOC118557730;gene_biotype=lncRNA	97975
+NC_046364.1	22883537	22883766	DMR_2	hypermethylated	NC_046364.1	Gnomon	gene	23011589	23126375	.	+	.	ID=gene-cdh8;Dbxref=GeneID:118556404;Name=cdh8;gbkey=Gene;gene=cdh8;gene_biotype=protein_coding;partial=true	127823
+NC_046366.1	7081208	7081367	DMR_3	hypermethylated	NC_046366.1	Gnomon	gene	7075099	7105964	.	+	.	ID=gene-fggy;Dbxref=GeneID:105925296;Name=fggy;gbkey=Gene;gene=fggy;gene_biotype=protein_coding	0
+NC_046367.1	16770264	16770423	DMR_4	hypermethylated	NC_046367.1	Gnomon	gene	16711110	16858206	.	+	.	ID=gene-fgf14;Dbxref=GeneID:105927467;Name=fgf14;gbkey=Gene;gene=fgf14;gene_biotype=protein_coding	0
+NC_046373.1	281709	281971	DMR_5	hypermethylated	NC_046373.1	Gnomon	gene	384334	388914	.	-	.	ID=gene-sox4a;Dbxref=GeneID:105931975;Name=sox4a;gbkey=Gene;gene=sox4a;gene_biotype=protein_coding	102363
+NC_046376.1	57649	57779	DMR_6	hypermethylated	NC_046376.1	Gnomon	gene	60886	64465	.	+	.	ID=gene-LOC118566350;Dbxref=GeneID:118566350;Name=LOC118566350;gbkey=Gene;gene=LOC118566350;gene_biotype=protein_coding	3107
+NC_046376.1	37486144	37486331	DMR_7	hypermethylated	NC_046376.1	Gnomon	gene	37491953	37496611	.	-	.	ID=gene-LOC110368333;Dbxref=GeneID:110368333;Name=LOC110368333;gbkey=Gene;gene=LOC110368333;gene_biotype=protein_coding	5622
+NC_046381.1	24998741	24998900	DMR_8	hypermethylated	NC_046381.1	Gnomon	gene	24931191	25003830	.	-	.	ID=gene-vopp1;Dbxref=GeneID:110367442;Name=vopp1;gbkey=Gene;gene=vopp1;gene_biotype=protein_coding	0
+NC_046382.1	24016650	24016784	DMR_9	hypermethylated	NC_046382.1	Gnomon	gene	24040371	24080476	.	+	.	ID=gene-pax2a;Dbxref=GeneID:105938650;Name=pax2a;gbkey=Gene;gene=pax2a;gene_biotype=protein_coding	23587
+NW_023397099.1	1670533	1670680	DMR_10	hypermethylated	NW_023397099.1	Gnomon	gene	1746268	1836170	.	+	.	ID=gene-LOC118561538;Dbxref=GeneID:118561538;Name=LOC118561538;end_range=1836170,.;gbkey=Gene;gene=LOC118561538;gene_biotype=protein_coding;partial=true;start_range=.,1746268	75588

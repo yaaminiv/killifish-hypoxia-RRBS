@@ -1,0 +1,6 @@
+24	20_5_N_DMR.closestGene.bed
+10	20_OC_N_DMR.closestGene.bed
+62	5_OC_N_DMR.closestGene.bed
+13	5_pop_diff_DMR.closestGene.bed
+1	OC_pop_diff_DMR.closestGene.bed
+11	all_pop_DMR.closestGene.bed

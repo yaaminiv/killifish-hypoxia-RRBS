@@ -1,0 +1,6 @@
+53	20_5_N_DMR.closestmRNA.bed
+13	20_OC_N_DMR.closestmRNA.bed
+118	5_OC_N_DMR.closestmRNA.bed
+34	5_pop_diff_DMR.closestmRNA.bed
+1	OC_pop_diff_DMR.closestmRNA.bed
+22	all_pop_DMR.closestmRNA.bed
