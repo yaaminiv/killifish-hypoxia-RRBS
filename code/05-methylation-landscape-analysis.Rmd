@@ -208,12 +208,6 @@ dev.off()
 
 ## Format data
 
-
-
-# Percent methylation by population and treatment
-
-## Format data
-
 ```{r}
 avgMethTreatLong <- avgMethUnion %>% 
   select(., chrom, start, 
@@ -226,56 +220,52 @@ avgMethTreatLong <- avgMethUnion %>%
 head(avgMethTreatLong) #Confirm formatting
 ```
 
+```{r}
+stackedBarplotData <- avgMethTreatLong %>%
+  group_by(., treatment) %>%
+  summarize(., 
+            total = sum(is.na(value) == FALSE),
+            methylated = sum(value > 0, na.rm = TRUE),
+            unmethylated = sum(value <= 0, na.rm = TRUE)) #Take long format data and group by treatment. For each treatment, use summarize to count the number of CpG with data, the number of methylated CpG, and the number of unmethylated CpG
+head(stackedBarplotData) #Confirm formatting
+stackedBarplotData %>%
+  mutate(sanityCheck = total - methylated) #Sanity check: total - methylated should equal the unmethylated column. It does, so we're good!
+```
+
 ## Plot data
 
 ```{r}
-ggplot(avgMethTreatLong) +
-  geom_density(mapping = aes(x = value, color = treatment, linetype = treatment)) +
-  labs(x = "Proportion CpG Methylation", y = "Density") +
-  scale_color_manual(name = "Population and Treatment",
-                     breaks = c("NBH.OC.average", 
-                                "NBH.NO.average", 
-                                "NBH.HY.average",
-                                "SC.OC.average", 
-                                "SC.NO.average", 
-                                "SC.HY.average"),
-                     labels = c("NBH Outside Control",
-                                "NBH Normoxia",
-                                "NBH Hypoxia",
-                                "SC Outside Control",
-                                "SC Normoxia",
-                                "SC Hypoxia"),
-                     values = c("NBH.OC.average" = plotColors[1], 
-                                "NBH.NO.average" = plotColors[2], 
-                                "NBH.HY.average" = plotColors[3],
-                                "SC.OC.average" = plotColors[4], 
-                                "SC.NO.average" = plotColors[5], 
-                                "SC.HY.average" = plotColors[6])) +
-  scale_linetype_manual(name = "Population and Treatment",
-                        breaks = c("NBH.OC.average", 
-                                "NBH.NO.average", 
-                                "NBH.HY.average",
-                                "SC.OC.average", 
-                                "SC.NO.average", 
-                                "SC.HY.average"),
-                     labels = c("NBH Outside Control",
-                                "NBH Normoxia",
-                                "NBH Hypoxia",
-                                "SC Outside Control",
-                                "SC Normoxia",
-                                "SC Hypoxia"),
-                     values = c("NBH.OC.average" = 1, 
-                                "NBH.NO.average" = 1, 
-                                "NBH.HY.average" = 1,
-                                "SC.OC.average" = 2, 
-                                "SC.NO.average" = 2, 
-                                "SC.HY.average" = 2),
-                     aesthetics = c("linetype")) +
-  theme_classic(base_size = 13) + theme(axis.text.x = element_text(size = 13),
-                                        axis.title.x = element_text(size = 20),
-                                        axis.text.y = element_text(size = 13),
-                                        axis.title.y = element_text(size = 20))
+stackedBarplotData %>%
+  select(., -total) %>%
+  mutate(., treatment2 = case_when(treatment == "NBH.HY.average" ~ "NBH5",
+                                   treatment == "NBH.NO.average" ~ "NBH20",
+                                   treatment == "NBH.OC.average" ~ "NBH0",
+                                   treatment == "SC.HY.average" ~ "SC5",
+                                   treatment == "SC.NO.average" ~ "SC20",
+                                   treatment == "SC.OC.average" ~ "SC0")) %>%
+  pivot_longer(., cols = 2:3, names_to = "CpGstatus", values_to = "count") %>%
+  ggplot(., mapping = aes(x = treatment2, y = count, fill = CpGstatus)) +
+  geom_bar(position = "fill", stat = "identity") +
+  labs(x = "", y = "% CpGs") +
+  scale_x_discrete(name = "",
+                   labels = c("NBH OC",
+                              "NBH NO",
+                              "NBH HY",
+                              "SC OC",
+                              "SC NO",
+                              "SC HY")) +
+  scale_y_continuous(breaks = seq(0,1,0.25),
+                     labels = seq(0,100,25)) +
+  scale_fill_manual(name = "",
+                     labels = c("Methylated", "Unmethylated"),
+                     values = c("grey20", "grey80")) +
+  theme_classic(base_size = 13) #Take stacked barplot data and remove total column. Create a new column, treatment2, that reorganized treatment information in a logical order. Pivot dataframe longer to use for plotting. Create a stacked barplot (position = "fill"). Modify x- and y-axes.
+ggsave("CpG-stacked-barplot.pdf", width = 11, height = 8.5)
 ```
+
+# Percent methylation by population and treatment
+
+## Plot data
 
 ```{r}
 #Create main plot
