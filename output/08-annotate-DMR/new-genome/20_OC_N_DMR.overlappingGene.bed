@@ -1,0 +1,3 @@
+NC_046366.1	7081208	7081367	DMR_3	hypermethylated	NC_046366.1	Gnomon	gene	7075099	7105964	.	+	.	ID=gene-fggy;Dbxref=GeneID:105925296;Name=fggy;gbkey=Gene;gene=fggy;gene_biotype=protein_coding	0
+NC_046367.1	16770264	16770423	DMR_4	hypermethylated	NC_046367.1	Gnomon	gene	16711110	16858206	.	+	.	ID=gene-fgf14;Dbxref=GeneID:105927467;Name=fgf14;gbkey=Gene;gene=fgf14;gene_biotype=protein_coding	0
+NC_046381.1	24998741	24998900	DMR_8	hypermethylated	NC_046381.1	Gnomon	gene	24931191	25003830	.	-	.	ID=gene-vopp1;Dbxref=GeneID:110367442;Name=vopp1;gbkey=Gene;gene=vopp1;gene_biotype=protein_coding	0

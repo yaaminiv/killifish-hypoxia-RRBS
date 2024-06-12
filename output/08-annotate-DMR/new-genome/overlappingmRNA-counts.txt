@@ -1,0 +1,6 @@
+30	20_5_N_DMR.overlappingmRNA.bed
+6	20_OC_N_DMR.overlappingmRNA.bed
+68	5_OC_N_DMR.overlappingmRNA.bed
+27	5_pop_diff_DMR.overlappingmRNA.bed
+1	OC_pop_diff_DMR.overlappingmRNA.bed
+8	all_pop_DMR.overlappingmRNA.bed

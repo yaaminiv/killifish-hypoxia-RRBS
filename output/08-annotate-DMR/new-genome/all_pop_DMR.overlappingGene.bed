@@ -1,0 +1,6 @@
+NC_046362.1	39864318	39864358	DMR_1	hypermethylated	NC_046362.1	Gnomon	gene	39845359	39876638	.	+	.	ID=gene-znf276;Dbxref=GeneID:105931444;Name=znf276;gbkey=Gene;gene=znf276;gene_biotype=protein_coding	0
+NC_046363.1	203897	205027	DMR_2	hypomethylated	NC_046363.1	Gnomon	gene	203450	205473	.	-	.	ID=gene-LOC118558079;Dbxref=GeneID:118558079;Name=LOC118558079;gbkey=Gene;gene=LOC118558079;gene_biotype=lncRNA	0
+NC_046366.1	15952916	15953096	DMR_4	hypermethylated	NC_046366.1	Gnomon	gene	15950377	15964525	.	-	.	ID=gene-LOC105937584;Dbxref=GeneID:105937584;Name=LOC105937584;gbkey=Gene;gene=LOC105937584;gene_biotype=protein_coding	0
+NC_046366.1	32856829	32857009	DMR_5	hypermethylated	NC_046366.1	Gnomon	gene	32793873	32940154	.	+	.	ID=gene-LOC105930928;Dbxref=GeneID:105930928;Name=LOC105930928;gbkey=Gene;gene=LOC105930928;gene_biotype=protein_coding	0
+NC_046372.1	26908073	26908253	DMR_7	hypermethylated	NC_046372.1	Gnomon	gene	26784506	27015252	.	-	.	ID=gene-adamts3;Dbxref=GeneID:105921104;Name=adamts3;gbkey=Gene;gene=adamts3;gene_biotype=protein_coding	0
+NW_023397165.1	42333	42513	DMR_11	hypermethylated	NW_023397165.1	Gnomon	gene	19541	52509	.	+	.	ID=gene-LOC118561803;Dbxref=GeneID:118561803;Name=LOC118561803;gbkey=Gene;gene=LOC118561803;gene_biotype=lncRNA	0

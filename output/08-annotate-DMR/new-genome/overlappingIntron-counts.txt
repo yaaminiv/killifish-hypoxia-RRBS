@@ -1,0 +1,6 @@
+9	20_5_N_DMR.overlappingIntron.bed
+3	20_OC_N_DMR.overlappingIntron.bed
+19	5_OC_N_DMR.overlappingIntron.bed
+7	5_pop_diff_DMR.overlappingIntron.bed
+1	OC_pop_diff_DMR.overlappingIntron.bed
+6	all_pop_DMR.overlappingIntron.bed

@@ -1,0 +1,9 @@
+NC_046361.1	5411834	5411929	DMR_1	hypomethylated	NC_046361.1	Gnomon	gene	5395097	5431788	.	+	.	ID=gene-LOC118556598;Dbxref=GeneID:118556598;Name=LOC118556598;gbkey=Gene;gene=LOC118556598;gene_biotype=protein_coding	0
+NC_046361.1	5420132	5420227	DMR_2	hypomethylated	NC_046361.1	Gnomon	gene	5395097	5431788	.	+	.	ID=gene-LOC118556598;Dbxref=GeneID:118556598;Name=LOC118556598;gbkey=Gene;gene=LOC118556598;gene_biotype=protein_coding	0
+NC_046373.1	14583752	14583847	DMR_7	hypomethylated	NC_046373.1	Gnomon	gene	14538685	14600827	.	-	.	ID=gene-necab1;Dbxref=GeneID:105930380;Name=necab1;gbkey=Gene;gene=necab1;gene_biotype=protein_coding	0
+NC_046373.1	14592138	14592233	DMR_8	hypomethylated	NC_046373.1	Gnomon	gene	14538685	14600827	.	-	.	ID=gene-necab1;Dbxref=GeneID:105930380;Name=necab1;gbkey=Gene;gene=necab1;gene_biotype=protein_coding	0
+NC_046373.1	37115424	37115457	DMR_9	hypomethylated	NC_046373.1	Gnomon	gene	37097080	37139864	.	-	.	ID=gene-lipea;Dbxref=GeneID:105916897;Name=lipea;gbkey=Gene;gene=lipea;gene_biotype=protein_coding	0
+NC_046373.1	38547588	38547621	DMR_10	hypomethylated	NC_046373.1	Gnomon	gene	38514008	38552853	.	-	.	ID=gene-crybg2;Dbxref=GeneID:105917380;Name=crybg2;gbkey=Gene;gene=crybg2;gene_biotype=protein_coding	0
+NC_046373.1	38547588	38547621	DMR_10	hypomethylated	NC_046373.1	Gnomon	gene	38538014	38558773	.	+	.	ID=gene-LOC118565375;Dbxref=GeneID:118565375;Name=LOC118565375;gbkey=Gene;gene=LOC118565375;gene_biotype=protein_coding	0
+NC_046374.1	20646130	20646225	DMR_11	hypomethylated	NC_046374.1	Gnomon	gene	20592178	20713723	.	+	.	ID=gene-LOC105927914;Dbxref=GeneID:105927914;Name=LOC105927914;gbkey=Gene;gene=LOC105927914;gene_biotype=protein_coding	0
+NC_046374.1	20654366	20654461	DMR_12	hypomethylated	NC_046374.1	Gnomon	gene	20592178	20713723	.	+	.	ID=gene-LOC105927914;Dbxref=GeneID:105927914;Name=LOC105927914;gbkey=Gene;gene=LOC105927914;gene_biotype=protein_coding	0

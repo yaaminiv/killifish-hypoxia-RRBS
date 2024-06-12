@@ -1,0 +1,6 @@
+15	20_5_N_DMR.overlappingIntergenic.bed
+7	20_OC_N_DMR.overlappingIntergenic.bed
+35	5_OC_N_DMR.overlappingIntergenic.bed
+6	5_pop_diff_DMR.overlappingIntergenic.bed
+0	OC_pop_diff_DMR.overlappingIntergenic.bed
+5	all_pop_DMR.overlappingIntergenic.bed

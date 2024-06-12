@@ -1,0 +1,6 @@
+0	20_5_N_DMR.overlappingCDS.bed
+0	20_OC_N_DMR.overlappingCDS.bed
+14	5_OC_N_DMR.overlappingCDS.bed
+0	5_pop_diff_DMR.overlappingCDS.bed
+0	OC_pop_diff_DMR.overlappingCDS.bed
+0	all_pop_DMR.overlappingCDS.bed
