@@ -1,0 +1,31 @@
+---
+title: "08-annotate-DMR"
+author: "Yaamini Venkataraman"
+date: "2024-08-07"
+output: html_document
+---
+
+# Set up R Markdown document
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/08-annotate-DMR/new-genome/") #Set root directory
+```
+
+#Install packages
+
+```{r}
+#install.packages("tidyverse")
+#install.packages("RColorBrewer")
+require(tidyverse)
+require(RColorBrewer)
+```
+
+```{r}
+sessionInfo()
+```
+
+# Import data
+
+# Format data
+
