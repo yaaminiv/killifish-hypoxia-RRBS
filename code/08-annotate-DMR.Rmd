@@ -5,11 +5,17 @@ date: "2024-08-07"
 output: html_document
 ---
 
+In this script I will examine overlaps between DMR and DEG for specific contrasts, then visualize DMR patterns. As a reminder, there were no DMR found for Scorton Creek populations, so this script will focus only on New Bedford Harbor populations when examining DMR-DEG overlaps.
+
 # Set up R Markdown document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = "/Users/yaaminivenkataraman/Documents/killifish-hypoxia-RRBS/output/08-annotate-DMR/new-genome/") #Set root directory
+```
+
+```{r}
+getwd()
 ```
 
 #Install packages
@@ -25,7 +31,65 @@ require(RColorBrewer)
 sessionInfo()
 ```
 
-# Import data
+# Import and format data
 
-# Format data
+## DMR data
+
+```{r}
+NBH20v0CDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE, 
+                          col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
+  separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
+  mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
+  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
+  #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+head(NBH20v0CDMR) #Confirm formatting
+```
+
+```{r}
+NBH5vOCDMR <- read.delim("5_OC_N_DMR.closestGene.bed", header = FALSE, 
+                          col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
+  separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
+  mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
+  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
+  #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+head(NBH5vOCDMR) #Confirm formatting
+```
+
+## DEG data
+
+```{r}
+NBH20vOCDEG <- read.csv("../../../data/NEW-n.NBHvso.NBH.csv") #Import DEG data
+colnames(NBH20vOCDEG)[1] <- "gene.name"
+head(NBH20vOCDEG)
+```
+
+```{r}
+NBH5vOCDEG <- read.csv("../../../data/NEW-h.NBHvso.NBH.csv") #Import DEG data
+colnames(NBH5vOCDEG)[1] <- "gene.name"
+head(NBH5vOCDEG)
+```
+
+# Overlaps between DEG and DMR
+
+```{r}
+NBH20v0CDMRDEG <- inner_join(NBH20v0CDMR, NBH20vOCDEG, by = "gene.name") %>%
+  mutate(contrast = "20_OC_N") #Use inner join to identify DMR that overlap with DEG.
+NBH20v0CDMRDEG
+```
+
+```{r}
+NBH5v0CDMRDEG <- inner_join(NBH5vOCDMR, NBH5vOCDEG, by = "gene.name") %>%
+  mutate(contrast = "5_OC_N") #Use inner join to identify DMR that overlap with DEG.
+NBH5v0CDMRDEG
+```
+
+```{r}
+allNBHDMRDMG <- rbind(NBH20v0CDMRDEG, NBH5v0CDMRDEG)
+write.csv(allNBHDMRDMG, "NBH-DMR-DEG-overlaps.csv", quote = FALSE, row.names = FALSE)
+```
+
+
+For each contrast, only one gene with a DMR is present in the DEG data, but these genes are not differentially expressed. For the hypoxia vs. outside control contrast, there are a few more genes that were included in the DEG data set that came up in the `closestBed` analysis, but again, none of these genes are differentially expressed.
+
+# DMR Figure
 
