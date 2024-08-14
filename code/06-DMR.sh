@@ -25,3 +25,13 @@ singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/06-DMR-envfile.
 /yaaminiv/06-BAT-DMRcalling.sh
 
 echo "Done with DMR calling"
+
+echo "DMR Correlating Module"
+
+#Run BAT_correlating
+singularity exec --env-file /vortexfs1/home/yaamini.venkataraman/06-DMR-envfile.txt \
+--bind /vortexfs1/home/naluru/:/naluru,/vortexfs1/scratch/yaamini.venkataraman:/scratch,/vortexfs1/home/yaamini.venkataraman/:/yaaminiv \
+/vortexfs1/home/naluru/bat_latest.sif \
+/yaaminiv/06-BAT-correlating.sh
+
+echo "Done with DMR correlating"
