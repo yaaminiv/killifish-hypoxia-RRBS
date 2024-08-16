@@ -8,7 +8,7 @@
 #SBATCH --exclusive                                                         # All 36 procs on the one node
 #SBATCH --mem=100gb                                                         # Job memory request
 #SBATCH --output=yrv_DMR%j.log  								   			      		  	      # Standard output
-#SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/08-annot-DMR        # Working directory for this script
+#SBATCH --chdir=/vortexfs1/scratch/yaamini.venkataraman/08-annotate-DMR        # Working directory for this script
 
 #Load the singularity module for BAT
 module load singularity/3.7
