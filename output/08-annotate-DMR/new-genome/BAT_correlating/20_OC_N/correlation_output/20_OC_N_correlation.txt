@@ -1,0 +1,12 @@
+x
+plot.pdf	ENSG_ID	methylation_region	adj.R2	rho	rho.p-val
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046364.1:22883537-22883766_cdh8.pdf	cdh8	NC_046364.1:22883537-22883766	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046367.1:16770264-16770423_fgf14.pdf	fgf14	NC_046367.1:16770264-16770423	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046366.1:7081208-7081367_fggy.pdf	fggy	NC_046366.1:7081208-7081367	-0.1	0.39	0.3956
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046376.1:37486144-37486331_LOC110368333.pdf	LOC110368333	NC_046376.1:37486144-37486331	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046363.1:3538100-3538292_LOC118557730.pdf	LOC118557730	NC_046363.1:3538100-3538292	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NW_023397099.1:1670533-1670680_LOC118561538.pdf	LOC118561538	NW_023397099.1:1670533-1670680	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046376.1:57649-57779_LOC118566350.pdf	LOC118566350	NC_046376.1:57649-57779	-0.14	0	1
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046382.1:24016650-24016784_pax2a.pdf	pax2a	NC_046382.1:24016650-24016784	NaN	NA	NA
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046373.1:281709-281971_sox4a.pdf	sox4a	NC_046373.1:281709-281971	-0.13	-0.63	0.1289
+/scratch/08-annotate-DMR/new-genome/20_OC_N/correlation_output/correlation_NC_046381.1:24998741-24998900_vopp1.pdf	vopp1	NC_046381.1:24998741-24998900	NaN	NA	NA
