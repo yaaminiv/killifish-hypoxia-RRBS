@@ -51,7 +51,7 @@ BAT_correlating \
 -m ${CORR}/20_OC_N/20_OC_N_methylation_files.list \
 -g ${CORR}/20_OC_N/20_OC_N_sample_to_group.txt \
 -i NO,OC \
--o ${CORR}/20_OC_N/correlation_output/20_OC_N_correlation
+-o ${CORR}/20_OC_N/correlation_output/
 
 echo "Oxygen within NB: Outside Control vs. Hypoxia"
 
@@ -104,6 +104,6 @@ BAT_correlating \
 -m ${CORR}/5_OC_N/5_OC_N_methylation_files.list \
 -g ${CORR}/5_OC_N/5_OC_N_sample_to_group.txt \
 -i HY,OC \
--o ${CORR}/5_OC_N/correlation_output/5_OC_N_correlation
+-o ${CORR}/5_OC_N/correlation_output/
 
 echo "Done with BAT_correlating"

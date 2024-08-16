@@ -10,4 +10,4 @@ BIGWIG=/yaaminiv/killifish-hypoxia-RRBS/output/05-analysis/new-genome/summarize/
 RNA=/yaaminiv/killifish-hypoxia-RRBS/data/RNA-Seq-renamed
 
 #BAT_correlating output directory
-CORR=/scratch/08-annotate-DMR/new-genome
+CORR=/yaaminiv/killifish-hypoxia-RRBS/output/08-annotate-DMR/new-genome
