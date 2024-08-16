@@ -7,13 +7,13 @@ SUMMARIZE=/yaaminiv/killifish-hypoxia-RRBS/output/05-analysis/new-genome/summari
 DMR=/scratch/06-DMR/new-genome/missing_1
 
 #DMR annotation output directory
-annot-DMR=/yaaminiv/killifish-hypoxia-RRBS/output/08-annotate-DMR/new-genome
+ANNOT=/yaaminiv/killifish-hypoxia-RRBS/output/08-annotate-DMR/new-genome
 
 #bigWig file directory
-bigWig-dir=/yaaminiv/killifish-hypoxia-RRBS/output/05-analysis/new-genome/summarize/missing_1
+BIGWIG=/yaaminiv/killifish-hypoxia-RRBS/output/05-analysis/new-genome/summarize/missing_1
 
 #RNA-Seq data directory
 RNA=/yaaminiv/killifish-hypoxia-RRBS/data/RNA-Seq-renamed
 
 #BAT_correlating output directory
-corr-DMR=/scratch/08-annotate-DMR/new-genome
+CORR=/scratch/08-annotate-DMR/new-genome

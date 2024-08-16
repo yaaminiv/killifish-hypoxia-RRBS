@@ -4,35 +4,39 @@ echo "Oxygen within NB: Outside Control vs. Hypoxia"
 
 #Create BAT_correlating input
 
-mkdir ${corr-DMR}/20_OC_N
+mkdir ${CORR}/20_OC_N
 
 echo "Create BEDfile with DMR and gene coordinates"
 
-cat ${annot-DMR}/20_OC_N_DMR.closestGene.bed \
+cat ${ANNOT}/20_OC_N_DMR.closestGene.bed \
 | cut -f1-3,14 \
 | tr ";" "\t" \
 | cut -f1-4 \
 | sed 's/ID=gene-//g' \
-> ${corr-DMR}/20_OC_N/20_OC_N_DMR_gene.bed
+> ${CORR}/20_OC_N/20_OC_N_DMR_gene.bed
 
 echo "Create methylation bigWig file list"
 
-ls ${bigWig-dir}/20_OC_N/*bw \
+ls ${BIGWIG}/20_OC_N/*bw \
 | grep -v "mean" \
 | grep -v "diff" \
 | sed 's/\t/\n/' \
-> ${corr-DMR}/20_OC_N/20_OC_N_methylation_files.list
+> ${CORR}/20_OC_N/20_OC_N_methylation_files.list
 
 echo "Create gene expression file list"
 
-ls ${RNA}/*txt \
+ls ${RNA}/*threeCol.txt \
 | grep -e "20-N" -e "OC-N" \
 | sed 's/\t/\n/' \
-> ${corr-DMR}/20_OC_N/20_OC_N_expression_files.list
+> ${CORR}/20_OC_N/20_OC_N_expression_files.list
 
 echo "Create sample identifier list"
 
-echo -e '20-N1\tNO\n20-N2\tNO\n20-N4\tNO\nOC-N1\tOC\nOC-N2\tOC\nOC-N3\tOC\nOC-N4\tOC\nOC-N5\tOC' > ${corr-DMR}/20_OC_N_sample_to_group.txt
+echo -e '20-N1\tNO\n20-N2\tNO\n20-N4\tNO\nOC-N1\tOC\nOC-N2\tOC\nOC-N3\tOC\nOC-N4\tOC\nOC-N5\tOC' > ${CORR}/20_OC_N/20_OC_N_sample_to_group.txt
+
+#Create output directory
+
+mkdir ${CORR}/20_OC_N/correlation_output
 
 #Run BAT_DMRcalling
 #-b: BED file with coordinates of methylation region and name of identifier: chr <tab> start <tab> end <tab> identifier
@@ -43,9 +47,9 @@ echo -e '20-N1\tNO\n20-N2\tNO\n20-N4\tNO\nOC-N1\tOC\nOC-N2\tOC\nOC-N3\tOC\nOC-N4
 #-o Path/prefix for output
 
 BAT_correlating \
--b ${corr-DMR}/20_OC_N/20_OC_N_DMR_gene.bed \
--e ${corr-DMR}/20_OC_N/20_OC_N_expression_files.list \
--m ${corr-DMR}/20_OC_N/20_OC_N_methylation_files.list \
--g ${corr-DMR}/20_OC_N_sample_to_group.txt \
+-b ${CORR}/20_OC_N/20_OC_N_DMR_gene.bed \
+-e ${CORR}/20_OC_N/20_OC_N_expression_files.list \
+-m ${CORR}/20_OC_N/20_OC_N_methylation_files.list \
+-g ${CORR}/20_OC_N/20_OC_N_sample_to_group.txt \
 -i NO,OC \
--o ${DMR}/20_5_N/correlation
+-o ${CORR}/20_OC_N/correlation_output/20_OC_N
