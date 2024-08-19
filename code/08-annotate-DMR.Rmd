@@ -41,17 +41,17 @@ NBH20vOCDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE,
   separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
   dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
-  #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
 head(NBH20vOCDMR) #Confirm formatting
 ```
 
 ```{r}
 NBH5vOCDMR <- read.delim("5_OC_N_DMR.closestGene.bed", header = FALSE, 
-                          col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
+                         col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
   separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
   dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
-  #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
 head(NBH5vOCDMR) #Confirm formatting
 ```
 
@@ -64,8 +64,8 @@ head(NBH20vOCmetilene) #Confirm import
 NBH20vOCpositions <- data.frame() #Create empty dataframe
 for (i in 1:nrow(NBH20vOCDMR)) {
   temp <- NBH20vOCmetilene %>%
-  filter(., pos >= NBH20vOCDMR$DMR.start[i] & pos <= NBH20vOCDMR$DMR.end[i]) %>%
-  mutate(., DMR = NBH20vOCDMR$DMR[i])
+    filter(., pos >= NBH20vOCDMR$DMR.start[i] & pos <= NBH20vOCDMR$DMR.end[i]) %>%
+    mutate(., DMR = NBH20vOCDMR$DMR[i])
   NBH20vOCpositions <- rbind(NBH20vOCpositions, temp)
 } #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
 colnames(NBH20vOCpositions) <- c(colnames(NBH20vOCmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
@@ -76,7 +76,8 @@ head(NBH20vOCpositions) #Confirm formatting
 NBH20vOCavgMeth <- NBH20vOCpositions %>%
   group_by(., DMR) %>%
   dplyr::select(., -c(chr, pos)) %>%
-  summarize_all(funs(sum(., na.rm = TRUE))) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample.
+  summarize_all(funs(sum(., na.rm = TRUE))) %>%
+  slice(., 1, 3:10, 2) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice.
 head(NBH20vOCavgMeth) #Confirm formatting
 ```
 
@@ -89,8 +90,8 @@ head(NBH5vOCmetilene) #Confirm import
 NBH5vOCpositions <- data.frame() #Create empty dataframe
 for (i in 1:nrow(NBH5vOCDMR)) {
   temp <- NBH5vOCmetilene %>%
-  filter(., pos >= NBH5vOCDMR$DMR.start[i] & pos <= NBH5vOCDMR$DMR.end[i]) %>%
-  mutate(., DMR = NBH5vOCDMR$DMR[i])
+    filter(., pos >= NBH5vOCDMR$DMR.start[i] & pos <= NBH5vOCDMR$DMR.end[i]) %>%
+    mutate(., DMR = NBH5vOCDMR$DMR[i])
   NBH5vOCpositions <- rbind(NBH5vOCpositions, temp)
 } #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
 colnames(NBH5vOCpositions) <- c(colnames(NBH5vOCmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
@@ -101,7 +102,8 @@ head(NBH5vOCpositions) #Confirm formatting
 NBH5vOCavgMeth <- NBH5vOCpositions %>%
   group_by(., DMR) %>%
   dplyr::select(., -c(chr, pos)) %>%
-  summarize_all(funs(sum(., na.rm = TRUE))) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample.
+  summarize_all(funs(sum(., na.rm = TRUE))) %>%
+  slice(., 1, 12, 23, 34, 45, 56:59, 2:11, 13:22, 24:33, 35:44, 46:55) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice
 head(NBH5vOCavgMeth) #Confirm formatting
 ```
 
@@ -124,7 +126,7 @@ head(NBH5vOCDEG)
 I will make heatmaps showing methylation level of DMR across samples for the normoxia vs. outside control and hypoxia vs. outside control comparisons.
 
 ```{r}
-head(NBH20vOCDMR)
+head(NBH20vOCavgMeth)
 ```
 
 ```{r}
