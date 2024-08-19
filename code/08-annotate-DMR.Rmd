@@ -55,6 +55,29 @@ NBH5vOCDMR <- read.delim("5_OC_N_DMR.closestGene.bed", header = FALSE,
 head(NBH5vOCDMR) #Confirm formatting
 ```
 
+```{r}
+NBH20v0Cmetilene <- read.delim("../../05-analysis/new-genome/summarize/missing_1/20_OC_N/N_metilene_NO_OC.txt", header = TRUE) #Import metilene data used to identify DMR. This dataset has the methylation value for each CpG in the DMR.
+head(NBH20v0Cmetilene) #Confirm import
+```
+
+```{r}
+NBH20v0Cpositions <- data.frame() #Create empty dataframe
+for (i in 1:nrow(NBH20v0CDMR)) {
+  temp <- NBH20v0Cmetilene %>%
+  filter(., pos >= NBH20v0CDMR$DMR.start[i] & pos <= NBH20v0CDMR$DMR.end[i]) %>%
+  mutate(., DMR = NBH20v0CDMR$DMR[i])
+  NBH20v0Cpositions <- rbind(NBH20v0Cpositions, temp)
+} #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
+colnames(NBH20v0Cpositions) <- c(colnames(NBH20v0Cmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
+head(NBH20v0Cpositions) #Confirm formatting
+```
+
+
+```{r}
+NBH20v0CDMR
+```
+
+
 ## DEG data
 
 ```{r}
@@ -68,6 +91,19 @@ NBH5vOCDEG <- read.csv("../../../data/NEW-h.NBHvso.NBH.csv") #Import DEG data
 colnames(NBH5vOCDEG)[1] <- "gene.name"
 head(NBH5vOCDEG)
 ```
+
+# Heatmaps of DMR
+
+I will make heatmaps showing methylation level of DMR across samples for the normoxia vs. outside control and hypoxia vs. outside control comparisons.
+
+```{r}
+head(NBH20v0CDMR)
+```
+
+```{r}
+
+```
+
 
 # Overlaps between DEG and DMR
 
@@ -87,7 +123,6 @@ NBH5v0CDMRDEG
 allNBHDMRDMG <- rbind(NBH20v0CDMRDEG, NBH5v0CDMRDEG)
 write.csv(allNBHDMRDMG, "NBH-DMR-DEG-overlaps.csv", quote = FALSE, row.names = FALSE)
 ```
-
 
 For each contrast, only one gene with a DMR is present in the DEG data, but these genes are not differentially expressed. For the hypoxia vs. outside control contrast, there are a few more genes that were included in the DEG data set that came up in the `closestBed` analysis, but again, none of these genes are differentially expressed.
 
