@@ -73,6 +73,14 @@ head(NBH20vOCpositions) #Confirm formatting
 ```
 
 ```{r}
+NBH20vOCavgMeth <- NBH20vOCpositions %>%
+  group_by(., DMR) %>%
+  dplyr::select(., -c(chr, pos)) %>%
+  summarize_all(funs(sum(., na.rm = TRUE))) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample.
+head(NBH20vOCavgMeth) #Confirm formatting
+```
+
+```{r}
 NBH5vOCmetilene <- read.delim("../../05-analysis/new-genome/summarize/missing_1/5_OC_N/N_metilene_HY_OC.txt", header = TRUE) #Import metilene data used to identify DMR. This dataset has the methylation value for each CpG in the DMR.
 head(NBH5vOCmetilene) #Confirm import
 ```
@@ -87,6 +95,14 @@ for (i in 1:nrow(NBH5vOCDMR)) {
 } #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
 colnames(NBH5vOCpositions) <- c(colnames(NBH5vOCmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
 head(NBH5vOCpositions) #Confirm formatting
+```
+
+```{r}
+NBH5vOCavgMeth <- NBH5vOCpositions %>%
+  group_by(., DMR) %>%
+  dplyr::select(., -c(chr, pos)) %>%
+  summarize_all(funs(sum(., na.rm = TRUE))) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample.
+head(NBH5vOCavgMeth) #Confirm formatting
 ```
 
 ## DEG data
