@@ -42,8 +42,10 @@ NBH20vOCDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE,
                           col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
   separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
-  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
-#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance) %>%
+  left_join(., (read.delim("../../06-DMR/new-genome/missing_1/20_OC_N/20_OC_N_qval.0.05.bedgraph", header = FALSE,
+           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
+#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. Join by imported dataframe to get methylation difference at each DMR (treatment - outside control).
 head(NBH20vOCDMR) #Confirm formatting
 ```
 
@@ -52,8 +54,10 @@ NBH5vOCDMR <- read.delim("5_OC_N_DMR.closestGene.bed", header = FALSE,
                          col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
   separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
-  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
-#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
+  dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance) %>%
+  left_join(., (read.delim("../../06-DMR/new-genome/missing_1/5_OC_N/5_OC_N_qval.0.05.bedgraph", header = FALSE,
+           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
+#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. Join by imported dataframe to get methylation difference at each DMR (treatment - outside control).
 head(NBH5vOCDMR) #Confirm formatting
 ```
 
@@ -125,7 +129,9 @@ colnames(NBH5vOCDEG)[1] <- "gene.name"
 head(NBH5vOCDEG)
 ```
 
-# Heatmaps of DMR
+# DMR figures
+
+## Heatmaps
 
 I will make heatmaps showing methylation level of DMR across samples for the normoxia vs. outside control and hypoxia vs. outside control comparisons.
 
@@ -137,7 +143,7 @@ mkdir figures
 heatmapColors <- rev(brewer.pal("RdBu", n = 11))
 ```
 
-## Normoxia vs. outside control
+### Normoxia vs. outside control
 
 ```{r}
 NBH20vOCoxygenTreatment <- data.frame(samples = colnames(NBH20vOCavgMeth),
@@ -161,7 +167,7 @@ pheatmap(NBH20vOCavgMeth, cluster_row = TRUE, show_rownames = FALSE, cluster_col
 #dev.off()
 ```
 
-## Hypoxia vs. outside control
+### Hypoxia vs. outside control
 
 ```{r}
 NBH5vOCoxygenTreatment <- data.frame(samples = colnames(NBH5vOCavgMeth),
@@ -184,6 +190,21 @@ pheatmap(NBH5vOCavgMeth, cluster_row = TRUE, show_rownames = FALSE, cluster_cols
 
 #dev.off()
 ```
+
+## Hyper- vs. hypomethylation
+
+I want to make a barplot showing the level of hyper- or hypomethylation of a DMR.
+
+### Normoxia vs. outside control
+
+```{r}
+NBH20vOCDMR
+```
+
+
+
+
+### Hypoxia vs. outside control
 
 # Overlaps between DEG and DMR
 
