@@ -23,8 +23,10 @@ getwd()
 ```{r}
 #install.packages("tidyverse")
 #install.packages("RColorBrewer")
+#install.packages("pheatmap")
 require(tidyverse)
 require(RColorBrewer)
+require(pheatmap)
 ```
 
 ```{r}
@@ -77,7 +79,8 @@ NBH20vOCavgMeth <- NBH20vOCpositions %>%
   group_by(., DMR) %>%
   dplyr::select(., -c(chr, pos)) %>%
   summarize_all(funs(sum(., na.rm = TRUE))) %>%
-  slice(., 1, 3:10, 2) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice.
+  slice(., 1, 3:10, 2) %>%
+  column_to_rownames(var = "DMR") #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice. Change DMR column to rownames
 head(NBH20vOCavgMeth) #Confirm formatting
 ```
 
@@ -103,7 +106,8 @@ NBH5vOCavgMeth <- NBH5vOCpositions %>%
   group_by(., DMR) %>%
   dplyr::select(., -c(chr, pos)) %>%
   summarize_all(funs(sum(., na.rm = TRUE))) %>%
-  slice(., 1, 12, 23, 34, 45, 56:59, 2:11, 13:22, 24:33, 35:44, 46:55) #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice
+  slice(., 1, 12, 23, 34, 45, 56:59, 2:11, 13:22, 24:33, 35:44, 46:55) %>%
+  column_to_rownames(var = "DMR") #Group by DMR. Remove chromosome and position columns. Average methylation level across all CpG positions in each DMR for each sample. Reorganize manually with slice. Change DMR column to rownames
 head(NBH5vOCavgMeth) #Confirm formatting
 ```
 
@@ -125,14 +129,61 @@ head(NBH5vOCDEG)
 
 I will make heatmaps showing methylation level of DMR across samples for the normoxia vs. outside control and hypoxia vs. outside control comparisons.
 
-```{r}
-head(NBH20vOCavgMeth)
+```{bash}
+mkdir figures
 ```
 
 ```{r}
-
+heatmapColors <- rev(brewer.pal("RdBu", n = 11))
 ```
 
+## Normoxia vs. outside control
+
+```{r}
+NBH20vOCoxygenTreatment <- data.frame(samples = colnames(NBH20vOCavgMeth),
+                                      Treatment = c(rep("Mild", times = 3),
+                                                    rep("Control", times = 4))) %>%
+  column_to_rownames(var = "samples") #Create dataframe with sample ID and treatment information. Convert sample to rownames.
+head(NBH20vOCoxygenTreatment) #Column annotation information
+```
+
+```{r}
+NBH20vOCoxygenTreatmentColors <- list(Treatment = c("Mild" = "grey80",
+                                                    "Control" = "grey20")) #List of colors for column annotations
+NBH20vOCoxygenTreatmentColors #Column annotation colors
+```
+
+```{r}
+#pdf("figures/20_OC_N-DMR-heatmap.pdf", width = 11, height = 8.5)
+
+pheatmap(NBH20vOCavgMeth, cluster_row = TRUE, show_rownames = FALSE, cluster_cols = FALSE, show_colnames = FALSE, scale = "row", color = heatmapColors, annotation_col = NBH20vOCoxygenTreatment, annotation_colors = NBH20vOCoxygenTreatmentColors, annotation_names_col = FALSE)
+
+#dev.off()
+```
+
+## Hypoxia vs. outside control
+
+```{r}
+NBH5vOCoxygenTreatment <- data.frame(samples = colnames(NBH5vOCavgMeth),
+                                     Treatment = c(rep("Severe", times = 3),
+                                                   rep("Control", times = 4))) %>%
+  column_to_rownames(var = "samples") #Create dataframe with sample ID and treatment information. Convert sample to rownames.
+head(NBH5vOCoxygenTreatment) #Column annotation information
+```
+
+```{r}
+NBH5vOCoxygenTreatmentColors <- list(Treatment = c("Severe" = "grey80",
+                                                   "Control" = "grey5")) #List of colors for column annotations
+NBH5vOCoxygenTreatmentColors #Column annotation colors
+```
+
+```{r}
+#pdf("figures/5_OC_N-DMR-heatmap.pdf", width = 11, height = 8.5)
+
+pheatmap(NBH5vOCavgMeth, cluster_row = TRUE, show_rownames = FALSE, cluster_cols = FALSE, show_colnames = FALSE, scale = "row", color = heatmapColors, annotation_col = NBH5vOCoxygenTreatment, annotation_colors = NBH5vOCoxygenTreatmentColors, annotation_names_col = FALSE)
+
+#dev.off()
+```
 
 # Overlaps between DEG and DMR
 
