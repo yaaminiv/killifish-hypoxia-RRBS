@@ -36,13 +36,13 @@ sessionInfo()
 ## DMR data
 
 ```{r}
-NBH20v0CDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE, 
+NBH20vOCDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE, 
                           col.names = c("chr", "DMR.start", "DMR.end", "DMR", "direction", "gene.chr", "Gnomon", "gene", "gene.start", "gene.end", "V11", "strands", "V13", "V14", "distance")) %>%
   separate_wider_delim(., cols = "V14", delim = ";Dbxref", names = c("gene.name", "trash")) %>%
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
   dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance)
   #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. 
-head(NBH20v0CDMR) #Confirm formatting
+head(NBH20vOCDMR) #Confirm formatting
 ```
 
 ```{r}
@@ -56,27 +56,38 @@ head(NBH5vOCDMR) #Confirm formatting
 ```
 
 ```{r}
-NBH20v0Cmetilene <- read.delim("../../05-analysis/new-genome/summarize/missing_1/20_OC_N/N_metilene_NO_OC.txt", header = TRUE) #Import metilene data used to identify DMR. This dataset has the methylation value for each CpG in the DMR.
-head(NBH20v0Cmetilene) #Confirm import
+NBH20vOCmetilene <- read.delim("../../05-analysis/new-genome/summarize/missing_1/20_OC_N/N_metilene_NO_OC.txt", header = TRUE) #Import metilene data used to identify DMR. This dataset has the methylation value for each CpG in the DMR.
+head(NBH20vOCmetilene) #Confirm import
 ```
 
 ```{r}
-NBH20v0Cpositions <- data.frame() #Create empty dataframe
-for (i in 1:nrow(NBH20v0CDMR)) {
-  temp <- NBH20v0Cmetilene %>%
-  filter(., pos >= NBH20v0CDMR$DMR.start[i] & pos <= NBH20v0CDMR$DMR.end[i]) %>%
-  mutate(., DMR = NBH20v0CDMR$DMR[i])
-  NBH20v0Cpositions <- rbind(NBH20v0Cpositions, temp)
+NBH20vOCpositions <- data.frame() #Create empty dataframe
+for (i in 1:nrow(NBH20vOCDMR)) {
+  temp <- NBH20vOCmetilene %>%
+  filter(., pos >= NBH20vOCDMR$DMR.start[i] & pos <= NBH20vOCDMR$DMR.end[i]) %>%
+  mutate(., DMR = NBH20vOCDMR$DMR[i])
+  NBH20vOCpositions <- rbind(NBH20vOCpositions, temp)
 } #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
-colnames(NBH20v0Cpositions) <- c(colnames(NBH20v0Cmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
-head(NBH20v0Cpositions) #Confirm formatting
+colnames(NBH20vOCpositions) <- c(colnames(NBH20vOCmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
+head(NBH20vOCpositions) #Confirm formatting
 ```
-
 
 ```{r}
-NBH20v0CDMR
+NBH5vOCmetilene <- read.delim("../../05-analysis/new-genome/summarize/missing_1/5_OC_N/N_metilene_HY_OC.txt", header = TRUE) #Import metilene data used to identify DMR. This dataset has the methylation value for each CpG in the DMR.
+head(NBH5vOCmetilene) #Confirm import
 ```
 
+```{r}
+NBH5vOCpositions <- data.frame() #Create empty dataframe
+for (i in 1:nrow(NBH5vOCDMR)) {
+  temp <- NBH5vOCmetilene %>%
+  filter(., pos >= NBH5vOCDMR$DMR.start[i] & pos <= NBH5vOCDMR$DMR.end[i]) %>%
+  mutate(., DMR = NBH5vOCDMR$DMR[i])
+  NBH5vOCpositions <- rbind(NBH5vOCpositions, temp)
+} #Use a for loop to filter CpG data for each DMR. Filter positions based on start and end positions of each DMR. Add a column for DMR identity. Save as a temporary dataframe. Use rbind to append information to empty dataframe
+colnames(NBH5vOCpositions) <- c(colnames(NBH5vOCmetilene), "DMR") #Assign column names based on previous dataframe and add name for the DMR column
+head(NBH5vOCpositions) #Confirm formatting
+```
 
 ## DEG data
 
@@ -97,7 +108,7 @@ head(NBH5vOCDEG)
 I will make heatmaps showing methylation level of DMR across samples for the normoxia vs. outside control and hypoxia vs. outside control comparisons.
 
 ```{r}
-head(NBH20v0CDMR)
+head(NBH20vOCDMR)
 ```
 
 ```{r}
@@ -108,19 +119,19 @@ head(NBH20v0CDMR)
 # Overlaps between DEG and DMR
 
 ```{r}
-NBH20v0CDMRDEG <- inner_join(NBH20v0CDMR, NBH20vOCDEG, by = "gene.name") %>%
+NBH20vOCDMRDEG <- inner_join(NBH20vOCDMR, NBH20vOCDEG, by = "gene.name") %>%
   mutate(contrast = "20_OC_N") #Use inner join to identify DMR that overlap with DEG.
-NBH20v0CDMRDEG
+NBH20vOCDMRDEG
 ```
 
 ```{r}
-NBH5v0CDMRDEG <- inner_join(NBH5vOCDMR, NBH5vOCDEG, by = "gene.name") %>%
+NBH5vOCDMRDEG <- inner_join(NBH5vOCDMR, NBH5vOCDEG, by = "gene.name") %>%
   mutate(contrast = "5_OC_N") #Use inner join to identify DMR that overlap with DEG.
-NBH5v0CDMRDEG
+NBH5vOCDMRDEG
 ```
 
 ```{r}
-allNBHDMRDMG <- rbind(NBH20v0CDMRDEG, NBH5v0CDMRDEG)
+allNBHDMRDMG <- rbind(NBH20vOCDMRDEG, NBH5vOCDMRDEG)
 write.csv(allNBHDMRDMG, "NBH-DMR-DEG-overlaps.csv", quote = FALSE, row.names = FALSE)
 ```
 
