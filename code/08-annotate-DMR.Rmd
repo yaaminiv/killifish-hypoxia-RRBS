@@ -24,9 +24,11 @@ getwd()
 #install.packages("tidyverse")
 #install.packages("RColorBrewer")
 #install.packages("pheatmap")
+#install.packages("patchwork")
 require(tidyverse)
 require(RColorBrewer)
 require(pheatmap)
+require(patchwork)
 ```
 
 ```{r}
@@ -44,7 +46,7 @@ NBH20vOCDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE,
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
   dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance) %>%
   left_join(., (read.delim("../../06-DMR/new-genome/missing_1/20_OC_N/20_OC_N_qval.0.05.bedgraph", header = FALSE,
-           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
+                           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
 #Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. Join by imported dataframe to get methylation difference at each DMR (treatment - outside control).
 head(NBH20vOCDMR) #Confirm formatting
 ```
@@ -56,8 +58,8 @@ NBH5vOCDMR <- read.delim("5_OC_N_DMR.closestGene.bed", header = FALSE,
   mutate(., gene.name = gsub(x = gene.name, pattern = "ID=gene-", replacement = "")) %>%
   dplyr::select(chr, DMR.start, DMR.end, DMR, direction, gene.name, gene.start, gene.end, strands, distance) %>%
   left_join(., (read.delim("../../06-DMR/new-genome/missing_1/5_OC_N/5_OC_N_qval.0.05.bedgraph", header = FALSE,
-           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
-#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. Join by imported dataframe to get methylation difference at each DMR (treatment - outside control).
+                           col.names = c("chr", "DMR.start", "DMR.end", "meth.diff"))), by = c("chr", "DMR.start", "DMR.end"))
+#Import DMR data and add column names. Separate column with gene name by a specific delimiter, then remove characters before gene name. Retain only necessary columns. Join by imported dataframe to get methylation difference at each DMR (treatment - outside control). #Reorganize manually with slice
 head(NBH5vOCDMR) #Confirm formatting
 ```
 
@@ -198,13 +200,79 @@ I want to make a barplot showing the level of hyper- or hypomethylation of a DMR
 ### Normoxia vs. outside control
 
 ```{r}
-NBH20vOCDMR
+NBH20vOCDMR %>%
+  mutate(order = as.numeric(gsub(x = DMR, pattern = "DMR_", replacement = ""))) %>%
+  arrange(order) %>%
+  ggplot(aes(y = factor(order), x = meth.diff)) +
+  geom_bar(stat = "identity") +
+  scale_x_continuous(name = "Mean Methylation Difference",
+                     breaks = seq(-1.0, 1.0, 0.25),
+                     limits = c(-1,1)) +
+  scale_y_discrete(name = "DMR") +
+  theme_classic(base_size = 15)
+ggsave("figures/20_OC_N-methDiff.pdf", height = 11, width = 8.5)
+```
+
+### Hypoxia vs. outside control
+
+There are three DMR between hypoxia and the outside control that have two annotations:DMR_22, DMR_26, and DMR_36 have one annotation. I need to ensure I'm only plotting one value for each DMR.
+
+```{r}
+NBH5vOCDMR %>%
+  dplyr::select(., -c(strands, gene.name, gene.start, gene.end, distance)) %>%
+  unique(.) %>%
+  mutate(order = as.numeric(gsub(x = DMR, pattern = "DMR_", replacement = ""))) %>%
+  arrange(order) %>%
+  ggplot(aes(y = factor(order), x = meth.diff)) +
+  geom_bar(stat = "identity") +
+  scale_x_continuous(name = "Mean Methylation Difference",
+                     breaks = seq(-1.0, 1.0, 0.25),
+                     limits = c(-1,1)) +
+  scale_y_discrete(name = "DMR",
+                   breaks = seq(1, 59, 2)) +
+  theme_classic(base_size = 15)
+ggsave("figures/5_OC_N-methDiff.pdf", height = 11, width = 8.5)
+```
+
+### Multipanel plot
+
+```{r}
+NBH20vOCmethDiffPlot <- NBH20vOCDMR %>%
+  mutate(order = as.numeric(gsub(x = DMR, pattern = "DMR_", replacement = ""))) %>%
+  arrange(order) %>%
+  ggplot(aes(y = factor(order), x = meth.diff)) +
+  geom_bar(stat = "identity") +
+  scale_x_continuous(breaks = seq(-1.0, 1.0, 0.25),
+                     limits = c(-1,1)) +
+  labs(x = "Mean Methylation Difference",
+       y = "DMR",
+       title = "A. Mild Hypoxia vs. Control") +
+  theme_classic(base_size = 15)
+```
+
+```{r}
+NBH5vOCmethDiffPlot <- NBH5vOCDMR %>%
+  dplyr::select(., -c(strands, gene.name, gene.start, gene.end, distance)) %>%
+  unique(.) %>%
+  mutate(order = as.numeric(gsub(x = DMR, pattern = "DMR_", replacement = ""))) %>%
+  arrange(order) %>%
+  ggplot(aes(y = factor(order), x = meth.diff)) +
+  geom_bar(stat = "identity") +
+  scale_x_continuous(breaks = seq(-1.0, 1.0, 0.25),
+                     limits = c(-1,1)) +
+  scale_y_discrete(breaks = seq(1, 59, 2)) +
+  labs(x = "Mean Methylation Difference",
+       y = "DMR",
+       title = "B. Severe Hypoxia vs. Control") +
+  theme_classic(base_size = 15)
+```
+
+```{r}
+NBH20vOCmethDiffPlot | NBH5vOCmethDiffPlot #Use patchwork to create a multipanel plot
+ggsave("figures/multipanel-methDiff.pdf", height = 8.5, width = 11)
 ```
 
 
-
-
-### Hypoxia vs. outside control
 
 # Overlaps between DEG and DMR
 
