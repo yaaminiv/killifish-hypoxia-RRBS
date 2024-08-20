@@ -25,10 +25,12 @@ getwd()
 #install.packages("RColorBrewer")
 #install.packages("pheatmap")
 #install.packages("patchwork")
+#install.packages("ggExtra")
 require(tidyverse)
 require(RColorBrewer)
 require(pheatmap)
 require(patchwork)
+require(ggExtra)
 ```
 
 ```{r}
@@ -133,14 +135,14 @@ head(NBH5vOCDEG)
 
 ```{r}
 NBH20geneExp <- rbind((read.delim("../../../data/RNA-Seq-renamed/htseq-20-N1.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "20-N1_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "20-N1_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-20-N2.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "20-N2_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "20-N2_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-20-N4.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "20-N4_exp"))) %>%
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "20-N4_exp"))) %>%
   pivot_wider(., names_from = "sample", values_from = "CPM") #Import gene expression data and rename columns. Add a new column for sample ID. Use rbind to combine dataframes. Pivot wider.
 head(NBH20geneExp) #Confirm import and formatting
 ```
@@ -149,10 +151,10 @@ head(NBH20geneExp) #Confirm import and formatting
 NBH5geneExp <- rbind((read.delim("../../../data/RNA-Seq-renamed/htseq-5-N1.txt", header = FALSE, 
                                  col.names = c("gene.name", "CPM")) %>%
                         mutate(., sample = "5-N1_exp")),
-                      (read.delim("../../../data/RNA-Seq-renamed/htseq-5-N2.txt", header = FALSE, 
+                     (read.delim("../../../data/RNA-Seq-renamed/htseq-5-N2.txt", header = FALSE, 
                                  col.names = c("gene.name", "CPM")) %>%
                         mutate(., sample = "5-N2_exp")),
-                      (read.delim("../../../data/RNA-Seq-renamed/htseq-5-N3.txt", header = FALSE, 
+                     (read.delim("../../../data/RNA-Seq-renamed/htseq-5-N3.txt", header = FALSE, 
                                  col.names = c("gene.name", "CPM")) %>%
                         mutate(., sample = "5-N3_exp"))) %>%
   pivot_wider(., names_from = "sample", values_from = "CPM") #Import gene expression data and rename columns. Add a new column for sample ID. Use rbind to combine dataframes. Pivot wider.
@@ -161,20 +163,20 @@ head(NBH5geneExp) #Confirm import and formatting
 
 ```{r}
 NBHOCgeneExp <- rbind((read.delim("../../../data/RNA-Seq-renamed/htseq-OC-N1.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "OC-N1_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "OC-N1_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-OC-N2.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "OC-N2_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "OC-N2_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-OC-N3.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "OC-N3_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "OC-N3_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-OC-N4.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "OC-N4_exp")),
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "OC-N4_exp")),
                       (read.delim("../../../data/RNA-Seq-renamed/htseq-OC-N5.txt", header = FALSE, 
-                                 col.names = c("gene.name", "CPM")) %>%
-                        mutate(., sample = "OC-N5_exp"))) %>%
+                                  col.names = c("gene.name", "CPM")) %>%
+                         mutate(., sample = "OC-N5_exp"))) %>%
   pivot_wider(., names_from = "sample", values_from = "CPM") #Import gene expression data and rename columns. Add a new column for sample ID. Use rbind to combine dataframes. Pivot wider.
 head(NBHOCgeneExp) #Confirm import and formatting
 ```
@@ -347,6 +349,8 @@ I [ran an analysis](https://github.com/yaaminiv/killifish-hypoxia-RRBS/blob/main
 
 ## Normoxia vs. outside control
 
+### Format data
+
 ```{r}
 NBH20vOCBATcorrelating <- read.delim("BAT_correlating/20_OC_N/correlation_output/20_OC_N_correlation.txt", sep = "\t", header = TRUE, skip = 1, na.strings = c("NaN", "NA")) %>%
   dplyr::select(-1) %>% 
@@ -363,7 +367,144 @@ NBH20vOCcorrOnly <- NBH20vOCBATcorrelating %>%
   filter(., is.na(rho.p.val) == FALSE) %>%
   left_join(., (NBH20vOCavgMeth %>% 
                   rename_with(., function(x) paste0(x, sep = "_meth")) %>%
-                  rownames_to_column(., var = "DMR")), by = "DMR") #Take BAT_correlating output and retain rows that have a correlation p-value. Join with average methylation data where the columns are renamed to indicate methylation values.
+                  rownames_to_column(., var = "DMR")), by = "DMR") %>%
+  left_join(., NBH20geneExp, by = "gene.name") %>%
+  left_join(., NBHOCgeneExp, by = "gene.name") %>% 
+  dplyr::select(-c(chr, DMR.start, DMR.end, direction, gene.start, gene.end, strands, "OC-N3_exp")) %>%
+  pivot_longer(cols = "NO_20.N4_meth":"OC_OC.N4_meth", names_to = "sample_meth", values_to = "meth") %>%
+  pivot_longer(cols = "20-N1_exp":"OC-N5_exp", names_to = "sample_exp", values_to = "exp") %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "_meth", replacement = "")) %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "NO_20.", replacement = "20-")) %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "OC_OC.", replacement = "OC-")) %>%
+  mutate(sample_exp = gsub(x = sample_exp, pattern = "_exp", replacement = "")) %>%
+  filter(., sample_meth == sample_exp) %>%
+  mutate(sample = sample_meth) %>%
+  separate(., col = sample_meth, into = c("treatment", "extra"), sep = "-") %>%
+  dplyr::select(-c(sample_exp, extra))
+#Take BAT_correlating output and retain rows that have a correlation p-value. Join with average methylation data where the columns are renamed to indicate methylation values. Join with gene expression data. Remove unecessary columns. Pivot longer for methylation and expression data separately. Modify column contents and retain rows where the sample ID for methylation and expression match. Create a new sample ID column. Create a new column for treatment specifications by separating defunct sample_meth column. Remove extra columns
 head(NBH20vOCcorrOnly)
 ```
 
+### Plot
+
+```{r}
+plotColors <- c(brewer.pal(9, "GnBu"), 
+                brewer.pal(9, "BuGn")) #Create color scheme with greys (outside controls), green-blues, and blue-greens
+plotColors <- plotColors[c(9,8,6,18,16,14)] #Pick colors to use in figures. 1 = NB OC, 2 = NB NO, 3 = NB HY
+```
+
+```{r}
+NBH20vOCcorrText <- data.frame(gene.name = unique(NBH20vOCcorrOnly$gene.name),
+                               label = c("rho = 0.39, p = 0.40",
+                                         "rho = -0.63, p = 0.13",
+                                         "rho = 0, p = 1.00")) #Create a geom with rho and p-value information to label facets
+```
+
+```{r}
+NBH20vOCcorrOnly %>%
+  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  geom_point() +
+  facet_wrap(~gene.name, scales = "free") +
+  labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
+  scale_color_manual(name = "Treatment",
+                     values = c(plotColors[2], plotColors[1]),
+                     labels = c("Mild", "Control")) +
+  geom_smooth(method = lm, se = FALSE, 
+              linewidth = 0.75, linetype = 2, color = "black") +
+  geom_text(NBH20vOCcorrText, inherit.aes = FALSE, 
+            mapping = aes(x = -Inf, y = Inf, label = label),
+            hjust = -0.05, vjust = 5) +
+  theme_classic(base_size= 15) #Create a scatterplot with methylation and expression data. Color by treatment and facet by gene. Relabel x- and y-axes. Add linear regression line and text labels.
+ggsave("figures/20_OC_N-corrPlots.pdf", height = 8.5, width = 11)
+```
+
+## Hypoxia vs. outside control
+
+### Format data
+
+```{r}
+NBH5vOCBATcorrelating <- read.delim("BAT_correlating/5_OC_N/correlation_output/5_OC_N_correlation.txt", sep = "\t", header = TRUE, skip = 1, na.strings = c("NaN", "NA")) %>%
+  dplyr::select(-1) %>% 
+  filter(is.na(rho.p.val) == FALSE) #Import output from BAT_correlating. Skip the first line to allow column names to be recognized. Input specific NA strings. Remove the first column. Keep rows that have correlation p-values
+colnames(NBH5vOCBATcorrelating)[1] <- "gene.name" #Rename column with gene ID
+NBH5vOCBATcorrelating <- NBH5vOCBATcorrelating %>%
+  left_join(NBH5vOCDMR, ., by = "gene.name") %>%
+  dplyr::select(-methylation_region) #Join correlating output with DMR dataframe
+head(NBH5vOCBATcorrelating) #Confirm import and formatting
+```
+
+```{r}
+NBH5vOCcorrOnly <- NBH5vOCBATcorrelating %>%
+  filter(., is.na(rho.p.val) == FALSE) %>%
+  left_join(., (NBH5vOCavgMeth %>% 
+                  rename_with(., function(x) paste0(x, sep = "_meth")) %>%
+                  rownames_to_column(., var = "DMR")), by = "DMR") %>%
+  left_join(., NBH5geneExp, by = "gene.name") %>%
+  left_join(., NBHOCgeneExp, by = "gene.name") %>% 
+  dplyr::select(-c(chr, DMR.start, DMR.end, direction, gene.start, gene.end, strands, "OC-N3_exp")) %>%
+  pivot_longer(cols = "HY_5.N1_meth":"OC_OC.N4_meth", names_to = "sample_meth", values_to = "meth") %>%
+  pivot_longer(cols = "5-N1_exp":"OC-N5_exp", names_to = "sample_exp", values_to = "exp") %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "_meth", replacement = "")) %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "HY_5.", replacement = "5-")) %>%
+  mutate(sample_meth = gsub(x = sample_meth, pattern = "OC_OC.", replacement = "OC-")) %>%
+  mutate(sample_exp = gsub(x = sample_exp, pattern = "_exp", replacement = "")) %>%
+  filter(., sample_meth == sample_exp) %>%
+  mutate(sample = sample_meth) %>%
+  separate(., col = sample_meth, into = c("treatment", "extra"), sep = "-") %>%
+  dplyr::select(-c(sample_exp, extra))
+#Take BAT_correlating output and retain rows that have a correlation p-value. Join with average methylation data where the columns are renamed to indicate methylation values. Join with gene expression data. Remove unecessary columns. Pivot longer for methylation and expression data separately. Modify column contents and retain rows where the sample ID for methylation and expression match. Create a new sample ID column. Create a new column for treatment specifications by separating defunct sample_meth column. Remove extra columns
+head(NBH5vOCcorrOnly)
+```
+
+### Plot
+
+```{r}
+NBH5vOCcorrOnly %>%
+  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  geom_point() +
+  facet_wrap(~gene.name, scales = "free") +
+  labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
+  scale_color_manual(name = "Treatment",
+                     values = c(plotColors[3], plotColors[1]),
+                     labels = c("Severe", "Control")) +
+  geom_smooth(method = lm, se = FALSE, 
+              linewidth = 0.75, linetype = 2, color = "black") +
+  theme_classic() #Create a scatterplot with methylation and expression data. Color by treatment and facet by gene. Relabel x- and y-axes. Add linear regression line and text labels.
+ggsave("figures/5_OC_N-corrPlots.pdf", height = 8.5, width = 11)
+```
+
+```{r}
+NBH5vOCcorrOnly %>%
+  filter(., rho.p.val < 0.05) %>%
+  dplyr::select(gene.name, rho, rho.p.val) %>%
+  unique()
+```
+
+```{r}
+NBH5vOCcorrText <- data.frame(gene.name = (NBH5vOCcorrOnly %>%
+                                             filter(., rho.p.val < 0.05) %>%
+                                             dplyr::select(gene.name) %>%
+                                             unique()),
+                              label = c("rho = 0.86, p = 0.02",
+                                        "rho = 0.86, p = 0.01",
+                                        "rho = 0.77, p = 0.04")) #Create a geom with rho and p-value information to label facets
+```
+
+```{r}
+NBH5vOCcorrOnly %>%
+  filter(., rho.p.val < 0.05) %>%
+  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  geom_point() +
+  facet_wrap(~gene.name, scales = "free") +
+  labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
+  scale_color_manual(name = "Treatment",
+                     values = c(plotColors[3], plotColors[1]),
+                     labels = c("Severe", "Control")) +
+  geom_smooth(method = lm, se = FALSE, 
+              linewidth = 0.75, linetype = 2, color = "black") +
+  geom_text(NBH5vOCcorrText, inherit.aes = FALSE,
+            mapping = aes(x = -Inf, y = Inf, label = label),
+            hjust = -0.05, vjust = 5) +
+  theme_classic() #Create a scatterplot with methylation and expression data. Color by treatment and facet by gene. Relabel x- and y-axes. Add linear regression line and text labels.
+ggsave("figures/5_OC_N-corrPlots-sigCorr.pdf", height = 8.5, width = 11)
+```
