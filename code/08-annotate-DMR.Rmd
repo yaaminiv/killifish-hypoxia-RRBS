@@ -363,7 +363,7 @@ head(NBH20vOCBATcorrelating) #Confirm import and formatting
 ```
 
 ```{r}
-write.table(NBH20vOCBATcorrelating, "BAT_correlating/20_OC_N/20_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
+write.table(NBH20vOCBATcorrelating, "BAT_correlating/20_OC_N/correlation_output/20_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
 ```
 
 
@@ -439,7 +439,7 @@ head(NBH5vOCBATcorrelating) #Confirm import and formatting
 ```
 
 ```{r}
-write.table(NBH5vOCBATcorrelating, "BAT_correlating/5_OC_N/5_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
+write.table(NBH5vOCBATcorrelating, "BAT_correlating/5_OC_N/correlation_output/5_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
 ```
 
 ```{r}
