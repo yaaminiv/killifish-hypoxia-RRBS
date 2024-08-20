@@ -39,7 +39,7 @@ sessionInfo()
 
 # Import and format data
 
-## DMR data
+## Methylation data
 
 ```{r}
 NBH20vOCDMR <- read.delim("20_OC_N_DMR.closestGene.bed", header = FALSE, 
@@ -119,7 +119,7 @@ NBH5vOCavgMeth <- NBH5vOCpositions %>%
 head(NBH5vOCavgMeth) #Confirm formatting
 ```
 
-## DEG data
+## Gene expression data
 
 ```{r}
 NBH20vOCDEG <- read.csv("../../../data/NEW-n.NBHvso.NBH.csv") #Import DEG data
@@ -363,6 +363,11 @@ head(NBH20vOCBATcorrelating) #Confirm import and formatting
 ```
 
 ```{r}
+write.table(NBH20vOCBATcorrelating, "BAT_correlating/20_OC_N/20_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
+```
+
+
+```{r}
 NBH20vOCcorrOnly <- NBH20vOCBATcorrelating %>%
   filter(., is.na(rho.p.val) == FALSE) %>%
   left_join(., (NBH20vOCavgMeth %>% 
@@ -431,6 +436,10 @@ NBH5vOCBATcorrelating <- NBH5vOCBATcorrelating %>%
   left_join(NBH5vOCDMR, ., by = "gene.name") %>%
   dplyr::select(-methylation_region) #Join correlating output with DMR dataframe
 head(NBH5vOCBATcorrelating) #Confirm import and formatting
+```
+
+```{r}
+write.table(NBH5vOCBATcorrelating, "BAT_correlating/5_OC_N/5_OC_N_correlation-withAnnot.txt", sep = "\t", quote = FALSE, row.names = FALSE) #Save modified dataframe
 ```
 
 ```{r}
@@ -505,6 +514,6 @@ NBH5vOCcorrOnly %>%
   geom_text(NBH5vOCcorrText, inherit.aes = FALSE,
             mapping = aes(x = -Inf, y = Inf, label = label),
             hjust = -0.05, vjust = 5) +
-  theme_classic() #Create a scatterplot with methylation and expression data. Color by treatment and facet by gene. Relabel x- and y-axes. Add linear regression line and text labels.
+  theme_classic(base_size = 15) #Create a scatterplot with methylation and expression data. Color by treatment and facet by gene. Relabel x- and y-axes. Add linear regression line and text labels.
 ggsave("figures/5_OC_N-corrPlots-sigCorr.pdf", height = 8.5, width = 11)
 ```
