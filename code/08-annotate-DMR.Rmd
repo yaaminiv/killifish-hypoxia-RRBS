@@ -476,7 +476,7 @@ ggsave("figures/5_OC_N-corrPlots.pdf", height = 8.5, width = 11)
 ```{r}
 NBH5vOCcorrOnly %>%
   filter(., rho.p.val < 0.05) %>%
-  dplyr::select(gene.name, rho, rho.p.val) %>%
+  dplyr::select(gene.name, rho, rho.p.val, distance) %>%
   unique()
 ```
 
