@@ -407,7 +407,7 @@ NBH20vOCcorrText <- data.frame(gene.name = unique(NBH20vOCcorrOnly$gene.name),
 
 ```{r}
 NBH20vOCcorrOnly %>%
-  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  ggplot(aes(x = meth*100, y = exp, color = treatment)) +
   geom_point() +
   facet_wrap(~gene.name, scales = "free") +
   labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
@@ -469,7 +469,7 @@ head(NBH5vOCcorrOnly)
 
 ```{r}
 NBH5vOCcorrOnly %>%
-  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  ggplot(aes(x = meth*100, y = exp, color = treatment)) +
   geom_point() +
   facet_wrap(~gene.name, scales = "free") +
   labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
@@ -502,7 +502,7 @@ NBH5vOCcorrText <- data.frame(gene.name = (NBH5vOCcorrOnly %>%
 ```{r}
 NBH5vOCcorrOnly %>%
   filter(., rho.p.val < 0.05) %>%
-  ggplot(aes(x = meth, y = exp, color = treatment)) +
+  ggplot(aes(x = meth*100, y = exp, color = treatment)) +
   geom_point() +
   facet_wrap(~gene.name, scales = "free") +
   labs(x = "Mean Methylation (%)", y = "Expression (CPM)") +
